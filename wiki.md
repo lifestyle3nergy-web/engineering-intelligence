@@ -171,9 +171,29 @@ How can software, documentation, identity, archives, and execution environments 
 
 ## 5. Transfer historical lessons into TWGT governance
 
+A historical EPR should not become a production dependency or policy merely because the underlying technology succeeded elsewhere.
 |
-v
+vHistorical source / research paper / incident
 
+Engineering Problem Record
+
+Identify bottleneck and assumptions
+
+Source code / test fixtures / benchmark harness
+
+Reproduce baseline and reported behaviour
+
+Compare with TWGT workload and target hardware
+
+Propose contract, algorithm or configuration
+
+Unit + integration + fault-injection tests
+
+Exact-head CI and independent review
+
+Human approval before runtime admission
+
+Measure outcomes and record lessons
 
 Before adopting a solution: does the original problem exist in the target workload? What evidence demonstrates the bottleneck? Which assumptions matter? What is the baseline? What new failure modes appear? Can it be reproduced? Can it be validated on target runtime? What approval and rollback conditions apply?
 
@@ -193,6 +213,25 @@ Before adopting a solution: does the original problem exist in the target worklo
 A green test suite proves configured tests passed on the tested revision. It does not prove the mock accurately represents production behaviour.
 
 ## 7. Proposed reference-library structure
+
+engineering-intelligence/
+|-- wiki.md
+|-- historical-atlas/
+|   |-- 1980-1989/
+|   |-- 1990-1999/
+|   |-- 2000-2009/
+|   |-- 2010-2019/
+|   |-- 2020-2026/
+|   -- 2027-2080-scenarios/
+|-- epr/
+|-- foundations/
+|-- archive-manifests/
+|-- reproduction/
+|-- transfer-to-twgt/
+-- governance/
+
+This is a proposal. No repository or governance configuration is changed by this document.
+
 
 
 This is a proposal. No repository or governance configuration is changed by this document.
