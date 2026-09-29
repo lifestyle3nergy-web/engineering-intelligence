@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  atlas-integrity:
+    name: atlas-integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate machine-readable atlas
+        run: node --input-type=module -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync('atlas/index.json','utf8')); if(!x.version||!Array.isArray(x.eprs)||x.eprs.some(e=>!/^EPR-\\d+$/.test(e.id)||!e.title||!e.status||!e.transfer)) process.exit(1); console.log(JSON.stringify({state:'VALIDATED',eprs:x.eprs.length}));"
+      - name: Validate EPR identifiers
+        run: |
+          python3 - <<'PY'
+          import re, pathlib
+          ids=[]
+          for p in pathlib.Path("epr").glob("EPR-*.md"):
+              m=re.match(r"(EPR-\d+)",p.name)
+              if m: ids.append(m.group(1))
+          if len(ids) != len(set(ids)): raise SystemExit("duplicate EPR identifier")
+          print({"state":"VALIDATED","records":len(ids)})
+          PY
