@@ -1,0 +1,21 @@
+{
+  "version":"1.0.0",
+  "purpose":"machine-readable engineering problem and transfer catalogue",
+  "evidence_classes":["historical_fact","implementation_evidence","measured_result","engineering_inference","research_hypothesis","unverified"],
+  "eprs":[
+    {"id":"EPR-001","title":"Separate internetworking from the underlying network","status":"catalogued","transfer":"stable interfaces between independent infrastructure"},
+    {"id":"EPR-002","title":"Plan protocol migration across a live system","status":"catalogued","transfer":"versioned compatibility and rollback"},
+    {"id":"EPR-003","title":"Replace central host tables with distributed naming","status":"catalogued","transfer":"distributed registries with authority and expiry"},
+    {"id":"EPR-004","title":"Exchange reachability between independently operated networks","status":"catalogued","transfer":"discovery separated from trust and admission"},
+    {"id":"EPR-005","title":"Respond to congestion with feedback","status":"catalogued","transfer":"backpressure and bounded concurrency"},
+    {"id":"EPR-006","title":"Make distributed information addressable and linkable","status":"catalogued","transfer":"canonical identifiers and provenance"},
+    {"id":"EPR-007","title":"Improve useful throughput under congestion","status":"catalogued","transfer":"feedback-driven throttling"},
+    {"id":"EPR-008","title":"Standardise extensible client-server interactions","status":"catalogued","transfer":"explicit API contracts and structured errors"},
+    {"id":"EPR-009","title":"Automate infrastructure provisioning and reconciliation","status":"catalogued","transfer":"desired state versus observed state"},
+    {"id":"EPR-010","title":"Isolate workloads and improve resource utilisation","status":"catalogued","transfer":"bounded per-agent resource budgets"},
+    {"id":"EPR-011","title":"Automate secure connection lifecycle management","status":"catalogued","transfer":"trust lifecycle monitoring and fail-closed expiry"},
+    {"id":"EPR-012","title":"Reduce connection setup and transport blocking","status":"catalogued","transfer":"measure transport setup and tail latency"},
+    {"id":"EPR-013","title":"Treat AI inference as a distributed-systems problem","status":"catalogued","transfer":"measure latency, throughput, memory, energy and cost"},
+    {"id":"EPR-019","title":"Enforce schema validation at every agent execution boundary","status":"open","transfer":"machine-checkable contracts at execution boundaries"}
+  ]
+}
