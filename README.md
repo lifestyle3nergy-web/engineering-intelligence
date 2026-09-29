@@ -1,6 +1,6 @@
 # engineering-intelligence
 
-The TWGT reference library. Home of the **Internet Engineering Evolution Atlas** and the **Engineering Problem Records** (EPRs) that motivate every TWGT system.
+The TWGT knowledge pillar. Home of the **Internet Engineering Evolution Atlas** and the **Engineering Problem Records** (EPRs) that motivate every TWGT system.
 
 This repository is the reason every other TWGT repository exists. No code here. No schemas. No agents. Just the source-graded, evidence-disciplined record of engineering problems, the historical evidence that constrains them, and the governance path that carries them into implementation.
 
@@ -10,6 +10,10 @@ This repository is the reason every other TWGT repository exists. No code here. 
 - `epr/` — individual Engineering Problem Records in their own files, one per record, cross-referenced from the atlas.
 - `assets/wiki.css` — the stylesheet for the rendered atlas.
 - Pages renders the atlas at `https://lifestyle3nergy-web.github.io/engineering-intelligence/`.
+
+## Three-repository architecture
+
+`engineering-intelligence` defines **why**; `twgt-schema-gate` defines **what**; `twgt-bridge` independently verifies **prove**. See `governance/three-repository-architecture.md`.
 
 ## Sibling repositories
 
