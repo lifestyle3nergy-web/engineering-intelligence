@@ -1,1 +1,10 @@
-* @lifestyle3nergy-web
+# Default — human owner
+*                       @lifestyle3nergy-web
+
+# Policy layer — human-only. EPR-021.
+/policy/                @lifestyle3nergy-web
+/epr/                   @lifestyle3nergy-web
+/foundations/           @lifestyle3nergy-web
+/status/                @lifestyle3nergy-web
+/wiki.md                @lifestyle3nergy-web
+/.github/               @lifestyle3nergy-web
