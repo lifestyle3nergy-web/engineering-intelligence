@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '20'
       - name: Validate machine-readable atlas
-        run: node --input-type=module -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync('atlas/index.json','utf8')); if(!x.version||!Array.isArray(x.eprs)||x.eprs.some(e=>!/^EPR-\\d+$/.test(e.id)||!e.title||!e.status||!e.transfer)) process.exit(1); console.log(JSON.stringify({state:'VALIDATED',eprs:x.eprs.length}));"
+        run: node -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync('atlas/index.json','utf8')); if(!x.version||!Array.isArray(x.eprs)||x.eprs.some(e=>!/^EPR-\\d+$/.test(e.id)||!e.title||!e.status||!e.transfer)) process.exit(1); console.log(JSON.stringify({state:'VALIDATED',eprs:x.eprs.length}));"
       - name: Validate EPR identifiers
         run: |
           python3 - <<'PY'
