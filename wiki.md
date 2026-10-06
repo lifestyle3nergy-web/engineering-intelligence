@@ -254,3 +254,386 @@ An EPR is ready for adoption review only when it contains:
 - Human review and explicit approval status.
 
 **Core principle:** TWGT should not become a collection of other people's repositories. It should become a system that understands why engineering solutions exist, when they work, where they fail, and how that knowledge can be transformed into verified capabilities of its own.
+## 10. Recommendations execution and evidence report
+
+**Record type:** Engineering-intelligence research and implementation-pattern record  
+**Repository head observed:** `595b73495b3b61470ba281099138f02035eb7e5c`  
+**Scope:** TWGT Merge Gates, #107, #117, #118, schema-gate #7, bridge #10, deterministic integrity evidence, security-candidate verification, and release-readiness replay.  
+**Evidence status:** Research-derived implementation guidance. Repository-specific defects and fixes remain **UNVERIFIED** until exact-head repository-native execution produces evidence.
+
+### 10.1 Evidence discipline
+
+The recommendations are not admission evidence by themselves. External implementation patterns may identify a plausible repair, but TWGT requires the target repository to demonstrate the behavior under its own runtime, dependency graph, workflow, and contract.
+
+Use these states consistently:
+
+- **RESEARCH_PATTERN** — pattern observed in external technical material.
+- **CANDIDATE_REPAIR** — proposed target-repository change.
+- **EXECUTED** — change or command was actually run against the target repository.
+- **EVIDENCE_READY** — deterministic evidence artifact exists and is bound to the exact candidate SHA.
+- **PASS_CANDIDATE** — required validation completed successfully.
+- **HOLD** — evidence is missing, stale, failed, inaccessible, or contradictory.
+- **HUMAN_ADMISSION_REQUIRED** — technical evidence is sufficient for human evaluation; it is not itself admission.
+
+**Rule:** `UNKNOWN != FALSE`, `INACCESSIBLE != ABSENT`, `SKIPPED != PASS`, and `VALIDATED != ADMITTED`.
+
+### 10.2 Recommendations evidence matrix
+
+| Workstream | Recommended implementation pattern | Required repository-native evidence | Current disposition |
+|---|---|---|---|
+| TWGT Merge Gates / Prisma | Explicit generation before consumers; generation must use the gate's declared package-manager/runtime environment | Clean-checkout generation, generated-client verification, lifecycle tests, exact-head CI | **HOLD / CANDIDATE_REPAIR** |
+| #107 | Repair the Prisma execution prerequisite; do not weaken lifecycle tests | Lifecycle tests pass unchanged at exact candidate SHA | **HOLD** |
+| #118 | Normalize timeout once: zero = default; negative = validation error naming the key; positive = explicit value | ADR, positive/zero/negative fixtures, startup validation failure for negative values | **HOLD** |
+| #117 | ADR-to-lint bridge with a named CI step and deterministic violation output | ADR reference, named lint invocation, passing and failing fixtures, exact-head CI | **HOLD** |
+| schema-gate #7 | Evidence is valid only for the exact PR head and base under evaluation | Fresh CI run, artifact/result containing candidate SHA, no head movement after evidence | **HOLD** |
+| bridge #10 | Validate mapping against a frozen canonical schema version after schema-gate evidence is green | Canonical schema pin, mapping validation, exact-head result | **HOLD** |
+| engineering-intelligence | Thin deterministic current-head integrity replay | Clean checkout, deterministic contract checks, head/base binding | **CANDIDATE_REPAIR** |
+| Security candidates | Prefer repository-native focused verification before broader security analysis | Native tool output, frozen dependency state, exact candidate SHA, findings disposition | **HOLD** |
+| Release readiness | Re-read head/base and invalidate stale evidence before each readiness decision | Thursday replay and independent Friday replay | **HOLD** |
+
+### 10.3 TWGT Merge Gates: Prisma generation prerequisite
+
+The implementation invariant is:
+
+~~~
+clean checkout
+    ↓
+lockfile-controlled install
+    ↓
+explicit Prisma generation
+    ↓
+verify generated client
+    ↓
+lint / typecheck
+    ↓
+lifecycle tests
+    ↓
+contract validation
+    ↓
+exact-head evidence
+~~~
+
+The gate must not depend on an inherited caller PATH, a previously generated client, or an undocumented shared cache.
+
+The recommendation is **not** to assume that a missing/stale client is the present TWGT defect. First establish the failure with repository-native evidence. If generation is the actual prerequisite failure, repair the execution environment rather than modifying lifecycle-test assertions.
+
+Acceptance criteria:
+
+1. Generation is an explicit named gate step.
+2. The command uses the repository's declared package manager and Prisma schema.
+3. The generated client consumed by later steps is produced in the same clean job environment.
+4. Lifecycle tests are unchanged.
+5. A clean checkout reproduces the result.
+6. The resulting evidence records the exact candidate SHA.
+
+### 10.4 Timeout validation pattern — #118
+
+Normative behavior:
+
+| Input | Normalization | Result |
+|---|---|---|
+| negative | no defaulting | validation error naming the configuration key |
+| zero | apply documented default | continue |
+| positive | retain explicit value | continue |
+
+The default belongs to normalization. A second use-time `> 0` guard must not silently convert invalid negative input into a default.
+
+Failure-negative acceptance test:
+
+~~~
+configured timeout = -1
+        ↓
+startup validation
+        ↓
+FAIL
+        ↓
+error identifies timeout key
+        ↓
+process does not enter normal runtime
+~~~
+
+### 10.5 ADR-to-lint bridge — #117
+
+An ADR-backed rule should have an explicit executable relationship:
+
+~~~
+ADR decision
+    ↓
+lint requirement
+    ↓
+named CI step
+    ↓
+deterministic violation
+    ↓
+fixture/test
+~~~
+
+A lint pass must not be inferred merely because another build step happened to invoke the linter. The compliance check should be discoverable as a named gate and its failure should identify the governing ADR.
+
+### 10.6 Exact-head evidence — schema-gate #7 and bridge #10
+
+Evidence is valid only when:
+
+~~~
+evidence.candidate_sha == current.candidate_sha
+AND
+evidence.base_sha == current.base_sha
+AND
+required_checks == PASS
+AND
+no required evidence is stale
+~~~
+
+If the PR head moves after evidence generation:
+
+~~~
+old evidence → STALE → HOLD
+                         ↓
+                    rerun validation
+                         ↓
+                    new evidence
+~~~
+
+Bridge validation must consume the canonical schema contract rather than reconstructing an equivalent local interpretation. The schema version/pin, candidate SHA, validation result, and provenance should be recorded together.
+
+### 10.7 Deterministic current-head integrity pattern
+
+The engineering-intelligence integrity harness should be deliberately small:
+
+1. Clean checkout at the evaluated SHA.
+2. Resolve the declared repository contract.
+3. Replay cheap deterministic checks.
+4. Record exact HEAD and BASE.
+5. Record each check's conclusion.
+6. Produce a stable machine-readable result.
+7. Refuse to represent missing or stale evidence as success.
+
+The harness is an **evidence producer**, not an admission authority.
+
+### 10.8 Security-candidate verification
+
+Repository-native verification should be layered:
+
+~~~
+candidate identification
+        ↓
+repository-native focused checks
+        ↓
+dependency / lockfile verification
+        ↓
+container or artifact provenance where applicable
+        ↓
+full required verification
+        ↓
+exact-head evidence
+        ↓
+TWGT evaluation
+~~~
+
+Examples are stack-dependent rather than mandatory global tooling:
+
+- JS/TS: repository AST/static checks and lockfile-aware dependency auditing.
+- Python: frozen dependency audit where the repository supports it.
+- Containers: immutable digest and signing/provenance verification where applicable.
+- Runtime-facing candidates: focused input-to-sink, process, outbound-request, redirect, and authorization-path tests where relevant.
+
+A generic external scanner finding is not automatically a repository-native failure; conversely, absence of an external finding does not establish security.
+
+## 11. Concurrency implementation patterns
+
+Concurrency is treated as a constrained control problem, not simply as a request to increase worker count.
+
+### 11.1 Bounded concurrency
+
+Define a hard concurrency budget:
+
+~~~
+active_work <= concurrency_limit
+~~~
+
+The limit should be applied at the narrowest resource boundary that can become saturated: CPU, memory, database connections, network requests, accelerator capacity, file descriptors, or downstream API quotas.
+
+**Failure mode:** increasing parallel workers can increase queueing, memory pressure, retry storms, downstream saturation, and tail latency.
+
+### 11.2 Backpressure
+
+Producers must be able to observe consumer saturation.
+
+Required behavior:
+
+~~~
+capacity available → admit
+capacity exhausted → queue / defer
+queue bound exceeded → reject or shed according to policy
+deadline exceeded → cancel
+~~~
+
+Backpressure must propagate instead of being hidden behind unbounded internal queues.
+
+### 11.3 Queue discipline
+
+Every concurrent worker pool should make these properties explicit:
+
+- maximum queue depth;
+- maximum active workers;
+- work-item deadline;
+- cancellation behavior;
+- retry policy;
+- retry budget;
+- overload behavior;
+- fairness policy, if multiple classes compete;
+- observability for queue depth and wait time.
+
+An unbounded queue is not a resilience strategy; it converts overload into delayed failure and memory growth.
+
+### 11.4 Retry and concurrency coupling
+
+Retries are additional load. The effective offered work can approximate:
+
+~~~
+effective_load = original_load × (1 + retry_fraction)
+~~~
+
+Therefore retry policy must be considered when selecting concurrency.
+
+Use bounded retries with:
+
+- exponential backoff where appropriate;
+- jitter when many workers can retry together;
+- explicit maximum attempts;
+- deadline-aware cancellation;
+- classification of retryable versus permanent failures.
+
+### 11.5 Admission before execution
+
+TWGT should evaluate whether work may enter the execution pool before consuming scarce resources.
+
+Conceptually:
+
+~~~
+candidate
+  ↓
+privacy / capability / security checks
+  ↓
+resource admission
+  ↓
+concurrency budget
+  ↓
+execution
+  ↓
+observation
+  ↓
+validation
+~~~
+
+A worker being available does not by itself authorize the task.
+
+### 11.6 Fairness and priority
+
+When multiple workloads share a pool, priority must not become an implicit bypass of safety or resource limits.
+
+Recommended ordering:
+
+1. safety and policy eligibility;
+2. hard resource limits;
+3. deadline/priority among eligible work;
+4. deterministic tie-break.
+
+This preserves the admission boundary while allowing scheduling policy to optimize useful throughput.
+
+### 11.7 Cancellation and shutdown
+
+Cancellation must be explicit and observable. A shutdown sequence should distinguish:
+
+~~~
+accepting new work
+    ↓
+stop admission
+    ↓
+cancel/defer queued work
+    ↓
+allow bounded in-flight completion
+    ↓
+enforce shutdown deadline
+    ↓
+report incomplete work
+~~~
+
+This pattern directly complements #118: an invalid negative timeout must fail validation rather than being silently interpreted as an operational timeout.
+
+### 11.8 Concurrency evidence requirements
+
+A concurrency optimization is not accepted because throughput increased in one benchmark.
+
+Record:
+
+- target hardware/runtime;
+- workload and request distribution;
+- baseline concurrency;
+- candidate concurrency;
+- queue depth;
+- throughput;
+- mean and p95/p99 latency;
+- error/retry rate;
+- memory/CPU/accelerator utilization;
+- energy where relevant;
+- downstream saturation;
+- test duration;
+- warm/cold conditions;
+- reproducibility procedure.
+
+Acceptance should consider the whole operating envelope, not peak throughput alone.
+
+## 12. Release-readiness replay protocol
+
+### Thursday simulation
+
+Re-read, for every release candidate:
+
+~~~
+repository
+candidate PR
+HEAD SHA
+BASE SHA
+required checks
+evidence SHA
+evidence age
+security result
+governance result
+contract result
+~~~
+
+Then invalidate any evidence where HEAD or BASE has changed.
+
+### Friday readiness
+
+Repeat the same evaluation independently. Thursday evidence is an input to comparison, not a Friday authorization.
+
+**Rule:** any candidate head movement between Thursday and Friday creates a new evidence requirement.
+
+### 12.1 Evidence record shape
+
+A release-readiness record should minimally contain:
+
+~~~
+{
+  "repository": "<owner/name>",
+  "candidate_sha": "<exact head>",
+  "base_sha": "<exact base>",
+  "checks": {},
+  "evidence_state": "EVIDENCE_READY",
+  "validation": "PASS_CANDIDATE",
+  "admission": "HUMAN_REQUIRED"
+}
+~~~
+
+The final field must not be changed to `ADMITTED` by an automated evidence collector.
+
+## 13. Implementation boundary
+
+This document records implementation patterns and evidence requirements. It does **not** establish that TWGT #107, #117, #118, schema-gate #7, or bridge #10 currently exhibit the described defects.
+
+Repository-native implementation remains a separate change set. Each repair should be isolated, tested at its exact candidate SHA, independently reviewed, and only then considered for TWGT evaluation.
+
+**Current engineering-intelligence status:** the recommendations have been incorporated as a research/evidence framework; no production admission decision is implied by this documentation change.
+\n
