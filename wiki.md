@@ -637,3 +637,168 @@ Repository-native implementation remains a separate change set. Each repair shou
 
 **Current engineering-intelligence status:** the recommendations have been incorporated as a research/evidence framework; no production admission decision is implied by this documentation change.
 \n
+
+## 14. CI/CD evidence completion and review progression
+
+The engineering-intelligence layer supplies evidence and review structure; it does not replace repository-native CI, deployment controls, or human admission.
+
+### 14.1 Evidence progression
+
+```text
+OBSERVE
+  ↓
+CLASSIFY repository / change
+  ↓
+CAPTURE exact HEAD + BASE
+  ↓
+CHECK contract + dependency/runtime state
+  ↓
+EXECUTE repository-native validation
+  ↓
+CAPTURE immutable evidence
+  ↓
+REVIEW independently
+  ↓
+TWGT evaluates
+  ↓
+HUMAN ADMISSION
+  ↓
+DEPLOY / MEASURE
+  ↓
+RECORD LESSON
+```
+
+Required distinction:
+
+`IMPLEMENTATION != EXECUTION != EVIDENCE != VALIDATION != ADMISSION != MERGE != POST-MERGE MEASUREMENT`.
+
+### 14.2 CI evidence minimum
+
+Every candidate intended for TWGT evaluation should identify:
+
+- repository and candidate SHA;
+- base SHA;
+- package manager and lockfile state;
+- runtime/toolchain versions;
+- required workflow checks;
+- security/dependency results;
+- contract/schema results;
+- test/build results;
+- skipped or unavailable checks;
+- evidence timestamp and provenance.
+
+A green job is evidence for that job and revision. It is not evidence that an unrelated check was executed.
+
+### 14.3 CD evidence minimum
+
+Release readiness requires a traceable path from artifact to environment:
+
+```text
+exact candidate SHA
+  ↓
+reproducible build
+  ↓
+artifact identity / provenance
+  ↓
+staging deployment
+  ↓
+authenticated health + smoke checks
+  ↓
+migration validation
+  ↓
+rollback readiness
+  ↓
+human production approval
+  ↓
+production deployment
+  ↓
+post-deployment measurement
+```
+
+If a repository only creates a release artifact and does not deploy, deployment readiness remains **UNVERIFIED**.
+
+### 14.4 Review progression
+
+Reviews should progress from evidence completeness to technical correctness to admission:
+
+1. Evidence reviewer checks provenance, exact-head binding, freshness, and missing checks.
+2. Technical reviewer checks implementation behavior, contracts, failure modes, and resource limits.
+3. Security reviewer checks dependency/runtime/security implications where applicable.
+4. Human authority decides admission, hold, rejection, or promotion.
+
+Automated review is advisory unless explicitly designated as a repository gate.
+
+## 15. Environmental performance and sustainability measurement
+
+Engineering changes should be evaluated for useful work, latency, resource pressure, reliability, and energy rather than throughput alone.
+
+### 15.1 Required measurement dimensions
+
+| Dimension | Minimum observation | Why it matters |
+|---|---|---|
+| Throughput | useful work/time | capacity |
+| Tail latency | p95/p99 | user and control-plane responsiveness |
+| Queueing | wait time/depth | saturation and backpressure |
+| CPU | steady/peak utilisation | compute efficiency |
+| Memory | steady/peak footprint | edge feasibility and OOM risk |
+| Accelerator | utilisation/memory where relevant | hardware efficiency |
+| Energy | Wh or device-native energy measure | environmental/thermal/battery cost |
+| Reliability | error/retry/cancel rate | useful output, not raw work |
+| Network | bytes, connection count, transfer time | transport cost and bottlenecks |
+
+Derived measures should include energy per successful work item and useful work per Wh where energy measurement is available.
+
+### 15.2 Measurement integrity
+
+Every measured result must identify target hardware, operating system, runtime, workload, baseline, candidate SHA, concurrency, duration, warm/cold state, repetitions, instrumentation, and known limitations.
+
+Do not transfer cloud or workstation results to mobile/edge hardware without reproduction. Record thermal throttling, power mode, battery state, memory constraints, and network conditions when material.
+
+An energy estimate must be labelled as an estimate. Wall-clock time is not an energy measurement.
+
+### 15.3 Concurrency environmental envelope
+
+Use controlled concurrency sweeps. Stop increasing concurrency when any hard budget is breached or material degradation appears in p99 latency, memory, errors/retries, downstream saturation, or energy per successful task.
+
+Select the operating point from the surviving candidates rather than selecting the highest raw throughput.
+
+## 16. Future target scorecard
+
+The future research horizon should convert broad targets into measurable engineering hypotheses.
+
+| Target | Constraint | Candidate measure | Evidence needed |
+|---|---|---|---|
+| Autonomous resource coordination | CPU/memory/network/energy limits | useful work per resource unit | controlled workload + resource trace |
+| Resilient distributed intelligence | disconnection/failure | recovery time, completed work, data integrity | fault-injection + replay |
+| Energy-constrained computing | battery/thermal/power budget | useful work/Wh and thermal stability | target-device measurement |
+| Long-lived knowledge | format/toolchain drift | successful replay after environment change | reproducible archive + migration test |
+| Agent orchestration | queue/tail-latency pressure | p95/p99, fairness, admission rate | deterministic workload replay |
+| Evidence automation | stale/missing evidence | false-pass and false-hold rate | adversarial fixtures |
+
+These are research targets, not claims of achieved capability.
+
+### 16.1 Target-selection rule
+
+Prioritise targets by:
+
+1. hard safety and privacy constraints;
+2. capability gap;
+3. measurable bottleneck;
+4. expected environmental/resource impact;
+5. reproducibility;
+6. implementation cost;
+7. reversibility and rollback.
+
+Do not optimise a metric that is not connected to a demonstrated bottleneck.
+
+## 17. Supporting reproduction specification
+
+The reusable environmental measurement protocol is maintained at `reproduction/environmental-performance.md`. It defines the minimum experiment record, environmental metrics, edge-device validation, concurrency sweeps, and evidence classifications.
+
+### 17.1 Current evidence boundary
+
+PR #14 exact head `63cf3d9b0cc68f289ecc85d722fef1b6cc28f0a7` has a successful `ci` workflow run (`37412305420`). That proves the repository's current CI workflow passed for that exact PR head; it does not prove TWGT admission, production deployment, or the truth of external repository-specific defect claims.
+
+Engineering-intelligence therefore remains an evidence producer and review aid. Production admission stays with the consuming repository's gates and human authority.
+
+**Status:** documentation/research enhancement; no production admission implied.
