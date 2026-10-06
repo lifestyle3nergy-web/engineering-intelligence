@@ -88,9 +88,14 @@ Attestation, OIDC, dependency review, build provenance.
 
 Two layers:
 
-- Aggregated Actions metrics at organization and repository level.
-  Verify the exact documentation URL before citing; it is not in this
-  catalogue because it was not supplied with a stable URL.
+- Aggregated Actions metrics at organization and repository level
+  - URL: TODO — not supplied with a stable URL in the session that
+    created this catalogue. Verify before citing.
+  - What it covers: Actions metrics exposed at organization and
+    repository scope. The exact page title and path have changed
+    between GitHub documentation revisions.
+  - Rule: do not cite from memory. Confirm the URL resolves, capture
+    the title, then add it here with the date it was verified.
 - Raw signals from which lead time, deployment frequency, change-failure
   rate, and recovery time can be calculated:
   - workflow run completion — §3 `workflow-runs`
