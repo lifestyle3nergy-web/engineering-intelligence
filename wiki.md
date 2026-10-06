@@ -802,3 +802,84 @@ PR #14 exact head `63cf3d9b0cc68f289ecc85d722fef1b6cc28f0a7` has a successful `c
 Engineering-intelligence therefore remains an evidence producer and review aid. Production admission stays with the consuming repository's gates and human authority.
 
 **Status:** documentation/research enhancement; no production admission implied.
+
+## 18. Evidence boundary rules
+
+This section states the rules that govern evidence in this repository. They
+apply to every commit, every pull request description, and every review. They
+formalise the boundary already implicit in §10.1, §14, and §17.
+
+### 18.1 Current evidence boundary
+
+CI evidence for any change is recorded on the pull request's checks for its
+**current head SHA**, not inside any document in the repository. A SHA, run ID,
+or artifact reference written into a file cannot refer to the commit that
+contains it and is stale by construction.
+
+A passing CI workflow proves only that the repository's CI workflow passed for
+that exact head. It does not prove admission, deployment, or the truth of any
+external claim.
+
+Engineering-intelligence remains an evidence producer and review aid. Admission
+stays with the consuming repository's gates and human authority.
+
+### 18.2 No self-referential CI evidence
+
+**Rule:** This document, and any file committed to this repository, must not
+record CI evidence for its own revision.
+
+Evidence for a candidate is valid only where it is bound to the current
+candidate SHA and base SHA **outside** the candidate's content — in pull request
+checks, CI artifacts, or an external log. Any SHA or run ID written into a file
+is `HISTORICAL` and `STALE` for every later head. The correct response to a
+stale reference is to re-run, not to rewrite the reference.
+
+`CI_PASS(head) != ADMISSION`.
+
+### 18.3 Evidence classes
+
+Every claim carries exactly one class. The taxonomy extends the method in §2.3
+for use in review and in commit messages.
+
+| Class | Meaning |
+|---|---|
+| `EXECUTED` | A command, test, or probe actually ran against the target. Bound to a source outside the commit. |
+| `RESEARCH_PATTERN` | Documented patterns, third-party analysis, or external repositories. Not repository-native. |
+| `ENGINEERING_INFERENCE` | A reasoned conclusion drawn from observations. Not a measurement. |
+| `RESEARCH_HYPOTHESIS` | A proposal not yet tested against the target. |
+| `UNVERIFIED` | Asserted without a source. |
+
+`EXECUTED` requires a change or command to actually run against the target
+repository. A commit, review comment, or analysis tool cannot move a claim to
+`EXECUTED`. It can point to candidate repairs or suggest where to look. It
+cannot promote anything to `EVIDENCE_READY` or `PASS_CANDIDATE`.
+
+### 18.4 AI code-search and analysis tools
+
+AI code-search or Q&A tools (for example DeepWiki or any assistant that
+answers questions about a repository) are `RESEARCH_PATTERN` sources only.
+Their output is not `EXECUTED` evidence and is not bound to a candidate SHA.
+It may be cited as a pointer, never as proof.
+
+### 18.5 PR description scope
+
+The pull request description must name every file the diff changes. A scope
+that omits a file included in the diff is inaccurate and must be corrected
+before review proceeds. §17 records the environmental performance specification
+created in the same pull request as this section — if the two are split, the
+reference in §17 breaks on the base branch.
+
+### 18.6 No self-admission in commits
+
+A commit message may not claim `ADMITTED`, `PASS_CANDIDATE`, `EVIDENCE_READY`,
+or any equivalent. Those are decisions made by a reviewing authority on a head
+that has been produced and observed. A commit that asserts its own admission is
+misclassified regardless of its content.
+
+### 18.7 Commit rules
+
+The commit-message form of these rules is in `COMMIT-RULES.md` at the
+repository root. That document is normative for commit messages; this section
+is normative for documents, PR descriptions, and reviews. Both say the same
+thing: evidence is bound to a head outside itself, and admission is a human
+act.
