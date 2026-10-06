@@ -238,7 +238,24 @@ This is a proposal. No repository or governance configuration is changed by this
 
 ## 8. Source catalogue
 
-RFC Editor; RFC 2235 Hobbes' Internet Timeline; Computer History Museum; Internet Archive; Wayback Machine; MementoWeb; Wayback API.
+### 8.1 Internal sources
+
+- `foundations/TWGT_Engineering_Foundation_Research_Record.md` — networking and cybersecurity foundation, dated 2026-09-11. Authority boundary: intrusive activity is authorized only inside owned or explicitly permitted ethical-hacking labs. Cited by EPRs that draw on network scope, topology, transport, or trust-zone claims.
+
+### 8.2 External sources
+
+- RFC Editor — primary technical specifications.
+- RFC 2235 Hobbes' Internet Timeline — historical timeline and discovery pointers.
+- Computer History Museum — historical context, interviews, and technical milestones.
+- Internet Archive — archived documents, books, and software snapshots.
+- Wayback Machine — historical website captures and version comparisons.
+- MementoWeb — time-travel aggregation across archives.
+- Wayback API — programmatic capture lookup.
+
+### 8.3 Reference catalogues
+
+- `reference/github-cicd/sources.md` — CI/CD evidence sources for GitHub Actions, REST API, webhooks, and machine-readable schemas. Evidence class `RESEARCH_PATTERN`.
+- `capabilities/CANDIDATES.md` — capability wishlist. Nothing listed there is admitted or validated.
 
 ## 9. EPR completion criteria
 
