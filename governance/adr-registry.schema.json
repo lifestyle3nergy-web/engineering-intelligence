@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lifestyle3nergy-web/engineering-intelligence/governance/adr-registry.schema.json",
+  "title": "TWGT Organization ADR Registry",
+  "type": "object",
+  "required": ["registry_version", "updated_at", "next_number", "allocated"],
+  "additionalProperties": false,
+  "properties": {
+    "registry_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "next_number": { "type": "string", "pattern": "^[0-9]{4}$" },
+    "allocated": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["number", "slug", "repo", "status", "evidence_class"],
+        "additionalProperties": false,
+        "properties": {
+          "number": { "type": "string", "pattern": "^[0-9]{4}$" },
+          "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" },
+          "repo": { "type": "string", "pattern": "^lifestyle3nergy-web/[A-Za-z0-9._-]+$" },
+          "pr": { "type": ["integer", "null"] },
+          "merged_at": { "type": ["string", "null"], "format": "date-time" },
+          "status": {
+            "type": "string",
+            "enum": ["proposed", "accepted", "superseded", "rejected", "withdrawn"]
+          },
+          "evidence_class": {
+            "type": "string",
+            "enum": ["ACTION", "STATE", "FACT", "GATE", "UNVERIFIED"]
+          },
+          "content_sha256": {
+            "type": ["string", "null"],
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "supersedes": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^[0-9]{4}$" }
+          },
+          "superseded_by": {
+            "type": ["string", "null"],
+            "pattern": "^[0-9]{4}$"
+          }
+        }
+      }
+    }
+  }
+}
