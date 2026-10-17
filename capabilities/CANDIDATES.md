@@ -90,3 +90,17 @@ CapabilityRecord schema, once that exists:
 
 - 2026-10-07 — Initial candidates file. No entry has been installed, run, or
   validated. Evidence class `RESEARCH_PATTERN` throughout.
+
+## 8. Governance
+
+**Evidence class:** `RESEARCH_HYPOTHESIS`. Nothing here is admitted.
+
+| Tool | URL | Notes |
+| --- | --- | --- |
+| ADR registry | `governance/adr-registry.json` (this repository) | Central allocation of ADR numbers across the governance family. Status: proposed. Not yet verified against a live collision test. |
+| ADR verifier | `twgt-bridge/bin/verify-adr-registry.mjs` | GET-only, hash-checked, fail-closed. Consumed by each own repo's validator. |
+
+Presence in this file does not mean admission. The registry is not admitted
+until it has been exercised against a real collision and passed. The
+verification PR (bootstrap step 9) is the transfer action that closes this
+candidate.
