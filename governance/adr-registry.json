@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "updated_at": "2026-10-17T00:00:00Z",
-  "next_number": "0023",
+  "next_number": "0024",
   "allocated": [
     {
       "number": "0000",
@@ -272,6 +272,18 @@
       "slug": "freeze-evidence-record",
       "repo": "lifestyle3nergy-web/engineering-intelligence",
       "pr": 28,
+      "merged_at": "2026-10-19",
+      "status": "merged",
+      "evidence_class": "ACTION",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0023",
+      "slug": "freeze-capability-record",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 32,
       "merged_at": "2026-10-19",
       "status": "merged",
       "evidence_class": "ACTION",
