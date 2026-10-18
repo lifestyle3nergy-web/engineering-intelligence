@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "updated_at": "2026-10-17T00:00:00Z",
-  "next_number": "0020",
+  "next_number": "0021",
   "allocated": [
     {
       "number": "0000",
@@ -237,6 +237,18 @@
       "repo": "lifestyle3nergy-web/TWGT-",
       "pr": 126,
       "merged_at": "2026-10-18",
+      "status": "merged",
+      "evidence_class": "ACTION",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0020",
+      "slug": "freeze-reason-code",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 24,
+      "merged_at": "2026-10-19",
       "status": "merged",
       "evidence_class": "ACTION",
       "content_sha256": null,
