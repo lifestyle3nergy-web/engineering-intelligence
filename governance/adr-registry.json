@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "updated_at": "2026-10-17T00:00:00Z",
-  "next_number": "0025",
+  "next_number": "0026",
   "allocated": [
     {
       "number": "0000",
@@ -296,6 +296,18 @@
       "slug": "freeze-authority-matrix",
       "repo": "lifestyle3nergy-web/engineering-intelligence",
       "pr": 34,
+      "merged_at": "2026-10-19",
+      "status": "merged",
+      "evidence_class": "ACTION",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0025",
+      "slug": "codify-phase-b-schemas",
+      "repo": "lifestyle3nergy-web/twgt-schema-gate",
+      "pr": 14,
       "merged_at": "2026-10-19",
       "status": "merged",
       "evidence_class": "ACTION",
