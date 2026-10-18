@@ -278,18 +278,6 @@
       "content_sha256": null,
       "supersedes": [],
       "superseded_by": null
-    },
-    {
-      "number": "0022",
-      "slug": "freeze-evidence-record",
-      "repo": "lifestyle3nergy-web/engineering-intelligence",
-      "pr": 28,
-      "merged_at": "2026-10-19",
-      "status": "merged",
-      "evidence_class": "ACTION",
-      "content_sha256": null,
-      "supersedes": [],
-      "superseded_by": null
     }
   ]
 }
