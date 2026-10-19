@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "updated_at": "2026-10-17T00:00:00Z",
-  "next_number": "0027",
+  "next_number": "0028",
   "allocated": [
     {
       "number": "0000",
@@ -320,6 +320,18 @@
       "slug": "capability-registry",
       "repo": "lifestyle3nergy-web/engineering-intelligence",
       "pr": 40,
+      "merged_at": "2026-10-19",
+      "status": "merged",
+      "evidence_class": "STATE",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0027",
+      "slug": "ei-ontology",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 42,
       "merged_at": "2026-10-19",
       "status": "merged",
       "evidence_class": "STATE",
