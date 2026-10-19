@@ -193,7 +193,7 @@
       "evidence_class": "ACTION",
       "content_sha256": null,
       "supersedes": [],
-      "superseded_by": null
+      "superseded_by": "0019"
     },
     {
       "number": "0016",
