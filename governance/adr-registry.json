@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "updated_at": "2026-10-17T00:00:00Z",
-  "next_number": "0026",
+  "next_number": "0027",
   "allocated": [
     {
       "number": "0000",
@@ -311,6 +311,18 @@
       "merged_at": "2026-10-19",
       "status": "merged",
       "evidence_class": "ACTION",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0026",
+      "slug": "capability-registry",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 40,
+      "merged_at": "2026-10-19",
+      "status": "merged",
+      "evidence_class": "STATE",
       "content_sha256": null,
       "supersedes": [],
       "superseded_by": null
