@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "updated_at": "2026-10-17T00:00:00Z",
-  "next_number": "0032",
+  "next_number": "0033",
   "allocated": [
     {
       "number": "0000",
@@ -380,6 +380,18 @@
       "slug": "osint-archive-contracts",
       "repo": "lifestyle3nergy-web/engineering-intelligence",
       "pr": 50,
+      "merged_at": "2026-10-20",
+      "status": "merged",
+      "evidence_class": "STATE",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0032",
+      "slug": "external-agent-tool-contracts",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 52,
       "merged_at": "2026-10-20",
       "status": "merged",
       "evidence_class": "STATE",
