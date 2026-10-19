@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "updated_at": "2026-10-17T00:00:00Z",
-  "next_number": "0028",
+  "next_number": "0029",
   "allocated": [
     {
       "number": "0000",
@@ -333,6 +333,18 @@
       "repo": "lifestyle3nergy-web/engineering-intelligence",
       "pr": 42,
       "merged_at": "2026-10-19",
+      "status": "merged",
+      "evidence_class": "STATE",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0028",
+      "slug": "provenance-model",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 44,
+      "merged_at": "2026-10-20",
       "status": "merged",
       "evidence_class": "STATE",
       "content_sha256": null,
