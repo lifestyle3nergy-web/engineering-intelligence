@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "updated_at": "2026-10-17T00:00:00Z",
-  "next_number": "0030",
+  "next_number": "0031",
   "allocated": [
     {
       "number": "0000",
@@ -356,6 +356,18 @@
       "slug": "lineage-model",
       "repo": "lifestyle3nergy-web/engineering-intelligence",
       "pr": 46,
+      "merged_at": "2026-10-20",
+      "status": "merged",
+      "evidence_class": "STATE",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0030",
+      "slug": "telemetry-model",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 48,
       "merged_at": "2026-10-20",
       "status": "merged",
       "evidence_class": "STATE",
