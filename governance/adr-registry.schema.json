@@ -23,7 +23,7 @@
           "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" },
           "repo": { "type": "string", "pattern": "^lifestyle3nergy-web/[A-Za-z0-9._-]+$" },
           "pr": { "type": ["integer", "null"] },
-          "merged_at": { "type": ["string", "null"], "format": "date-time" },
+          "merged_at": { "type": ["string", "null"], "format": "date" },
           "status": {
             "type": "string",
             "enum": ["accepted", "merged", "proposed", "rejected", "superseded", "withdrawn"]
