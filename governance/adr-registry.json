@@ -398,6 +398,18 @@
       "content_sha256": null,
       "supersedes": [],
       "superseded_by": null
+    },
+    {
+      "number": "0034",
+      "slug": "p03-shadow-gate",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 179,
+      "merged_at": "2026-10-29",
+      "status": "merged",
+      "evidence_class": "STATE",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
     }
   ]
 }
