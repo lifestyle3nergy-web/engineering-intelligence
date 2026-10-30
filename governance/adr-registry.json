@@ -410,6 +410,18 @@
       "content_sha256": null,
       "supersedes": [],
       "superseded_by": null
+    },
+    {
+      "number": "0035",
+      "slug": "p03-node22-hotfix",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 180,
+      "merged_at": "2026-10-30",
+      "status": "merged",
+      "evidence_class": "STATE",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
     }
   ]
 }
