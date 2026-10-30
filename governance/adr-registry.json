@@ -422,6 +422,18 @@
       "content_sha256": null,
       "supersedes": [],
       "superseded_by": null
+    },
+    {
+      "number": "0036",
+      "slug": "p03-strict-pinning",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 181,
+      "merged_at": "2026-10-30",
+      "status": "merged",
+      "evidence_class": "STATE",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
     }
   ]
 }
