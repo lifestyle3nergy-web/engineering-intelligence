@@ -65,6 +65,16 @@
       "root_cause": "Termux on mobile networks has intermittent TLS/443 timeouts. Treating transient network errors as data-integrity failures makes the gate depend on network weather, not system state.",
       "fix": "Classify non-ENRICHED states as (a) structural failures (parent deleted, no common ancestor) → allowlist; (b) transient errors (network timeout, rate limit) → tolerate at commit and report count. Never conflate the two. Gate output must include both counts explicitly.",
       "evidence": "Run 1 non-ENRICHED: {5G-Proxy-Pro, hallmark, jsoncanvas, kepano-obsidian}. Run 2 non-ENRICHED: {5G-Proxy-Pro, sanitizers, Ventoid, open-design}. Only 5G-Proxy-Pro appears in both — the rest are network flake."
+    },
+    {
+      "id": "L-STALE-001",
+      "title": "Registry snapshots are observations at time T, not assertions about now",
+      "severity": "MEDIUM",
+      "observed_at": "2026-11-04",
+      "symptom": "M06 recorded unsloth as 6407 behind parent. Hours later, merge-upstream API reported not behind. Contradictory facts.",
+      "root_cause": "The fork was synced between the two observations (either externally or via GitHub ruleset). M06 was correct at time T; the API is correct at T+N.",
+      "fix": "When live API contradicts recorded registry data, re-run the observation to capture the new state. Commit the reconciliation. Never overwrite history silently.",
+      "evidence": "M06 enriched.json: unsloth behind=6407. merge-upstream: not behind. Re-enrichment: behind=0, identical."
     }
   ]
 }

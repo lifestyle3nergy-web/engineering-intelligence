@@ -32,20 +32,19 @@
   "upstream_pins": {
     "inventory_count": 183,
     "fork_count": 164,
-    "enriched_count": 160,
-    "up_to_date": 60,
-    "behind_only": 96,
+    "enriched_count": 162,
+    "up_to_date": 77,
+    "behind_only": 81,
     "ahead_only": 0,
     "diverged": 4,
     "status_breakdown": {
       "COMPARE_FAILED": 1,
-      "ENRICHED": 160,
+      "ENRICHED": 162,
       "NOT_A_FORK": 19,
-      "PARENT_HEAD_UNREACHABLE": 2,
-      "ERROR": 1
+      "PARENT_HEAD_UNREACHABLE": 1
     },
     "source": "registry/repositories/upstream-pins.enriched.json",
-    "retry_attempts": 2,
-    "note": "Non-ENRICHED forks are transient network failures (Termux mobile) or structural allowlist entries (5G-Proxy-Pro). G06 tolerates transients, blocks structural integrity failures."
+    "retry_attempts": 3,
+    "note": "Reconciled after external fork sync. Transient network failures tolerated."
   }
 }
