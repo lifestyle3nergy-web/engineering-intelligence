@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0-PARTIAL",
+  "generated_at": "2026-11-03T19:16:08Z",
+  "state": "PARTIAL",
+  "authority": {
+    "admission": "TWGT",
+    "this_registry_grants_admission": false,
+    "embedding_kind": "sha256-truncated-32",
+    "semantic": false
+  },
+  "templates": {
+    "upstream": "./templates/upstream-repo.json",
+    "capability": "./templates/capability.json",
+    "remediation": "./templates/remediation.json",
+    "automation": "./templates/automation.json",
+    "integration": "./templates/integration.json"
+  },
+  "held_items": [
+    "semantic-embeddings (requires provider + acceptance criteria)",
+    "remediation-auto-linking (HOLD per C6)",
+    "G03 canonical-vs-bytes (BLOCKED)",
+    "G04 fixtures execution (BLOCKED)",
+    "human-approval (separate authorization)"
+  ],
+  "investigation_queue": "./investigation-queue.json"
+}
