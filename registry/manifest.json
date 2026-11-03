@@ -16,11 +16,17 @@
     "integration": "./templates/integration.json"
   },
   "held_items": [
-    "semantic-embeddings (requires provider + acceptance criteria)",
-    "remediation-auto-linking (HOLD per C6)",
     "G03 canonical-vs-bytes (BLOCKED)",
     "G04 fixtures execution (BLOCKED)",
-    "human-approval (separate authorization)"
+    "M05: External embedding provider not selected. Using hash fallback.",
+    "human-approval (separate authorization)",
+    "remediation-auto-linking (HOLD per C6)",
+    "semantic-embeddings (requires provider + acceptance criteria)"
   ],
-  "investigation_queue": "./investigation-queue.json"
+  "investigation_queue": "./investigation-queue.json",
+  "adr_catalog": {
+    "records": 36,
+    "allocation_field": "allocated",
+    "adr_0033_status": "PROVEN_ABSENT"
+  }
 }

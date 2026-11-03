@@ -1,0 +1,1034 @@
+[
+  {
+    "adr_id": "ADR-0000",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": null,
+      "merged_at": null,
+      "slug": "adr-template",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0001",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": null,
+      "merged_at": null,
+      "slug": "stable-repository-boundary",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0002",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": null,
+      "merged_at": null,
+      "slug": "runtime-freeze-meta-repository-transition-policy",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0003",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 59,
+      "merged_at": "2026-09-08",
+      "slug": "upload-artifact-runtime-upgrade",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0004",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 69,
+      "merged_at": null,
+      "slug": "setup-node-7-runtime-alignment",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0005",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 71,
+      "merged_at": null,
+      "slug": "codeql-action-4.38.0",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0006",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": null,
+      "merged_at": null,
+      "slug": "typescript-6-toolchain-migration",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0007",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": null,
+      "merged_at": null,
+      "slug": "pr-governance-diff-baseline",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0008",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 89,
+      "merged_at": null,
+      "slug": "prisma-7-postgresql-client-migration",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0009",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 123,
+      "merged_at": null,
+      "slug": "dependency-governance-boundary",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0010",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 123,
+      "merged_at": null,
+      "slug": "bootstrap-verifier",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0011",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": null,
+      "merged_at": null,
+      "slug": "bootstrap-verifier-implementation-record",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0012",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": null,
+      "merged_at": null,
+      "slug": "fail-closed-merge-gates",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0013",
+    "allocation": {
+      "status": "accepted",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 124,
+      "merged_at": null,
+      "slug": "bootstrap-verifier-top-level-layout",
+      "evidence_class": "FACT"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0014",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 119,
+      "merged_at": "2026-10-18",
+      "slug": "versioned-admission-contract-schemas",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0015",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 126,
+      "merged_at": "2026-10-18",
+      "slug": "baseline-provenance-intake-and-admission",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": "0019"
+  },
+  {
+    "adr_id": "ADR-0016",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 93,
+      "merged_at": "2026-10-18",
+      "slug": "static-outcome-library-activation-boundary",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0017",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 90,
+      "merged_at": "2026-10-18",
+      "slug": "single-runtime-build-boundary",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0018",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 92,
+      "merged_at": "2026-10-18",
+      "slug": "adaptive-metric-selection-and-capability-controls",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0019",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 126,
+      "merged_at": "2026-10-18",
+      "slug": "baseline-provenance-intake-and-admission",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0020",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 24,
+      "merged_at": "2026-10-19",
+      "slug": "freeze-reason-code",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "UNKNOWN",
+      "canonical_path": "docs/adr/0020-freeze-reason-code.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "cc7ca05abec2a9b6f7f9812236ebf839d427d5af5148d71167d47a401de70233",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0021",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 26,
+      "merged_at": "2026-10-19",
+      "slug": "freeze-admission-record",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "UNKNOWN",
+      "canonical_path": "docs/adr/0021-freeze-admission-record.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "9d09cd425fa9c90d51fcd3847aabea0d3ee659e8fc52c5a936a4b8c093678c45",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0022",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 28,
+      "merged_at": "2026-10-19",
+      "slug": "freeze-evidence-record",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "UNKNOWN",
+      "canonical_path": "docs/adr/0022-freeze-evidence-record.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "8970f25340f34671839dc1bec9ba5f6fd5048d486a1d483c5da66922a31ce6bf",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0023",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 32,
+      "merged_at": "2026-10-19",
+      "slug": "freeze-capability-record",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "UNKNOWN",
+      "canonical_path": "docs/adr/0023-freeze-capability-record.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "4099662ea694d38782b7e4f2690d1bfca40295c0512dfe3f71ae85a76f22945d",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0024",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 34,
+      "merged_at": "2026-10-19",
+      "slug": "freeze-authority-matrix",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "UNKNOWN",
+      "canonical_path": "docs/adr/0024-freeze-authority-matrix.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "9b339fdbfda8c6c2a514ba15566ffdfb4df1e17141451bc8fd40539cd8132a9f",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0025",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/twgt-schema-gate",
+      "pr": 14,
+      "merged_at": "2026-10-19",
+      "slug": "codify-phase-b-schemas",
+      "evidence_class": "ACTION"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0026",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 40,
+      "merged_at": "2026-10-19",
+      "slug": "capability-registry",
+      "evidence_class": "STATE"
+    },
+    "decision": {
+      "status": "proposed",
+      "canonical_path": "docs/adr/0026-capability-registry.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "8290b9b643e4f7972999503086f4bf8e401d8353177942cc0215a0d9e60abab6",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0027",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 42,
+      "merged_at": "2026-10-19",
+      "slug": "ei-ontology",
+      "evidence_class": "STATE"
+    },
+    "decision": {
+      "status": "UNKNOWN",
+      "canonical_path": "docs/adr/0027-ei-ontology.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "8158ef7f51762d3dfbc5092cd32e6a4daf75abd374f6e77eee371b7fea526e80",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0028",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 44,
+      "merged_at": "2026-10-20",
+      "slug": "provenance-model",
+      "evidence_class": "STATE"
+    },
+    "decision": {
+      "status": "proposed",
+      "canonical_path": "docs/adr/0028-provenance-model.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "60af2fff1efa44a2352ff70569e570b2daa522f7c150deef7d011f212645bc39",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0029",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 46,
+      "merged_at": "2026-10-20",
+      "slug": "lineage-model",
+      "evidence_class": "STATE"
+    },
+    "decision": {
+      "status": "proposed",
+      "canonical_path": "docs/adr/0029-lineage-model.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "e520f16be26beb8bb5fa9a72f911f4e548f1c4e9ca4f1a832763042eda6de09e",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0030",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 48,
+      "merged_at": "2026-10-20",
+      "slug": "telemetry-model",
+      "evidence_class": "STATE"
+    },
+    "decision": {
+      "status": "proposed",
+      "canonical_path": "docs/adr/0030-telemetry-model.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "b2ca908a896d0e03d226de0bb2bf8904494b19edd0710808abb201df6e128d26",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0031",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 50,
+      "merged_at": "2026-10-20",
+      "slug": "osint-archive-contracts",
+      "evidence_class": "STATE"
+    },
+    "decision": {
+      "status": "proposed",
+      "canonical_path": "docs/adr/0031-osint-archive-contracts.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "d63d3b45f31c5421a5dc036d6b354c2153817053b72a8c1bc13c8f8eb014553a",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0032",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/engineering-intelligence",
+      "pr": 52,
+      "merged_at": "2026-10-20",
+      "slug": "external-agent-tool-contracts",
+      "evidence_class": "STATE"
+    },
+    "decision": {
+      "status": "proposed",
+      "canonical_path": "docs/adr/0032-external-agent-tool-contracts.md",
+      "source_commit": null,
+      "owner": "UNKNOWN"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": "3b9e982043e91f5771f762cd195ce94f2cd7cea8c385c90cda88ab1a86251b6b",
+      "verified": true
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0034",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 179,
+      "merged_at": "2026-10-29",
+      "slug": "p03-shadow-gate",
+      "evidence_class": "STATE"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0035",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 180,
+      "merged_at": "2026-10-30",
+      "slug": "p03-node22-hotfix",
+      "evidence_class": "STATE"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  },
+  {
+    "adr_id": "ADR-0036",
+    "allocation": {
+      "status": "merged",
+      "source": "governance/adr-registry.json",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 181,
+      "merged_at": "2026-10-30",
+      "slug": "p03-strict-pinning",
+      "evidence_class": "STATE"
+    },
+    "decision": {
+      "status": "NO_CANONICAL_DOCUMENT",
+      "canonical_path": null,
+      "source_commit": null,
+      "owner": null,
+      "investigation": "Allocation exists but no canonical ADR file found in docs/adr/"
+    },
+    "implementation": {
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "provenance": {
+      "content_sha256": null,
+      "verified": false
+    },
+    "supersedes": [],
+    "superseded_by": null
+  }
+]

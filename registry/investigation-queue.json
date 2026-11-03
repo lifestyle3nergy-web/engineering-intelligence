@@ -1,11 +1,32 @@
-{ "state": "OPEN",
+{
+  "state": "OPEN",
   "entries": [
-    { "id": "INV-001", "subject": "TWGT-", "action_required": "HUMAN_CONFIRM_IDENTITY",
-      "reason": "trailing dash; prefix-collision risk" },
-    { "id": "INV-002", "subject": "ADR-0033", "action_required": "HUMAN_RECONCILIATION",
-      "reason": "allocation gap; 0034-0036 present; do not invent" },
-    { "id": "INV-003", "subject": "ADR-0015/0019", "action_required": "HUMAN_READ_BOTH",
-      "reason": "same slug+PR; inverse supersedes unrecorded" },
-    { "id": "INV-004", "subject": "embedding-provider", "action_required": "HUMAN_SELECT_PROVIDER",
-      "reason": "semantic:false in current slice; real provider blocked pending acceptance criteria" }
-  ] }
+    {
+      "id": "INV-001",
+      "subject": "TWGT-",
+      "action_required": "HUMAN_CONFIRM_IDENTITY",
+      "reason": "trailing dash; prefix-collision risk"
+    },
+    {
+      "id": "INV-002",
+      "subject": "ADR-0033",
+      "action_required": "HUMAN_RECONCILIATION",
+      "reason": "allocation gap; 0034-0036 present; do not invent",
+      "proven": true,
+      "evidence": "governance/adr-registry.json has 36 allocations (0000-0036) with 0033 absent; docs/adr/ confirms 0033 has no canonical markdown either.",
+      "next_number": "0033"
+    },
+    {
+      "id": "INV-003",
+      "subject": "ADR-0015/0019",
+      "action_required": "HUMAN_READ_BOTH",
+      "reason": "same slug+PR; inverse supersedes unrecorded"
+    },
+    {
+      "id": "INV-004",
+      "subject": "embedding-provider",
+      "action_required": "HUMAN_SELECT_PROVIDER",
+      "reason": "semantic:false in current slice; real provider blocked pending acceptance criteria"
+    }
+  ]
+}
