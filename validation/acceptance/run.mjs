@@ -182,7 +182,10 @@ const GATES = [
       if (record.enrichment.ahead_of_parent_by > 0 || record.enrichment.behind_parent_by > 0) {
         return { exit: 30, out: "E_REMEDIATION_INCOMPLETE " + log.repo + " ahead=" + record.enrichment.ahead_of_parent_by + " behind=" + record.enrichment.behind_parent_by };
       }
-      return { exit: 0, out: "remediated=" + log.repo + " identical" };
+      if (log.success !== true) {
+        return { exit: 30, out: "E_REMEDIATION_NOT_SUCCESSFUL " + log.repo };
+      }
+      return { exit: 0, out: "remediated=" + log.repo + " identical" + (log.already_synced ? " (already_synced)" : "") };
     }
   }
 ];

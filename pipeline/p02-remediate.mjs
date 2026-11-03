@@ -90,10 +90,15 @@ console.log(`Old Local HEAD: ${oldLocalSha}`);
 console.log(`New Local HEAD: ${newLocalSha}`);
 console.log(`New Ahead/Behind: ${newRecord.enrichment.ahead_of_parent_by} / ${newRecord.enrichment.behind_parent_by}`);
 
-if (oldLocalSha === newLocalSha) {
-  console.log("WARNING: Local HEAD did not change after merge-upstream. Sync may have been a no-op.");
+// Success criteria: new local HEAD should equal the parent HEAD (fully synced)
+const newParentSha = newRecord.enrichment.parent_head_sha;
+if (newLocalSha === newParentSha) {
+  console.log("Success: fork is now fully synced to parent.");
+  if (oldLocalSha === newLocalSha) {
+    console.log("NOTE: oldLocalSha matched newLocalSha — fork was already synced before this run.");
+  }
 } else {
-  console.log("Success: Local HEAD moved.");
+  console.log("WARNING: fork is not fully synced. newLocal=" + newLocalSha + " newParent=" + newParentSha);
 }
 
 // 7. Write remediation log for G07
@@ -103,8 +108,11 @@ const log = {
   old_local_sha: oldLocalSha,
   old_parent_sha: oldParentSha,
   new_local_sha: newLocalSha,
+  new_parent_sha: newParentSha,
   new_ahead: newRecord.enrichment.ahead_of_parent_by,
   new_behind: newRecord.enrichment.behind_parent_by,
+  success: newLocalSha === newParentSha,
+  already_synced: oldLocalSha === newLocalSha && newLocalSha === newParentSha,
   timestamp: new Date().toISOString()
 };
 fs.mkdirSync("reports/validation-results", { recursive: true });
