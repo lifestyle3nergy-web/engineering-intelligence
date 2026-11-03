@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0-PARTIAL",
+  "generated_at": "2026-11-03T19:16:08Z",
+  "state": "PARTIAL",
+  "authority": {
+    "admission": "TWGT",
+    "this_registry_grants_admission": false,
+    "embedding_kind": "sha256-truncated-32",
+    "semantic": false
+  },
+  "templates": {
+    "upstream": "./templates/upstream-repo.json",
+    "capability": "./templates/capability.json",
+    "remediation": "./templates/remediation.json",
+    "automation": "./templates/automation.json",
+    "integration": "./templates/integration.json"
+  },
+  "held_items": [
+    "G03 canonical-vs-bytes (BLOCKED)",
+    "G04 fixtures execution (BLOCKED)",
+    "M05: External embedding provider not selected. Using hash fallback.",
+    "human-approval (separate authorization)",
+    "remediation-auto-linking (HOLD per C6)",
+    "semantic-embeddings (requires provider + acceptance criteria)"
+  ],
+  "investigation_queue": "./investigation-queue.json",
+  "adr_catalog": {
+    "records": 36,
+    "allocation_field": "allocated",
+    "adr_0033_status": "PROVEN_ABSENT"
+  },
+  "upstream_pins": {
+    "inventory_count": 183,
+    "fork_count": 164,
+    "enriched_count": 162,
+    "up_to_date": 77,
+    "behind_only": 81,
+    "ahead_only": 0,
+    "diverged": 4,
+    "status_breakdown": {
+      "COMPARE_FAILED": 1,
+      "ENRICHED": 162,
+      "NOT_A_FORK": 19,
+      "PARENT_HEAD_UNREACHABLE": 1
+    },
+    "source": "registry/repositories/upstream-pins.enriched.json",
+    "retry_attempts": 3,
+    "note": "Reconciled after external fork sync. Transient network failures tolerated."
+  }
+}

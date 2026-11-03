@@ -1,0 +1,15 @@
+{
+  "total": 183,
+  "forks": 164,
+  "status_breakdown": {
+    "COMPARE_FAILED": 1,
+    "ENRICHED": 162,
+    "NOT_A_FORK": 19,
+    "PARENT_HEAD_UNREACHABLE": 1
+  },
+  "enriched_count": 162,
+  "up_to_date": 77,
+  "behind_only": 81,
+  "ahead_only": 0,
+  "diverged": 4
+}

@@ -1,0 +1,9 @@
+{ "$id": "lifestyle3nergy:base:repository@1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["repo_id","full_name","visibility"],
+  "properties": {
+    "repo_id": {"type":"number"},
+    "full_name": {"type":"string"},
+    "visibility": {"enum":["PUBLIC","PRIVATE"]}
+  } }

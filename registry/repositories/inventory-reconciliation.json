@@ -1,0 +1,10 @@
+{
+  "expected_historical": 47,
+  "expected_previous_snapshot": 75,
+  "requested_limit": 180,
+  "observed_now": 183,
+  "private_observed": 3,
+  "status": "AT_OR_ABOVE_LIMIT",
+  "endpoint": "user/repos?affiliation=owner",
+  "note": "Account has reached or exceeded the requested limit of 180."
+}

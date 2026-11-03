@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 *.log
 _site/
+.cache/
+reports/validation-results/A00.json

@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "L-TERMUX-001",
+      "title": "Never assume /tmp is writable on Termux",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "Piped jq extractions to /tmp/*.json silently fail with Permission denied.",
+      "root_cause": "Termux does not guarantee /tmp is writable. $TMPDIR is the correct path.",
+      "fix": "Always write to $TMPDIR (guaranteed writable) or .cache/ within the project."
+    },
+    {
+      "id": "L-SCHEMA-001",
+      "title": "Never assume JSON field names — inspect with jq keys first",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "ADR catalog produced 0 records despite 36 allocation records existing.",
+      "root_cause": "Query used .allocations (null) but actual field is .allocated (array of 36).",
+      "fix": "Run jq \"keys\" before consuming external JSON."
+    },
+    {
+      "id": "L-HEREDOC-001",
+      "title": "Heredoc on stdin overrides pipe, breaking Python read()",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "Python extractor produced empty output despite git show returning data.",
+      "root_cause": "out=$(git show ... | python3 - <<'PY') consumed heredoc as stdin, not git show output. sys.stdin.read() returned the heredoc text, not the ADR markdown.",
+      "fix": "Write Python to a real file. Pipe git show into that file via python3 script.py. Never mix heredoc-in-subshell with piped input.",
+      "evidence": "12/12 SKIP invalid record — all with empty $out from Python."
+    },
+    {
+      "id": "L-GATE-001",
+      "title": "Gate existence is not gate coverage",
+      "severity": "CRITICAL",
+      "observed_at": "2026-11-04",
+      "symptom": "Empty adr-catalog.json passed all gates and shipped in commit.",
+      "root_cause": "No gate asserted non-empty catalog content. G01–G04 checked file presence and schema, not results.",
+      "fix": "Every artifact whose content matters must have a gate asserting non-trivial content (length > 0, expected anomalies present/absent)."
+    },
+    {
+      "id": "L-JQ-SLURP-001",
+      "title": "jq -s on NDJSON produces one element per line, not a nested array",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "Cannot index string with string (adr_id) when merging allocation registry with canonical ADR NDJSON.",
+      "root_cause": "jq -s slurps each JSON value as a top-level element. NDJSON has one value per line, so jq -s produces N elements, not 1 array. Accessing .[1] returns the first NDJSON line, not the array.",
+      "fix": "Pre-wrap NDJSON: jq -s . file.ndjson > wrapped.json, then use jq --slurpfile dec wrapped.json and access $dec[0] as the array."
+    },
+    {
+      "id": "L-TMPDIR-002",
+      "title": "Even $TMPDIR can be cleared between Termux sessions",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "$TMPDIR/twgt-ei existed in one session but was gone on the next. Rebuild failed at first step with No such file or directory.",
+      "root_cause": "Termux $TMPDIR (= $PREFIX/tmp) is not guaranteed to persist across sessions or pkg upgrade.",
+      "fix": "For pipeline caches that must survive, use $PROJECT/.cache/<pipeline>/. Add .cache/ to .gitignore. Reserve $TMPDIR for genuinely ephemeral single-session scratch."
+    },
+    {
+      "id": "L-TRANSIENT-001",
+      "title": "Network failures are not data-integrity failures",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "G06 failed on first strict run because 4 forks had PARENT_HEAD_UNREACHABLE from mobile network timeouts. On retry, 3 of those recovered but 3 different forks failed. A strict all-forks-ENRICHED gate would never pass reliably on Termux mobile.",
+      "root_cause": "Termux on mobile networks has intermittent TLS/443 timeouts. Treating transient network errors as data-integrity failures makes the gate depend on network weather, not system state.",
+      "fix": "Classify non-ENRICHED states as (a) structural failures (parent deleted, no common ancestor) → allowlist; (b) transient errors (network timeout, rate limit) → tolerate at commit and report count. Never conflate the two. Gate output must include both counts explicitly.",
+      "evidence": "Run 1 non-ENRICHED: {5G-Proxy-Pro, hallmark, jsoncanvas, kepano-obsidian}. Run 2 non-ENRICHED: {5G-Proxy-Pro, sanitizers, Ventoid, open-design}. Only 5G-Proxy-Pro appears in both — the rest are network flake."
+    },
+    {
+      "id": "L-STALE-001",
+      "title": "Registry snapshots are observations at time T, not assertions about now",
+      "severity": "MEDIUM",
+      "observed_at": "2026-11-04",
+      "symptom": "M06 recorded unsloth as 6407 behind parent. Hours later, merge-upstream API reported not behind. Contradictory facts.",
+      "root_cause": "The fork was synced between the two observations (either externally or via GitHub ruleset). M06 was correct at time T; the API is correct at T+N.",
+      "fix": "When live API contradicts recorded registry data, re-run the observation to capture the new state. Commit the reconciliation. Never overwrite history silently.",
+      "evidence": "M06 enriched.json: unsloth behind=6407. merge-upstream: not behind. Re-enrichment: behind=0, identical."
+    },
+    {
+      "id": "L-CODE-INSERT-001",
+      "title": "Anchor-based file insertion needs syntax verification",
+      "severity": "MEDIUM",
+      "observed_at": "2026-11-04",
+      "symptom": "G06 inserted between G05 and array close, missing comma → SyntaxError: Unexpected token {",
+      "root_cause": "Replacement text omitted the trailing comma that separates array elements.",
+      "fix": "Run node --check after programmatic insertion; restore from git if syntax fails.",
+      "evidence": "run.mjs line 96-97: closing brace followed immediately by G06 opening brace with no comma."
+    }
+  ]
+}
