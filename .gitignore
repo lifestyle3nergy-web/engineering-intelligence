@@ -1,6 +1,7 @@
-node_modules/
-.DS_Store
 *.log
-_site/
+.DS_Store
 .cache/
+_site/
+node_modules/
 reports/validation-results/A00.json
+reports/validation-results/remediation-latest.json

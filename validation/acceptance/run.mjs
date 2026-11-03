@@ -167,6 +167,23 @@ const GATES = [
 
       return { exit: 0, out: `forks=${forks.length} enriched=${stats.enriched_count} diverged=${stats.diverged} behind_only=${stats.behind_only} transient=${transientHits.length} structural=${structuralHits.length}` };
     }
+  },
+  { id: "G07", name: "remediation-honesty",
+    run() {
+      const remediationLog = "reports/validation-results/remediation-latest.json";
+      if (!fs.existsSync(remediationLog)) return { exit: 0, out: "no-remediation-performed" };
+      const log = JSON.parse(fs.readFileSync(remediationLog, "utf8"));
+      const enrichedPath = "registry/repositories/upstream-pins.enriched.json";
+      if (!fs.existsSync(enrichedPath)) return { exit: 30, out: "E_ENRICHED_MISSING" };
+      const enriched = JSON.parse(fs.readFileSync(enrichedPath, "utf8"));
+      const record = enriched.find(e => e.full_name === log.repo);
+      if (!record) return { exit: 30, out: "E_REPO_NOT_FOUND " + log.repo };
+      if (record.enrichment?.status !== "ENRICHED") return { exit: 30, out: "E_REMEDIATED_REPO_NOT_ENRICHED " + log.repo };
+      if (record.enrichment.ahead_of_parent_by > 0 || record.enrichment.behind_parent_by > 0) {
+        return { exit: 30, out: "E_REMEDIATION_INCOMPLETE " + log.repo + " ahead=" + record.enrichment.ahead_of_parent_by + " behind=" + record.enrichment.behind_parent_by };
+      }
+      return { exit: 0, out: "remediated=" + log.repo + " identical" };
+    }
   }
 ];
 
