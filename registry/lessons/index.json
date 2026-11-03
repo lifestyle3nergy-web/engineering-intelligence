@@ -55,6 +55,16 @@
       "symptom": "$TMPDIR/twgt-ei existed in one session but was gone on the next. Rebuild failed at first step with No such file or directory.",
       "root_cause": "Termux $TMPDIR (= $PREFIX/tmp) is not guaranteed to persist across sessions or pkg upgrade.",
       "fix": "For pipeline caches that must survive, use $PROJECT/.cache/<pipeline>/. Add .cache/ to .gitignore. Reserve $TMPDIR for genuinely ephemeral single-session scratch."
+    },
+    {
+      "id": "L-TRANSIENT-001",
+      "title": "Network failures are not data-integrity failures",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "G06 failed on first strict run because 4 forks had PARENT_HEAD_UNREACHABLE from mobile network timeouts. On retry, 3 of those recovered but 3 different forks failed. A strict all-forks-ENRICHED gate would never pass reliably on Termux mobile.",
+      "root_cause": "Termux on mobile networks has intermittent TLS/443 timeouts. Treating transient network errors as data-integrity failures makes the gate depend on network weather, not system state.",
+      "fix": "Classify non-ENRICHED states as (a) structural failures (parent deleted, no common ancestor) → allowlist; (b) transient errors (network timeout, rate limit) → tolerate at commit and report count. Never conflate the two. Gate output must include both counts explicitly.",
+      "evidence": "Run 1 non-ENRICHED: {5G-Proxy-Pro, hallmark, jsoncanvas, kepano-obsidian}. Run 2 non-ENRICHED: {5G-Proxy-Pro, sanitizers, Ventoid, open-design}. Only 5G-Proxy-Pro appears in both — the rest are network flake."
     }
   ]
 }

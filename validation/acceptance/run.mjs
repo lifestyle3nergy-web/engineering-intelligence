@@ -93,6 +93,80 @@ const GATES = [
       }
       return { exit: 0, out: "catalog_records=" + cat.length + " adr_0033=absent" };
     }
+  },
+  { id: "G06", name: "upstream-divergence",
+    run() {
+      const enrichedPath = "registry/repositories/upstream-pins.enriched.json";
+      const statsPath = "registry/repositories/enrichment-stats.json";
+      const pinPath = "registry/repositories/upstream-pins.json";
+      if (!fs.existsSync(enrichedPath)) return { exit: 30, out: "E_ENRICHED_MISSING" };
+      if (!fs.existsSync(statsPath)) return { exit: 30, out: "E_STATS_MISSING" };
+      const pins = JSON.parse(fs.readFileSync(pinPath, "utf8"));
+      const enriched = JSON.parse(fs.readFileSync(enrichedPath, "utf8"));
+      const stats = JSON.parse(fs.readFileSync(statsPath, "utf8"));
+      if (pins.length !== enriched.length) return { exit: 30, out: `E_COUNT_MISMATCH pins=${pins.length} enriched=${enriched.length}` };
+      const forks = enriched.filter(e => e.fork === true);
+      if (forks.length === 0) return { exit: 30, out: "E_NO_FORKS" };
+
+      // Structural allowlist: cannot be ENRICHED even with perfect network
+      const structuralAllowlist = new Set([
+        "lifestyle3nergy-web/5G-Proxy-Pro"
+      ]);
+
+      // Transient error statuses: network failures tolerated at commit, reported
+      const transientStatuses = new Set(["COMPARE_FAILED", "PARENT_HEAD_UNREACHABLE", "ERROR"]);
+
+      const structuralHits = [];
+      const transientHits = [];
+      const hardFailures = [];
+
+      for (const f of forks) {
+        const status = f.enrichment?.status ?? "UNKNOWN";
+
+        if (status === "ENRICHED") {
+          const e = f.enrichment;
+          if (!e.parent_full_name) hardFailures.push(f.full_name + ":E_NO_PARENT");
+          else if (typeof e.ahead_of_parent_by !== "number") hardFailures.push(f.full_name + ":E_AHEAD_NOT_NUMBER");
+          else if (typeof e.behind_parent_by !== "number") hardFailures.push(f.full_name + ":E_BEHIND_NOT_NUMBER");
+          else if (!e.parent_head_sha || !/^[0-9a-f]{40}$/.test(e.parent_head_sha)) hardFailures.push(f.full_name + ":E_PARENT_SHA_INVALID");
+          continue;
+        }
+
+        if (structuralAllowlist.has(f.full_name)) {
+          structuralHits.push(f.full_name + ":" + status);
+          continue;
+        }
+
+        if (transientStatuses.has(status)) {
+          transientHits.push(f.full_name + ":" + status);
+          continue;
+        }
+
+        hardFailures.push(f.full_name + ":" + status);
+      }
+
+      // Stale allowlist check
+      for (const name of structuralAllowlist) {
+        const f = forks.find(x => x.full_name === name);
+        if (!f) return { exit: 30, out: "E_ALLOWLIST_MISSING " + name };
+        if (f.enrichment?.status === "ENRICHED") return { exit: 30, out: "E_ALLOWLIST_STALE " + name };
+      }
+
+      if (hardFailures.length > 0) {
+        return { exit: 30, out: `E_HARD_FAILURES count=${hardFailures.length} sample=${hardFailures.slice(0, 3).join(",")}` };
+      }
+
+      const sum = (stats.up_to_date || 0) + (stats.behind_only || 0) + (stats.ahead_only || 0) + (stats.diverged || 0);
+      if (sum !== stats.enriched_count) return { exit: 30, out: `E_STATS_INCONSISTENT sum=${sum} enriched=${stats.enriched_count}` };
+
+      const catPath = "registry/adr/adr-catalog.json";
+      if (fs.existsSync(catPath)) {
+        const cat = JSON.parse(fs.readFileSync(catPath, "utf8"));
+        if (cat.some(r => r.adr_id === "ADR-0033")) return { exit: 30, out: "E_ADR_0033_PRESENT" };
+      }
+
+      return { exit: 0, out: `forks=${forks.length} enriched=${stats.enriched_count} diverged=${stats.diverged} behind_only=${stats.behind_only} transient=${transientHits.length} structural=${structuralHits.length}` };
+    }
   }
 ];
 
