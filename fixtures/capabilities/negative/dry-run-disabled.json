@@ -1,0 +1,9 @@
+{
+  "fixture_id": "CAP-N-0001",
+  "fixture_version": "1.0.0",
+  "expected_outcome": "REJECT",
+  "expected_rejection_code": "E-P06-DRY-RUN-DISABLED",
+  "expected_rejection_reason": "dry_run_default is false.",
+  "source_evidence": [],
+  "target_sha": null
+}

@@ -1,0 +1,9 @@
+{
+  "fixture_id": "REPO-N-0002",
+  "fixture_version": "1.0.0",
+  "expected_outcome": "REJECT",
+  "expected_rejection_code": "E-P01-MISSING-SHA",
+  "expected_rejection_reason": "observed_sha missing or malformed.",
+  "source_evidence": [],
+  "target_sha": null
+}

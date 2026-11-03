@@ -1,0 +1,9 @@
+{
+  "fixture_id": "ADR-N-0003",
+  "fixture_version": "1.0.0",
+  "expected_outcome": "REJECT",
+  "expected_rejection_code": "E-ADR-STATUS-CONFLATION",
+  "expected_rejection_reason": "allocation_status used as decision_status.",
+  "source_evidence": [],
+  "target_sha": null
+}

@@ -1,0 +1,9 @@
+{
+  "fixture_id": "CAP-P-0001",
+  "fixture_version": "1.0.0",
+  "expected_outcome": "ACCEPT",
+  "expected_rejection_code": "",
+  "expected_rejection_reason": "closed schema, dry_run_default true, AWAITING_TWGT",
+  "source_evidence": [],
+  "target_sha": null
+}

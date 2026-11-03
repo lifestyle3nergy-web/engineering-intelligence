@@ -1,0 +1,9 @@
+{
+  "fixture_id": "REPO-N-0003",
+  "fixture_version": "1.0.0",
+  "expected_outcome": "REJECT",
+  "expected_rejection_code": "E-P04-UNPINNED-UPSTREAM",
+  "expected_rejection_reason": "fork record has no upstream_sha.",
+  "source_evidence": [],
+  "target_sha": null
+}

@@ -1,0 +1,9 @@
+{
+  "fixture_id": "PROV-N-0001",
+  "fixture_version": "1.0.0",
+  "expected_outcome": "REJECT",
+  "expected_rejection_code": "E-P05-HASH-MISMATCH",
+  "expected_rejection_reason": "envelope SHA does not match observed head SHA.",
+  "source_evidence": [],
+  "target_sha": null
+}

@@ -1,0 +1,9 @@
+{
+  "fixture_id": "REPO-P-0001",
+  "fixture_version": "1.0.0",
+  "expected_outcome": "ACCEPT",
+  "expected_rejection_code": "",
+  "expected_rejection_reason": "owned repo with verified head sha",
+  "source_evidence": [],
+  "target_sha": null
+}

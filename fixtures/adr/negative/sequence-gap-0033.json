@@ -1,0 +1,9 @@
+{
+  "fixture_id": "ADR-N-0033-GAP",
+  "fixture_version": "1.0.0",
+  "expected_outcome": "REJECT",
+  "expected_rejection_code": "E-ADR-SEQUENCE-GAP",
+  "expected_rejection_reason": "ADR-0034..0036 present; ADR-0033 has no allocation record.",
+  "source_evidence": [],
+  "target_sha": null
+}
