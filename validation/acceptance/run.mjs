@@ -187,6 +187,22 @@ const GATES = [
       }
       return { exit: 0, out: "remediated=" + log.repo + " identical" + (log.already_synced ? " (already_synced)" : "") };
     }
+  },
+  { id: "G08", name: "remediation-freshness",
+    run() {
+      const logPath = "reports/validation-results/remediation-latest.json";
+      if (!fs.existsSync(logPath)) return { exit: 0, out: "no-remediation-log" };
+      let log;
+      try { log = JSON.parse(fs.readFileSync(logPath, "utf8")); }
+      catch (e) { return { exit: 30, out: "E_LOG_INVALID_JSON" }; }
+      if (log.new_local_sha !== log.new_parent_sha) {
+        return { exit: 30, out: "E_SHA_MISMATCH_FRESHNESS local=" + log.new_local_sha + " parent=" + log.new_parent_sha };
+      }
+      if (log.success !== true) {
+        return { exit: 30, out: "E_SUCCESS_FALSE " + (log.repo || "unknown") };
+      }
+      return { exit: 0, out: "fresh=" + log.repo + " local==parent" };
+    }
   }
 ];
 
