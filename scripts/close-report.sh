@@ -4,7 +4,7 @@ set -euo pipefail
 OUT="reports/validation-results/CLOSE.md"
 OUT_JSON="reports/validation-results/CLOSE.json"
 mkdir -p reports/validation-results
-exec > >(tee -a "$OUT") 2>&1
+exec > >(tee "$OUT") 2>&1
 
 echo "# Session Close Artifact"
 echo "Generated: $(date -u +%FT%TZ)"
