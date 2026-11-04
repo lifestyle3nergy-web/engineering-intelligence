@@ -1,0 +1,9 @@
+{
+  "fixture_id": "REPO-N-001",
+  "expected_outcome": "REJECT",
+  "expected_rejection_code": "E-P01-DUPLICATE-ID",
+  "payload": [
+    {"repo_id": 999, "full_name": "a", "visibility": "PUBLIC", "observed_sha": "0123456789abcdef0123456789abcdef01234567"},
+    {"repo_id": 999, "full_name": "b", "visibility": "PUBLIC", "observed_sha": "0123456789abcdef0123456789abcdef01234567"}
+  ]
+}
