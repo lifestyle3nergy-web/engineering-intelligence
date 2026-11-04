@@ -1,5 +1,5 @@
 # Session Close Artifact
-Generated: 2026-11-04T09:32:52Z
+Generated: 2026-11-04T09:35:15Z
 
 ## 1. Actual PR Chain
 - ei-registry-001/m02-m05-milestones → main
@@ -7,7 +7,7 @@ Generated: 2026-11-04T09:32:52Z
 - ei-registry-001/m07-remediation → ei-registry-001/m06-divergence (distance: 7)
 - ei-registry-001/m07.1-race-fix → ei-registry-001/m07-remediation (distance: 7)
 - ei-registry-001/m07.3-compare-fix → ei-registry-001/m07.1-race-fix (distance: 4)
-- ei-registry-001/m07.5-adr-lint → ei-registry-001/m07.3-compare-fix (distance: 3)
+- ei-registry-001/m07.5-adr-lint → ei-registry-001/m07.3-compare-fix (distance: 4)
 
 ## 2. Gate Count (parsed)
 Total Gates: 10
@@ -16,6 +16,7 @@ IDs: G01, G02, G03, G04, G05, G06, G07, G08, G09, G10
 ## 3. Signature Verification
 | SHA | Verified | Reason | Subject |
 |---|---|---|---|
+| 74a5f11 | True | valid | fix(scripts): overwrite CLOSE.md instead |
 | 882efa4 | True | valid | feat(scripts): close-report generates CL |
 | 771a0d3 | True | valid | feat(scripts): generate CLOSE.md via par |
 | ab7b076 | True | valid | fix(governance): close review R1, R9 and |

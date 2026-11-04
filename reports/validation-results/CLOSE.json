@@ -1,7 +1,7 @@
 {
   "branch": "ei-registry-001/m07.5-adr-lint",
-  "sha": "882efa44acb8988c6a8bf88ec56db8fdb3a3cd1a",
+  "sha": "74a5f118c5d338f17967230c2898d91e3e49258b",
   "lessons": 17,
   "gates": 10,
-  "worktree_dirty_files": "3"
+  "worktree_dirty_files": "1"
 }
