@@ -121,10 +121,10 @@
       "title": "GitHub API propagation is per-endpoint, not global",
       "severity": "HIGH",
       "observed_at": "2026-11-04",
-      "symptom": "PollUntil() succeeded at /commits/{branch} in 1621ms. Immediately after, enrichment read stale fork state from /compare — fork appeared behind parent.",
-      "root_cause": "Different GitHub API endpoints resolve against different backend replicas. /commits/{branch} may return the new SHA while /compare still returns the old SHA for up to ~30s.",
-      "fix": "For M07.1: poll succeeds means the ref moved. But enrichment must retry if the just-synced fork reads as behind, or delay enrichment by 10s after poll. Deferred to M07.3.",
-      "evidence": "poll_ok: true. new_local_sha: old. new_parent_sha: new. success: false. G07/G08 correctly failed. Live check 8min later: fork == parent."
+      "symptom": "PollUntil() succeeded at /commits/{branch} in 1621ms. Enrichment read stale fork state from /compare — fork appeared behind parent. 10+ minutes later, /compare still returned stale local_sha while /commits/{branch} returned correct SHA.",
+      "root_cause": "GitHub caches fork /compare responses much longer than /commits/{branch} responses. This is not a short propagation window — it is a caching asymmetry between endpoints. /compare can serve stale fork refs for many minutes after /commits/{branch} has caught up.",
+      "fix": "Enrichment must not trust /compare local_sha blindly. It should independently fetch /commits/{branch} for the fork and use that as the authoritative local_sha, only using /compare for ahead/behind counts. This is the M07.3 fix.",
+      "evidence": "poll_ok: true. /commits/main returns b725ec00. /compare returns local=842c3098. Same fork, same branch, same moment — different answers."
     }
   ]
 }
