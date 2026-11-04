@@ -21,6 +21,16 @@ function ghJson(cmd) {
   }
 }
 
+// L-RACE-002 fix: direct fork HEAD fetch (bypasses /compare caching)
+function fetchForkHeadDirect(fullName, branch) {
+  try {
+    return execSync(
+      `gh api "repos/${fullName}/commits/${branch}" --jq .sha`,
+      { encoding: "utf8" }
+    ).trim();
+  } catch (e) { return null; }
+}
+
 const enriched = [];
 let i = 0;
 for (const p of pins) {
@@ -32,7 +42,7 @@ for (const p of pins) {
 
   process.stderr.write(`  [${i}/${pins.length}] ${p.full_name}... `);
 
-  // 1. Fork metadata → parent info
+  // 1. Fork metadata -> parent info
   const meta = ghJson(`gh api "repos/${p.full_name}"`);
   if (!meta.ok) {
     enriched.push({ ...p, enrichment: { status: "ERROR", step: "metadata", error: meta.error } });
@@ -63,8 +73,10 @@ for (const p of pins) {
   }
   const parentSha = parentHead.data.sha;
 
-  // 3. Cross-repo compare: base=parent@sha, head=fork_owner:branch
-  // Confirmed working syntax (tested against open-policy-agent/opa)
+  // L-RACE-002 fix: fetch fork HEAD DIRECTLY here, in scope for both branches below
+  const directLocalHead = fetchForkHeadDirect(p.full_name, p.default_branch);
+
+  // 3. Cross-repo compare
   const compareCmd = `gh api "repos/${parent.full_name}/compare/${parentSha}...${p.full_name.split("/")[0]}:${p.default_branch}"`;
   const cmp = ghJson(compareCmd);
   if (!cmp.ok) {
@@ -74,7 +86,7 @@ for (const p of pins) {
         status: "COMPARE_FAILED",
         parent_full_name: parent.full_name,
         parent_head_sha: parentSha,
-        local_head_sha: p.head_sha,
+        local_head_sha: directLocalHead || p.head_sha,
         error: cmp.error
       }
     });
@@ -90,12 +102,12 @@ for (const p of pins) {
       parent_id: parent.id,
       parent_default_branch: parent.default_branch,
       parent_head_sha: parentSha,
-      local_head_sha: p.head_sha,
+      local_head_sha: directLocalHead || p.head_sha,
       ahead_of_parent_by: cmp.data.ahead_by,
       behind_parent_by: cmp.data.behind_by,
       total_commits_in_range: cmp.data.total_commits,
       merge_base_sha: cmp.data.merge_base_commit?.sha ?? null,
-      compare_status: cmp.data.status,   // "ahead" | "behind" | "diverged" | "identical"
+      compare_status: cmp.data.status,
       enriched_at: new Date().toISOString()
     }
   });

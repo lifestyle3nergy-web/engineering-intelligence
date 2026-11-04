@@ -125,6 +125,27 @@
       "root_cause": "GitHub caches fork /compare responses much longer than /commits/{branch} responses. This is not a short propagation window — it is a caching asymmetry between endpoints. /compare can serve stale fork refs for many minutes after /commits/{branch} has caught up.",
       "fix": "Enrichment must not trust /compare local_sha blindly. It should independently fetch /commits/{branch} for the fork and use that as the authoritative local_sha, only using /compare for ahead/behind counts. This is the M07.3 fix.",
       "evidence": "poll_ok: true. /commits/main returns b725ec00. /compare returns local=842c3098. Same fork, same branch, same moment — different answers."
+    },
+    {
+      "id": "L-RACE-002-VALIDATED",
+      "title": "Fetching fork HEAD directly via /commits bypasses /compare caching bug",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "After M07.2 discovered that /compare on forks serves stale local_sha for 10+ minutes, M07.3 implemented a fix: fetch fork HEAD via /commits/{branch}. Need to verify the fix works.",
+      "root_cause": "GitHub's /compare endpoint caches fork commit refs aggressively. /commits/{branch} is cache-busted per request. Same fork, same moment, different answers.",
+      "fix": "In p01-enrich-divergence.mjs: fetchForkHeadDirect(fullName, branch) calls /commits/{branch} and uses that as local_head_sha. /compare remains for ahead_by, behind_by, merge_base_sha — those are consistent within a single comparison.",
+      "evidence": "docs fork: before fix, enrichment recorded local=842c3098 (stale from /compare). After full-file rewrite, local=b725ec00 (fresh, matches /commits/main). Full registry: 0 contradictory records after fix (was 78 — every up_to_date fork had local != parent). 78 consistent records match up_to_date count exactly. 12-min enrichment ran without error. G09 sampled 3 forks, all fresh.",
+      "additional_notes": "Prior attempts: 45f65de (anchor not found), 3f9b4f2 (silently dropped), 56f586a (ReferenceError - declaration in if(!p.fork) block), plus 3 patch attempts this session (template-literal whitespace mismatches). Full-file rewrite succeeded where 8 patches failed. See L-PATCH-ANCHOR-FAIL."
+    },
+    {
+      "id": "L-PATCH-ANCHOR-FAIL",
+      "title": "Patch-by-string-anchor is fragile; full file rewrite is deterministic",
+      "severity": "CRITICAL",
+      "observed_at": "2026-11-04",
+      "symptom": "Eight attempts to patch p01-enrich-divergence.mjs to add fetchForkHeadDirect and change two local_head_sha assignments. Every attempt failed: string anchors not found (whitespace mismatch), silent drop (heredoc exit did not halt shell), scope bug (declaration in wrong block), template-literal escaping (nested backticks in heredoc).",
+      "root_cause": "src.includes(EXACT_STRING) requires the anchor to match byte-for-byte. Any prior edit shifts whitespace (tabs vs spaces, trailing spaces). Template literals with nested backticks need double-escaping that is fragile in heredocs. Any failure mode is invisible to grep -c which counts symbol presence, not scope or structure.",
+      "fix": "For any file under 200 lines, use cat > file <<'EOF' to write the entire file. Verify with sed -n (visual inspection) and node --check (syntax). Use grep only to count total occurrences, not to verify scope or structure. Never patch anchors programmatically.",
+      "evidence": "8 patch attempts, 0 successes. 1 file rewrite, 1 success. 12-min enrichment completed with zero errors on first run after rewrite. Registry went from 78 contradictory records to 0."
     }
   ]
 }
