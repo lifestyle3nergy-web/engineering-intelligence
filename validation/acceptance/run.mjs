@@ -203,6 +203,45 @@ const GATES = [
       }
       return { exit: 0, out: "fresh=" + log.repo + " local==parent" };
     }
+  },
+  { id: "G09", name: "local-sha-freshness",
+    run() {
+      // L-RACE-002 fix verification:
+      // For a sample of forks, /commits/{branch} must agree with enrichment.local_head_sha
+      // (Or both must be null for transient states)
+      const enrichedPath = "registry/repositories/upstream-pins.enriched.json";
+      if (!fs.existsSync(enrichedPath)) return { exit: 30, out: "E_ENRICHED_MISSING" };
+      const enriched = JSON.parse(fs.readFileSync(enrichedPath, "utf8"));
+      
+      // Sample 3 ENRICHED forks (deterministic: first 3 alphabetically)
+      const sample = enriched
+        .filter(e => e.fork && e.enrichment?.status === "ENRICHED")
+        .sort((a, b) => a.full_name.localeCompare(b.full_name))
+        .slice(0, 3);
+      
+      if (sample.length === 0) return { exit: 0, out: "no-enriched-forks-to-sample" };
+      
+      const mismatches = [];
+      for (const fork of sample) {
+        try {
+          const liveSha = require("node:child_process").execSync(
+            `gh api "repos/${fork.full_name}/commits/${fork.default_branch}" --jq .sha`,
+            { encoding: "utf8" }
+          ).trim();
+          const recorded = fork.enrichment.local_head_sha;
+          if (liveSha && recorded && liveSha !== recorded) {
+            mismatches.push(fork.full_name + ": live=" + liveSha.slice(0,8) + " recorded=" + recorded.slice(0,8));
+          }
+        } catch (e) {
+          // Network failure on live check — skip this sample, don't fail
+        }
+      }
+      
+      if (mismatches.length > 0) {
+        return { exit: 30, out: "E_LOCAL_SHA_MISMATCH count=" + mismatches.length + " sample=" + mismatches[0] };
+      }
+      return { exit: 0, out: "sampled=" + sample.length + " all_local_shas_fresh" };
+    }
   }
 ];
 

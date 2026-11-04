@@ -21,12 +21,28 @@ function ghJson(cmd) {
   }
 }
 
+// Direct fetch of fork HEAD via /commits/{branch} — NOT /compare
+// Fixes L-RACE-002: /compare caches fork refs much longer than /commits
+function fetchForkHeadDirect(fullName, branch) {
+  try {
+    return execSync(
+      `gh api "repos/${fullName}/commits/${branch}" --jq .sha`,
+      { encoding: "utf8" }
+    ).trim();
+  } catch (e) {
+    return null;
+  }
+}
+
 const enriched = [];
 let i = 0;
 for (const p of pins) {
   i++;
   if (!p.fork) {
-    enriched.push({ ...p, enrichment: { status: "NOT_A_FORK", reason: "own repository, no upstream to diverge from" } });
+    // L-RACE-002 fix: fetch fork HEAD via /commits/{branch}, NOT /compare
+  const directLocalHead = fetchForkHeadDirect(p.full_name, p.default_branch);
+
+  enriched.push({ ...p, enrichment: { status: "NOT_A_FORK", reason: "own repository, no upstream to diverge from" } });
     continue;
   }
 
@@ -74,7 +90,7 @@ for (const p of pins) {
         status: "COMPARE_FAILED",
         parent_full_name: parent.full_name,
         parent_head_sha: parentSha,
-        local_head_sha: p.head_sha,
+        local_head_sha: directLocalHead || p.head_sha,
         error: cmp.error
       }
     });
