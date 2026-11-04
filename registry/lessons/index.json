@@ -125,6 +125,16 @@
       "root_cause": "GitHub caches fork /compare responses much longer than /commits/{branch} responses. This is not a short propagation window — it is a caching asymmetry between endpoints. /compare can serve stale fork refs for many minutes after /commits/{branch} has caught up.",
       "fix": "Enrichment must not trust /compare local_sha blindly. It should independently fetch /commits/{branch} for the fork and use that as the authoritative local_sha, only using /compare for ahead/behind counts. This is the M07.3 fix.",
       "evidence": "poll_ok: true. /commits/main returns b725ec00. /compare returns local=842c3098. Same fork, same branch, same moment — different answers."
+    },
+    {
+      "id": "L-RACE-002-VALIDATED",
+      "title": "Fetching fork HEAD directly via /commits bypasses /compare caching bug",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "After M07.2 discovered that /compare on forks serves stale local_sha for 10+ minutes, M07.3 implemented a fix: fetch fork HEAD via /commits/{branch}. Need to verify the fix works.",
+      "root_cause": "GitHub's /compare endpoint caches fork commit refs aggressively. /commits/{branch} is cache-busted per request. Same fork, same moment, different answers.",
+      "fix": "In p01-enrich-divergence.mjs: fetchForkHeadDirect(fullName, branch) calls /commits/{branch} and uses that as local_head_sha. /compare remains for ahead_by, behind_by, merge_base_sha — those are consistent within a single comparison.",
+      "evidence": "docs fork: before fix, enrichment recorded local=842c3098 (stale). After fix, local=b725ec00 (fresh, matches /commits/main). G09 verifies the invariant across sample of 3 forks."
     }
   ]
 }
