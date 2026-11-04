@@ -461,7 +461,7 @@
       "verified": false
     },
     "supersedes": [],
-    "superseded_by": "0019"
+    "superseded_by": "ADR-0019"
   },
   {
     "adr_id": "ADR-0016",

@@ -146,6 +146,26 @@
       "root_cause": "src.includes(EXACT_STRING) requires the anchor to match byte-for-byte. Any prior edit shifts whitespace (tabs vs spaces, trailing spaces). Template literals with nested backticks need double-escaping that is fragile in heredocs. Any failure mode is invisible to grep -c which counts symbol presence, not scope or structure.",
       "fix": "For any file under 200 lines, use cat > file <<'EOF' to write the entire file. Verify with sed -n (visual inspection) and node --check (syntax). Use grep only to count total occurrences, not to verify scope or structure. Never patch anchors programmatically.",
       "evidence": "8 patch attempts, 0 successes. 1 file rewrite, 1 success. 12-min enrichment completed with zero errors on first run after rewrite. Registry went from 78 contradictory records to 0."
+    },
+    {
+      "id": "L-COUNT-WITHOUT-PARSER",
+      "title": "A count is trustworthy only when produced by a structural parser",
+      "severity": "CRITICAL",
+      "observed_at": "2026-11-04",
+      "symptom": "The session-close diagnostic script undercounted gates (9 instead of 10) because it used grep -oE 'id: \"G[0-9]+\"'. A human had to manually correct the count, recreating the very failure mode (L-PATCH-ANCHOR-FAIL) the session was trying to document.",
+      "root_cause": "A single grep pattern is a hypothesis. It relies on formatting assumptions (e.g., id: \"G10\" vs id:'G10' vs { id: 'G10' }). Pattern matching cannot reliably parse structural data.",
+      "fix": "Any reported count must be produced by a structural parser (e.g., importing the array in Node). If parsing is impossible, use two independently-written patterns and assert they agree. If a human touches the number, the artifact is not fail-closed. Generate close artifacts via script, never by hand.",
+      "evidence": "Diagnostic script returned 9 gates. Manual inspection proved 10. G10 was invisible to the regex. See L-PATCH-ANCHOR-FAIL."
+    },
+    {
+      "id": "L-NARRATION-IS-NOT-EVIDENCE",
+      "title": "A claim of machine confirmation without the machine's output is a hypothesis",
+      "severity": "CRITICAL",
+      "observed_at": "2026-11-04",
+      "symptom": "Session close artifacts and commit messages have repeatedly claimed tests passed or metrics were verified without the raw stdout/stderr being pasted in the same message. This creates authoritative-looking text that is not reproducible.",
+      "root_cause": "Natural language is frictionless. Pasting raw terminal output is high-friction. When an AI assistant transcribes expected outputs, it creates a narrative that sounds like evidence but lacks cryptographic or structural proof.",
+      "fix": "The One Command, One Paste rule: any claim of the form 'the machine confirmed X' must be accompanied by the verbatim raw output of the command that produced X, pasted in the same message, before any prose. If the output is not pasted, the claim is a hypothesis and must be labeled as such in commit messages.",
+      "evidence": "Countless turns in this session where expected output was narrated as fact, culminating in a commit message asserting a negative test passed before the test was ever run."
     }
   ]
 }
