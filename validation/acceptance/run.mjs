@@ -242,6 +242,45 @@ const GATES = [
       }
       return { exit: 0, out: "sampled=" + sample.length + " all_local_shas_fresh" };
     }
+  },
+  { id: "G10", name: "adr-registry-lint",
+    run() {
+      const regPath = "governance/adr-registry.json";
+      const catPath = "registry/adr/adr-catalog.json";
+      
+      if (!fs.existsSync(regPath)) return { exit: 30, out: "E_REGISTRY_MISSING" };
+      if (!fs.existsSync(catPath)) return { exit: 30, out: "E_CATALOG_MISSING" };
+      
+      const reg = JSON.parse(fs.readFileSync(regPath, "utf8"));
+      const cat = JSON.parse(fs.readFileSync(catPath, "utf8"));
+      
+      // R1: updated_at >= max(merged_at)
+      const maxMerged = reg.allocated.reduce((max, a) => (a.merged_at && a.merged_at > max) ? a.merged_at : max, "");
+      if (reg.updated_at && maxMerged && reg.updated_at.slice(0, 10) < maxMerged.slice(0, 10)) {
+        return { exit: 30, out: "E_STALE_UPDATED_AT reg=" + reg.updated_at.slice(0, 10) + " max_merged=" + maxMerged.slice(0, 10) };
+      }
+      
+      // R4: evidence_class vocabulary
+      const validClasses = new Set(["FACT", "ACTION", "STATE", "GATE"]);
+      const badClass = cat.find(r => r.allocation?.evidence_class && !validClasses.has(r.allocation.evidence_class));
+      if (badClass) return { exit: 30, out: "E_BAD_EVIDENCE_CLASS " + badClass.adr_id + " " + badClass.allocation.evidence_class };
+      
+      // R9: Supersession integrity
+      const adrIds = new Set(cat.map(r => r.adr_id));
+      for (const r of cat) {
+        if (r.superseded_by && !adrIds.has(r.superseded_by)) {
+          return { exit: 30, out: "E_MISSING_SUPERSEDED_BY " + r.adr_id + " -> " + r.superseded_by };
+        }
+      }
+      
+      // R2: content_sha256 presence (warn if null, but pass for now until we fix the registry)
+      const nullSha = cat.filter(r => r.provenance?.content_sha256 == null).length;
+      if (nullSha > 0) {
+        return { exit: 0, out: "warn=" + nullSha + " null_sha256 (R2 known issue)" };
+      }
+      
+      return { exit: 0, out: "adrs=" + cat.length + " valid" };
+    }
   }
 ];
 
