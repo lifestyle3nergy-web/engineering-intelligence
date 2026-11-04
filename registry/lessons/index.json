@@ -115,6 +115,16 @@
       "root_cause": "Sequential heredoc invocations in a shell block are separate commands. A non-zero exit from one does not stop the next unless the shell is running with set -e or the commands are chained with &&.",
       "fix": "Either: (a) prefix the whole session with set -e; (b) chain every node - <<'JS' with && node - <<'JS'; or (c) after any programmatic file patch, explicitly verify with grep that the change landed before proceeding.",
       "evidence": "Commit 45f65de: 1 file changed (run.mjs only), 20 insertions. But the intent was two files. The .mjs file was unchanged. Silent drop."
+    },
+    {
+      "id": "L-RACE-002",
+      "title": "GitHub API propagation is per-endpoint, not global",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "PollUntil() succeeded at /commits/{branch} in 1621ms. Immediately after, enrichment read stale fork state from /compare — fork appeared behind parent.",
+      "root_cause": "Different GitHub API endpoints resolve against different backend replicas. /commits/{branch} may return the new SHA while /compare still returns the old SHA for up to ~30s.",
+      "fix": "For M07.1: poll succeeds means the ref moved. But enrichment must retry if the just-synced fork reads as behind, or delay enrichment by 10s after poll. Deferred to M07.3.",
+      "evidence": "poll_ok: true. new_local_sha: old. new_parent_sha: new. success: false. G07/G08 correctly failed. Live check 8min later: fork == parent."
     }
   ]
 }
