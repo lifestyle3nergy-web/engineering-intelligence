@@ -105,6 +105,26 @@
       "root_cause": "GitHub's merge-upstream returns before the fork's default-branch HEAD ref is fully propagated across GitHub's internal replicas. A read against /commits/ immediately after merge can return the pre-merge SHA.",
       "fix": "In p02-remediate.mjs: after merge-upstream, poll fork HEAD vs parent HEAD with exponential backoff (max 30s, 5 attempts) before re-enriching. If still divergent after 30s, write success:false and note the race. Do not silently accept stale observation.",
       "evidence": "Alacritty first attempt: 20c1e1b recorded success:false but re-enrichment showed identical. Root cause: propagation delay between merge-upstream response and /commits/ availability."
+    },
+    {
+      "id": "L-SHELL-CHAIN-001",
+      "title": "Heredoc node invocations must be chained with && or the shell continues after failure",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "M07.1 first patch attempt: node - <<'JS' exited with process.exit(1) because the string anchor 'const enriched = []' didn't exist (actual: 'const enriched = JSON.parse(...)'). The shell proceeded to the next node - <<'JS' which added G08 to run.mjs, and the subsequent git commit succeeded with 20 insertions — but the p02-remediate.mjs change was silently dropped.",
+      "root_cause": "Sequential heredoc invocations in a shell block are separate commands. A non-zero exit from one does not stop the next unless the shell is running with set -e or the commands are chained with &&.",
+      "fix": "Either: (a) prefix the whole session with set -e; (b) chain every node - <<'JS' with && node - <<'JS'; or (c) after any programmatic file patch, explicitly verify with grep that the change landed before proceeding.",
+      "evidence": "Commit 45f65de: 1 file changed (run.mjs only), 20 insertions. But the intent was two files. The .mjs file was unchanged. Silent drop."
+    },
+    {
+      "id": "L-RACE-002",
+      "title": "GitHub API propagation is per-endpoint, not global",
+      "severity": "HIGH",
+      "observed_at": "2026-11-04",
+      "symptom": "PollUntil() succeeded at /commits/{branch} in 1621ms. Enrichment read stale fork state from /compare — fork appeared behind parent. 10+ minutes later, /compare still returned stale local_sha while /commits/{branch} returned correct SHA.",
+      "root_cause": "GitHub caches fork /compare responses much longer than /commits/{branch} responses. This is not a short propagation window — it is a caching asymmetry between endpoints. /compare can serve stale fork refs for many minutes after /commits/{branch} has caught up.",
+      "fix": "Enrichment must not trust /compare local_sha blindly. It should independently fetch /commits/{branch} for the fork and use that as the authoritative local_sha, only using /compare for ahead/behind counts. This is the M07.3 fix.",
+      "evidence": "poll_ok: true. /commits/main returns b725ec00. /compare returns local=842c3098. Same fork, same branch, same moment — different answers."
     }
   ]
 }
