@@ -39,7 +39,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "0f849dc4a8a7a94e681bcd5437facb0102260588",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:14:19.705Z"
+      "enriched_at": "2026-11-04T06:33:49.079Z"
     }
   },
   {
@@ -64,7 +64,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "356279e4acb62b2a8713f3d85cd3d513104cfde6",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:14:22.358Z"
+      "enriched_at": "2026-11-04T06:33:53.907Z"
     }
   },
   {
@@ -104,7 +104,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "f6c271de83a60c348cd023415d7fe8abd1b7b631",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:14:25.427Z"
+      "enriched_at": "2026-11-04T06:33:57.588Z"
     }
   },
   {
@@ -129,7 +129,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "f2c05d65fc5bdc7e69e9247ac043515b761fc482",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:14:27.783Z"
+      "enriched_at": "2026-11-04T06:34:00.258Z"
     }
   },
   {
@@ -184,7 +184,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:14:30.547Z"
+      "enriched_at": "2026-11-04T06:34:02.923Z"
     }
   },
   {
@@ -209,7 +209,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "b2516fa466d0d851932da92ee6d0e66946db9efc",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:14:32.902Z"
+      "enriched_at": "2026-11-04T06:34:05.955Z"
     }
   },
   {
@@ -234,7 +234,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "f177fe323420ccb23e1a79445fd470cbf80aee7c",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:14:36.075Z"
+      "enriched_at": "2026-11-04T06:34:08.364Z"
     }
   },
   {
@@ -259,7 +259,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "aecf0f600fa840a415b55da5cf34fbeaec39ac32",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:14:38.535Z"
+      "enriched_at": "2026-11-04T06:34:11.425Z"
     }
   },
   {
@@ -284,7 +284,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "95615789c5eddee1c5407a520cd9959a86fa4716",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:14:41.300Z"
+      "enriched_at": "2026-11-04T06:34:13.880Z"
     }
   },
   {
@@ -309,7 +309,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "e525bb35e57a106fa628caafacd2187223e858d1",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:14:44.064Z"
+      "enriched_at": "2026-11-04T06:34:16.237Z"
     }
   },
   {
@@ -334,7 +334,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "1f4cbd7c7d37fbacebf857fc6339b8d5873ebfb8",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:14:47.446Z"
+      "enriched_at": "2026-11-04T06:34:19.102Z"
     }
   },
   {
@@ -359,7 +359,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "841f45db2226ce15f5d1f52c580e35181e74ff68",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:14:50.207Z"
+      "enriched_at": "2026-11-04T06:34:22.275Z"
     }
   },
   {
@@ -384,7 +384,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "26b64ed1f22208c6742f47df547dfd65088ec30d",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:14:52.877Z"
+      "enriched_at": "2026-11-04T06:34:24.733Z"
     }
   },
   {
@@ -409,7 +409,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "0853a805003514776bef3593ecca091409828902",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:14:56.085Z"
+      "enriched_at": "2026-11-04T06:34:27.498Z"
     }
   },
   {
@@ -434,7 +434,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "b709c58c6b1b8aa3b90866c7c001b7bf82b6353b",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:14:58.576Z"
+      "enriched_at": "2026-11-04T06:34:30.221Z"
     }
   },
   {
@@ -459,7 +459,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "5803b7edcc2fe5feb250033951ab3abca3758ff0",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:01.273Z"
+      "enriched_at": "2026-11-04T06:34:33.233Z"
     }
   },
   {
@@ -484,7 +484,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "e46d6feaeacf5f0bec31a92c6ec68f2a701ce714",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:15:03.829Z"
+      "enriched_at": "2026-11-04T06:34:36.806Z"
     }
   },
   {
@@ -509,7 +509,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "db3746bfd13e79af848175864abf927a447ba97a",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:06.386Z"
+      "enriched_at": "2026-11-04T06:34:39.127Z"
     }
   },
   {
@@ -534,7 +534,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "7e09bc224a31331eb545557a0f6d52102f93b908",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:15:09.054Z"
+      "enriched_at": "2026-11-04T06:34:42.463Z"
     }
   },
   {
@@ -559,7 +559,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "bc53efed28c5b5ed427930bcb3e635daed124261",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:12.429Z"
+      "enriched_at": "2026-11-04T06:34:45.225Z"
     }
   },
   {
@@ -584,7 +584,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "248c2461ffc3715f9f284bced9f1e71a5d6ead55",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:15.610Z"
+      "enriched_at": "2026-11-04T06:34:47.670Z"
     }
   },
   {
@@ -609,7 +609,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "f8e2d541208281368129929a96f70f937c0735ef",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:18.164Z"
+      "enriched_at": "2026-11-04T06:34:50.333Z"
     }
   },
   {
@@ -634,7 +634,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "d946af9b99a791f073695cc720860b5bda285a0e",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:21.136Z"
+      "enriched_at": "2026-11-04T06:34:52.894Z"
     }
   },
   {
@@ -659,7 +659,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "378594fc86baa0ecadb1c2165e492b4e2aaf695b",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:15:24.308Z"
+      "enriched_at": "2026-11-04T06:34:55.452Z"
     }
   },
   {
@@ -684,7 +684,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "468154121df3c5e5cc56dae45edcf70037761894",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:26.869Z"
+      "enriched_at": "2026-11-04T06:34:58.115Z"
     }
   },
   {
@@ -709,7 +709,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "f7394d5c8f618623573072caadf6594821c789b6",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:15:29.530Z"
+      "enriched_at": "2026-11-04T06:35:00.538Z"
     }
   },
   {
@@ -734,7 +734,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "6fc318b4e3ce58e2898b00a9c3538ead9e24dee5",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:32.462Z"
+      "enriched_at": "2026-11-04T06:35:02.927Z"
     }
   },
   {
@@ -759,7 +759,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "1feb76b2bf6712c69efb4486310761e5732ce786",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:34.872Z"
+      "enriched_at": "2026-11-04T06:35:05.182Z"
     }
   },
   {
@@ -784,7 +784,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "a8737d095ad5a48ca031cea6ab704057dbc2d250",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:37.619Z"
+      "enriched_at": "2026-11-04T06:35:08.561Z"
     }
   },
   {
@@ -809,7 +809,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "03b15a6d9916030acdeeac4669dc39db2ed897c6",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:40.386Z"
+      "enriched_at": "2026-11-04T06:35:12.054Z"
     }
   },
   {
@@ -827,14 +827,14 @@
       "parent_full_name": "openai/codex",
       "parent_id": 965415649,
       "parent_default_branch": "main",
-      "parent_head_sha": "19438adcb6d1ba5248cc725a97ed591ba1783b94",
+      "parent_head_sha": "93b4e5b4c6474cdbf12614c4ac3acbd006fbee89",
       "local_head_sha": "93f9f1a592635a10854687954aad5a53e41654d5",
       "ahead_of_parent_by": 0,
-      "behind_parent_by": 30,
+      "behind_parent_by": 31,
       "total_commits_in_range": 0,
       "merge_base_sha": "f1b0721c88002066201e7d977c449fbf14f1e499",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:15:43.666Z"
+      "enriched_at": "2026-11-04T06:35:16.137Z"
     }
   },
   {
@@ -859,7 +859,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "6309e0ee6ed594fd7f382bd826e138e0ba04dd63",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:46.122Z"
+      "enriched_at": "2026-11-04T06:35:19.210Z"
     }
   },
   {
@@ -884,7 +884,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "2308b7ba5b4631fcb21a5b5d093646116bcb0e4b",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:49.094Z"
+      "enriched_at": "2026-11-04T06:35:21.666Z"
     }
   },
   {
@@ -909,7 +909,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "0dbf0ece209b77d722588e5e7943014d3db48f7f",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:51.851Z"
+      "enriched_at": "2026-11-04T06:35:24.182Z"
     }
   },
   {
@@ -934,7 +934,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "8bd073392eef6f54e921a093b95076248eb08cbb",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:15:55.026Z"
+      "enriched_at": "2026-11-04T06:35:28.433Z"
     }
   },
   {
@@ -959,7 +959,7 @@
       "total_commits_in_range": 2817,
       "merge_base_sha": "23bdf0813016ee12164f38aaaf0e17e741e3c5c3",
       "compare_status": "diverged",
-      "enriched_at": "2026-11-04T06:15:58.725Z"
+      "enriched_at": "2026-11-04T06:35:32.151Z"
     }
   },
   {
@@ -984,7 +984,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "90d3d16ccc48cadbffea4258a263192945bbc8f7",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:16:01.696Z"
+      "enriched_at": "2026-11-04T06:35:35.700Z"
     }
   },
   {
@@ -1009,7 +1009,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "b725ec000ac7b5098c6ad33183ab620f8456d5c0",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:16:04.552Z"
+      "enriched_at": "2026-11-04T06:35:38.050Z"
     }
   },
   {
@@ -1034,7 +1034,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "5ec94ba9684fb217bb72c54f78e1ef58400f740f",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:16:07.825Z"
+      "enriched_at": "2026-11-04T06:35:40.405Z"
     }
   },
   {
@@ -1089,7 +1089,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "da805bb38667506f28eb5b1353e975c7cf689eb0",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:16:10.390Z"
+      "enriched_at": "2026-11-04T06:35:42.863Z"
     }
   },
   {
@@ -1114,7 +1114,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "d523ea7ee67bb8b2fd54768d685142205f91da5a",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:16:13.359Z"
+      "enriched_at": "2026-11-04T06:35:45.911Z"
     }
   },
   {
@@ -1139,7 +1139,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "80028202c5e99f422c02ea1365def5581792bc02",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:16:15.916Z"
+      "enriched_at": "2026-11-04T06:35:48.495Z"
     }
   },
   {
@@ -1164,7 +1164,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "5cb6272ed7e3e07eaf6978e1e65b94aca76fa8e0",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:16:18.885Z"
+      "enriched_at": "2026-11-04T06:35:51.055Z"
     }
   },
   {
@@ -1189,7 +1189,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "df4a7534860137e060e18d2ebf019906120ea204",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:16:21.449Z"
+      "enriched_at": "2026-11-04T06:35:53.518Z"
     }
   },
   {
@@ -1214,7 +1214,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "c942c83443117b73af5ad278cc780270998ba3e1",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:16:24.213Z"
+      "enriched_at": "2026-11-04T06:35:56.380Z"
     }
   },
   {
@@ -1239,7 +1239,7 @@
       "total_commits_in_range": 1,
       "merge_base_sha": "538a07bc43a9cb1009196b2126b72255b25dfbdf",
       "compare_status": "diverged",
-      "enriched_at": "2026-11-04T06:16:27.584Z"
+      "enriched_at": "2026-11-04T06:35:59.514Z"
     }
   },
   {
@@ -1264,7 +1264,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "8752f772c0c46b989a8cdc04808b5c0275822fca",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:16:30.457Z"
+      "enriched_at": "2026-11-04T06:36:02.115Z"
     }
   },
   {
@@ -1289,7 +1289,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "a4f76da9e7aeffcd89552070680693e4438858e8",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:16:33.584Z"
+      "enriched_at": "2026-11-04T06:36:04.474Z"
     }
   },
   {
@@ -1314,7 +1314,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "d71691036ccc06a43a15a3625bd74e1eb23c43f2",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:16:36.395Z"
+      "enriched_at": "2026-11-04T06:36:06.826Z"
     }
   },
   {
@@ -1339,7 +1339,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "2d4273f929501ea42bba566e3899e608258436b2",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:16:38.958Z"
+      "enriched_at": "2026-11-04T06:36:09.282Z"
     }
   },
   {
@@ -1364,7 +1364,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "9cacca6f65d58f79269bc9c26aee48bff204dadd",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:16:41.417Z"
+      "enriched_at": "2026-11-04T06:36:13.170Z"
     }
   },
   {
@@ -1389,7 +1389,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "436efa09bc868a6922e307624189e7018406beb9",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:16:44.179Z"
+      "enriched_at": "2026-11-04T06:36:15.529Z"
     }
   },
   {
@@ -1414,7 +1414,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "1facc09f8d3c9e86e1f4b0ff39f5dd26c0be51c1",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:16:47.044Z"
+      "enriched_at": "2026-11-04T06:36:18.973Z"
     }
   },
   {
@@ -1439,7 +1439,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "9684fa3cdbf2995e30ea8b9b637f1db008f144fc",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:16:50.121Z"
+      "enriched_at": "2026-11-04T06:36:21.674Z"
     }
   },
   {
@@ -1464,7 +1464,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "aeb42fb354ff4efa36ab475773a082315a3af2ce",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:16:52.882Z"
+      "enriched_at": "2026-11-04T06:36:23.925Z"
     }
   },
   {
@@ -1489,7 +1489,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "85fb23f1c23a0acc9c9094dc033c19ec2c0d2a2b",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:16:56.671Z"
+      "enriched_at": "2026-11-04T06:36:26.710Z"
     }
   },
   {
@@ -1514,7 +1514,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "e0f50952103b359c91580529349b5cdf64301840",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:16:59.437Z"
+      "enriched_at": "2026-11-04T06:36:29.371Z"
     }
   },
   {
@@ -1547,14 +1547,14 @@
       "parent_full_name": "jimbrig/jimbrig",
       "parent_id": 285926530,
       "parent_default_branch": "main",
-      "parent_head_sha": "b087dd1a646f9bf1515b7c649f1ff7d6ae37910b",
+      "parent_head_sha": "45d0c77c9827a0d0ee6cd6a00988c3f188327de6",
       "local_head_sha": "60fbbcf916aed47d97d543ad265214baa3fcab32",
       "ahead_of_parent_by": 0,
-      "behind_parent_by": 1139,
+      "behind_parent_by": 1140,
       "total_commits_in_range": 0,
       "merge_base_sha": "60fbbcf916aed47d97d543ad265214baa3fcab32",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:17:01.898Z"
+      "enriched_at": "2026-11-04T06:36:31.879Z"
     }
   },
   {
@@ -1579,7 +1579,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "4f56a9900674b27804f0ec32e3b7fdfa4efad695",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:17:04.864Z"
+      "enriched_at": "2026-11-04T06:36:34.476Z"
     }
   },
   {
@@ -1604,7 +1604,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "456f843cb293df4f4ab1763e22ccb46a80b307c8",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:07.420Z"
+      "enriched_at": "2026-11-04T06:36:37.043Z"
     }
   },
   {
@@ -1629,7 +1629,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "bd774d32e5790a651bec84f4b16ef23bf1f4d481",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:17:09.991Z"
+      "enriched_at": "2026-11-04T06:36:39.900Z"
     }
   },
   {
@@ -1654,7 +1654,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "31e90cbfb792db41b2e456c250a2f33dbae047d9",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:12.750Z"
+      "enriched_at": "2026-11-04T06:36:42.666Z"
     }
   },
   {
@@ -1679,7 +1679,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "fb6a4fdd597626f537dd5387adf19a3dcd0c74c2",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:15.414Z"
+      "enriched_at": "2026-11-04T06:36:45.023Z"
     }
   },
   {
@@ -1704,7 +1704,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "473697347a0eaac790a6596229c741b3915f3b77",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:18.687Z"
+      "enriched_at": "2026-11-04T06:36:47.376Z"
     }
   },
   {
@@ -1729,7 +1729,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "53fd9db94adc721b89d57ae589e6a1f341643562",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:17:21.968Z"
+      "enriched_at": "2026-11-04T06:36:49.940Z"
     }
   },
   {
@@ -1754,7 +1754,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "24a848d9f0f31a40d047a8178b86eb024548546e",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:24.321Z"
+      "enriched_at": "2026-11-04T06:36:52.293Z"
     }
   },
   {
@@ -1779,7 +1779,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "347edcbd60448c0ca60c25d6e2db3a76826a7449",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:17:26.778Z"
+      "enriched_at": "2026-11-04T06:36:54.545Z"
     }
   },
   {
@@ -1804,7 +1804,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "72ab7368639cffb20dc70b124609d232be40901d",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:17:29.338Z"
+      "enriched_at": "2026-11-04T06:36:57.513Z"
     }
   },
   {
@@ -1829,7 +1829,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "85db4690088754e24c8485222b302539d834a810",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:17:32.614Z"
+      "enriched_at": "2026-11-04T06:37:00.279Z"
     }
   },
   {
@@ -1854,7 +1854,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "211b2be6205a720f30aad77e5b94cd1fac441443",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:34.978Z"
+      "enriched_at": "2026-11-04T06:37:02.695Z"
     }
   },
   {
@@ -1872,14 +1872,14 @@
       "parent_full_name": "owncloud/marketplace",
       "parent_id": 1267003015,
       "parent_default_branch": "main",
-      "parent_head_sha": "1521fcd422d6c1da9e1bca422f676283c5c52c06",
+      "parent_head_sha": "d08876c485c98627c94214a848a61ec75e787315",
       "local_head_sha": "1658a74f360ec375728482ac7d90105bb8440c0c",
       "ahead_of_parent_by": 0,
-      "behind_parent_by": 174,
+      "behind_parent_by": 175,
       "total_commits_in_range": 0,
       "merge_base_sha": "1658a74f360ec375728482ac7d90105bb8440c0c",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:17:37.425Z"
+      "enriched_at": "2026-11-04T06:37:05.293Z"
     }
   },
   {
@@ -1904,7 +1904,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "f7f6cd999374f817b9fc050e1b596d601698c23f",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:17:39.817Z"
+      "enriched_at": "2026-11-04T06:37:07.857Z"
     }
   },
   {
@@ -1929,7 +1929,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "5b305630399cb203c595ec1dcef78a2f8db17777",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:42.446Z"
+      "enriched_at": "2026-11-04T06:37:10.825Z"
     }
   },
   {
@@ -1954,7 +1954,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "ee0a53bc5ab45177254a18b892d08d47c95e813b",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:44.799Z"
+      "enriched_at": "2026-11-04T06:37:13.282Z"
     }
   },
   {
@@ -1979,7 +1979,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "538cd85628b555ef4ad9392b7270b52274f444d4",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:48.485Z"
+      "enriched_at": "2026-11-04T06:37:16.217Z"
     }
   },
   {
@@ -2004,7 +2004,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "d91d74e55442670f22019de1156f9e961de1493f",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:51.458Z"
+      "enriched_at": "2026-11-04T06:37:19.222Z"
     }
   },
   {
@@ -2029,7 +2029,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "fff43f47524267603f3afeb0ed201396e1d5588f",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:54.117Z"
+      "enriched_at": "2026-11-04T06:37:21.781Z"
     }
   },
   {
@@ -2054,7 +2054,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "7590e14da9fcab7c81bb2496a4c3389f0901988e",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:56.785Z"
+      "enriched_at": "2026-11-04T06:37:24.138Z"
     }
   },
   {
@@ -2079,7 +2079,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:17:59.340Z"
+      "enriched_at": "2026-11-04T06:37:26.698Z"
     }
   },
   {
@@ -2104,7 +2104,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "b4d5beebca8a76cf01335f724d154b9b9d394d96",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:18:02.308Z"
+      "enriched_at": "2026-11-04T06:37:29.154Z"
     }
   },
   {
@@ -2129,7 +2129,7 @@
       "total_commits_in_range": 7,
       "merge_base_sha": "d8a212dd217ea5aa82a2031808aac3937a2b8bfc",
       "compare_status": "diverged",
-      "enriched_at": "2026-11-04T06:18:05.054Z"
+      "enriched_at": "2026-11-04T06:37:31.983Z"
     }
   },
   {
@@ -2169,7 +2169,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "7bf6d13468e1b0075ee5e56345e9e97237be7d53",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:18:08.453Z"
+      "enriched_at": "2026-11-04T06:37:34.894Z"
     }
   },
   {
@@ -2194,7 +2194,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "c31dc1f2d84274e3929a49443380631ceac3f02a",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:18:11.118Z"
+      "enriched_at": "2026-11-04T06:37:38.654Z"
     }
   },
   {
@@ -2219,7 +2219,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "8fec65d87731c86711bc930a78c612a4ae70b16b",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:18:13.686Z"
+      "enriched_at": "2026-11-04T06:37:41.649Z"
     }
   },
   {
@@ -2244,7 +2244,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "ad13cbd0df5e6dcb821e64fd75a43c826eedd20e",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:18:17.977Z"
+      "enriched_at": "2026-11-04T06:37:44.015Z"
     }
   },
   {
@@ -2284,7 +2284,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "3a6c050d9c0c7b2516ce17e2190fb7e71b741f82",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:18:20.364Z"
+      "enriched_at": "2026-11-04T06:37:46.668Z"
     }
   },
   {
@@ -2309,7 +2309,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "52c12abad789c78c88f8337f8544dd03b02ed5de",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:18:23.624Z"
+      "enriched_at": "2026-11-04T06:37:49.853Z"
     }
   },
   {
@@ -2334,7 +2334,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "1416ddd2c9d789ffe489488550a81c4c40176602",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:18:25.965Z"
+      "enriched_at": "2026-11-04T06:37:52.913Z"
     }
   },
   {
@@ -2348,10 +2348,18 @@
     "parent_id": null,
     "observed_at": "2026-11-03T20:04:22.321Z",
     "enrichment": {
-      "status": "PARENT_HEAD_UNREACHABLE",
+      "status": "ENRICHED",
       "parent_full_name": "nonbili/Nora",
+      "parent_id": 1022457744,
       "parent_default_branch": "main",
-      "error": "Get \"https://api.github.com/repos/nonbili/Nora/commits/main\": dial tcp 4.237.22.34:443: i/o timeout"
+      "parent_head_sha": "f7ce646144aac0383b196b279d3ff02bb90f3a92",
+      "local_head_sha": "1871eb1305485009d5ad97263d5c1c82117e4b0d",
+      "ahead_of_parent_by": 0,
+      "behind_parent_by": 161,
+      "total_commits_in_range": 0,
+      "merge_base_sha": "1871eb1305485009d5ad97263d5c1c82117e4b0d",
+      "compare_status": "behind",
+      "enriched_at": "2026-11-04T06:37:55.367Z"
     }
   },
   {
@@ -2376,7 +2384,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "a1dc48e68138490d522c04cbf5822214c6eb1202",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:19:00.780Z"
+      "enriched_at": "2026-11-04T06:37:58.446Z"
     }
   },
   {
@@ -2401,7 +2409,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "3bfe2b259fda93d7935ffb5d530fc8e99ba90c34",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:19:03.340Z"
+      "enriched_at": "2026-11-04T06:38:00.898Z"
     }
   },
   {
@@ -2426,7 +2434,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "1ee7fac187b9ef968b4cc268534c72500596220f",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:19:06.315Z"
+      "enriched_at": "2026-11-04T06:38:03.698Z"
     }
   },
   {
@@ -2451,7 +2459,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "5eb922f137422ff32a90869a9ba47525a428792d",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:19:09.075Z"
+      "enriched_at": "2026-11-04T06:38:06.234Z"
     }
   },
   {
@@ -2476,7 +2484,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "fcc0161f905d4bb5b4f23f90dbd1201d79198f0b",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:19:12.146Z"
+      "enriched_at": "2026-11-04T06:38:09.091Z"
     }
   },
   {
@@ -2501,7 +2509,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "a554d017c8fa12d8913354ba6cf792d26d0c3b54",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:19:15.116Z"
+      "enriched_at": "2026-11-04T06:38:11.856Z"
     }
   },
   {
@@ -2526,7 +2534,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "02b2d0dd1b8d2b9b2b80ab7fa36808fb639b9116",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:19:17.985Z"
+      "enriched_at": "2026-11-04T06:38:14.315Z"
     }
   },
   {
@@ -2551,7 +2559,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "6eb5222d25487362fcd411891fad9027f7840f96",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:19:20.856Z"
+      "enriched_at": "2026-11-04T06:38:16.992Z"
     }
   },
   {
@@ -2576,7 +2584,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "ff8394da6ca3a14583668d5dd7f02aeacb5da47b",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:19:23.515Z"
+      "enriched_at": "2026-11-04T06:38:19.434Z"
     }
   },
   {
@@ -2601,7 +2609,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "20b89a9b4f6a1287c8d8dd931a52754ab701de49",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:19:26.385Z"
+      "enriched_at": "2026-11-04T06:38:21.894Z"
     }
   },
   {
@@ -2626,7 +2634,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "b4339c640f5331ef75098637d1be2c787715ee88",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:19:28.941Z"
+      "enriched_at": "2026-11-04T06:38:25.671Z"
     }
   },
   {
@@ -2651,7 +2659,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "1f389d9e306c41c8931f44e4214025ca2e2f6b18",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:19:31.503Z"
+      "enriched_at": "2026-11-04T06:38:28.250Z"
     }
   },
   {
@@ -2676,7 +2684,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "81de5aa02e6bf03094370fb83ac84a2288ee328f",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:19:34.163Z"
+      "enriched_at": "2026-11-04T06:38:30.905Z"
     }
   },
   {
@@ -2690,18 +2698,11 @@
     "parent_id": null,
     "observed_at": "2026-11-03T20:04:32.806Z",
     "enrichment": {
-      "status": "ENRICHED",
+      "status": "COMPARE_FAILED",
       "parent_full_name": "falcosecurity/plugins",
-      "parent_id": 408613173,
-      "parent_default_branch": "main",
       "parent_head_sha": "b53aeae1547c589c016d1486a112e649701a7a39",
       "local_head_sha": "7481621f5de13c79c72aba72b285acd8268ab094",
-      "ahead_of_parent_by": 0,
-      "behind_parent_by": 0,
-      "total_commits_in_range": 0,
-      "merge_base_sha": "b53aeae1547c589c016d1486a112e649701a7a39",
-      "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:19:36.723Z"
+      "error": "Get \"https://api.github.com/repos/falcosecurity/plugins/compare/b53aeae1547c589c016d1486a112e649701a7a39...lifestyle3nergy-web:main\": dial tcp 4.237.22.34:443: i/o timeout"
     }
   },
   {
@@ -2715,9 +2716,18 @@
     "parent_id": null,
     "observed_at": "2026-11-03T20:04:33.907Z",
     "enrichment": {
-      "status": "ERROR",
-      "step": "metadata",
-      "error": "Get \"https://api.github.com/repos/lifestyle3nergy-web/postcss\": dial tcp 4.237.22.34:443: i/o timeout"
+      "status": "ENRICHED",
+      "parent_full_name": "postcss/postcss",
+      "parent_id": 13078968,
+      "parent_default_branch": "main",
+      "parent_head_sha": "17e54b7fb503b5fda847da4feb030d28c880a324",
+      "local_head_sha": "8f3784702ecb4c5fdbdccf82d9c033a450aa08d5",
+      "ahead_of_parent_by": 0,
+      "behind_parent_by": 43,
+      "total_commits_in_range": 0,
+      "merge_base_sha": "8f3784702ecb4c5fdbdccf82d9c033a450aa08d5",
+      "compare_status": "behind",
+      "enriched_at": "2026-11-04T06:39:05.618Z"
     }
   },
   {
@@ -2742,7 +2752,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "1ccdfcc15c3ae7826480e105be3824456944a623",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:09.499Z"
+      "enriched_at": "2026-11-04T06:39:08.176Z"
     }
   },
   {
@@ -2767,7 +2777,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "97a2d05f80c4c50534959b1d0d41cc4b3895625e",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:20:12.256Z"
+      "enriched_at": "2026-11-04T06:39:10.635Z"
     }
   },
   {
@@ -2781,18 +2791,11 @@
     "parent_id": null,
     "observed_at": "2026-11-03T20:04:36.614Z",
     "enrichment": {
-      "status": "ENRICHED",
+      "status": "COMPARE_FAILED",
       "parent_full_name": "aalleejustadev/Replit-Clone",
-      "parent_id": 1296317684,
-      "parent_default_branch": "main",
       "parent_head_sha": "6713b9d30e3513e5c36bbddddbacd8790413de45",
       "local_head_sha": "3c9c627038c919490ca5e6371569112d1a0fb09b",
-      "ahead_of_parent_by": 0,
-      "behind_parent_by": 1,
-      "total_commits_in_range": 0,
-      "merge_base_sha": "3c9c627038c919490ca5e6371569112d1a0fb09b",
-      "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:15.225Z"
+      "error": "Get \"https://api.github.com/repos/aalleejustadev/Replit-Clone/compare/6713b9d30e3513e5c36bbddddbacd8790413de45...lifestyle3nergy-web:main\": dial tcp 4.237.22.34:443: i/o timeout"
     }
   },
   {
@@ -2817,7 +2820,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "4f596d1c16793dd305b598eb15fc43cb5a285d91",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:20:17.684Z"
+      "enriched_at": "2026-11-04T06:39:45.388Z"
     }
   },
   {
@@ -2857,7 +2860,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "d4658c7c8e9b58988243125b6373b5f28e2af9ce",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:20.346Z"
+      "enriched_at": "2026-11-04T06:39:48.010Z"
     }
   },
   {
@@ -2882,7 +2885,7 @@
       "total_commits_in_range": 1,
       "merge_base_sha": "542fe29de353f7f123f9a8a732f7da165a842aa6",
       "compare_status": "diverged",
-      "enriched_at": "2026-11-04T06:20:23.025Z"
+      "enriched_at": "2026-11-04T06:39:50.774Z"
     }
   },
   {
@@ -2907,7 +2910,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "895b4be37ef0ca1cd55c6e628e7ff937ba5a1cf1",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:25.580Z"
+      "enriched_at": "2026-11-04T06:39:53.435Z"
     }
   },
   {
@@ -2932,7 +2935,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "3e931c8cb6ae3ef28804a82c1e76ce290610138f",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:20:29.562Z"
+      "enriched_at": "2026-11-04T06:39:56.100Z"
     }
   },
   {
@@ -2972,7 +2975,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "6b65d8aab1dd3677065e99f8042b111bb895dd1b",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:32.119Z"
+      "enriched_at": "2026-11-04T06:39:58.632Z"
     }
   },
   {
@@ -2997,7 +3000,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "46245eeee49e9d67fea19784c68d282f30c6d1d2",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:34.682Z"
+      "enriched_at": "2026-11-04T06:40:01.016Z"
     }
   },
   {
@@ -3022,7 +3025,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "36273b916d508902dea2572a47c40297e6405821",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:37.446Z"
+      "enriched_at": "2026-11-04T06:40:03.677Z"
     }
   },
   {
@@ -3047,7 +3050,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "093ea9ddb2f3e47facbc2dc42d4e523ba050dedb",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:40.168Z"
+      "enriched_at": "2026-11-04T06:40:06.747Z"
     }
   },
   {
@@ -3072,7 +3075,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "503fc1e82bcea3f8e5f4153a7d4be08891d23735",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:20:42.570Z"
+      "enriched_at": "2026-11-04T06:40:09.112Z"
     }
   },
   {
@@ -3097,7 +3100,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "ed37663cc5fbef691ddfecd080dff42f7e7e350d",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:45.636Z"
+      "enriched_at": "2026-11-04T06:40:11.870Z"
     }
   },
   {
@@ -3122,7 +3125,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "4a8bbf50db1415b8223321c33d964d37ac44dfaf",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:20:48.713Z"
+      "enriched_at": "2026-11-04T06:40:14.325Z"
     }
   },
   {
@@ -3147,7 +3150,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "f9c63fb2b3d765fc8242813e43a9b15b0ea84a1f",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:51.678Z"
+      "enriched_at": "2026-11-04T06:40:17.503Z"
     }
   },
   {
@@ -3172,7 +3175,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "e44a40eb2f810558ccd9da1425421270ccb81351",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:55.140Z"
+      "enriched_at": "2026-11-04T06:40:20.061Z"
     }
   },
   {
@@ -3197,7 +3200,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "660f7941b2c2793aa514a737ee4043f8e9c2269f",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:20:57.926Z"
+      "enriched_at": "2026-11-04T06:40:23.133Z"
     }
   },
   {
@@ -3239,7 +3242,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:21:31.718Z"
+      "enriched_at": "2026-11-04T06:40:56.822Z"
     }
   },
   {
@@ -3268,10 +3271,18 @@
     "parent_id": null,
     "observed_at": "2026-11-03T20:04:53.756Z",
     "enrichment": {
-      "status": "PARENT_HEAD_UNREACHABLE",
+      "status": "ENRICHED",
       "parent_full_name": "Fyleek/swot",
+      "parent_id": 866461689,
       "parent_default_branch": "master",
-      "error": "Get \"https://api.github.com/repos/Fyleek/swot/commits/master\": dial tcp 4.237.22.34:443: i/o timeout"
+      "parent_head_sha": "b1844f1b1c74db6151d1991e2b247e2f3d0eb33e",
+      "local_head_sha": "b1844f1b1c74db6151d1991e2b247e2f3d0eb33e",
+      "ahead_of_parent_by": 0,
+      "behind_parent_by": 0,
+      "total_commits_in_range": 0,
+      "merge_base_sha": "b1844f1b1c74db6151d1991e2b247e2f3d0eb33e",
+      "compare_status": "identical",
+      "enriched_at": "2026-11-04T06:40:59.279Z"
     }
   },
   {
@@ -3296,7 +3307,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "675ec5192ad51570d8ece3071f843329869b13c7",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:05.715Z"
+      "enriched_at": "2026-11-04T06:41:01.840Z"
     }
   },
   {
@@ -3321,7 +3332,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "776c3636c01a5fe1f66e5913aa8439de57547781",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:09.707Z"
+      "enriched_at": "2026-11-04T06:41:04.504Z"
     }
   },
   {
@@ -3346,7 +3357,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "fc26ce17e3badf85d4df191af364fcf7798047f1",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:22:13.089Z"
+      "enriched_at": "2026-11-04T06:41:07.060Z"
     }
   },
   {
@@ -3371,7 +3382,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "9e7f1531e1aa4a9c1e261a2dbde4de93653c366e",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:22:15.952Z"
+      "enriched_at": "2026-11-04T06:41:09.687Z"
     }
   },
   {
@@ -3396,7 +3407,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "238767722f7226ffca7c1f843cd99a166166a832",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:19.231Z"
+      "enriched_at": "2026-11-04T06:41:12.488Z"
     }
   },
   {
@@ -3421,7 +3432,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "1e5cf15c80e1b3620ad6a2cf4adbffbc219e5f8e",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:22:23.434Z"
+      "enriched_at": "2026-11-04T06:41:15.151Z"
     }
   },
   {
@@ -3446,7 +3457,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "f430449ab978c9c4abe021e3e7dff71a0c2447fa",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:25.886Z"
+      "enriched_at": "2026-11-04T06:41:17.609Z"
     }
   },
   {
@@ -3471,7 +3482,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "d18962e8f8177361e8397924f6aa6838c4a351aa",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:28.449Z"
+      "enriched_at": "2026-11-04T06:41:20.171Z"
     }
   },
   {
@@ -3496,7 +3507,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "051951c6cc137494a011f394dc3f56aef18d8cc9",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:22:31.210Z"
+      "enriched_at": "2026-11-04T06:41:22.727Z"
     }
   },
   {
@@ -3641,7 +3652,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "70de0c8b569b0d664a56b90be2f141d1d1645880",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:33.772Z"
+      "enriched_at": "2026-11-04T06:41:25.495Z"
     }
   },
   {
@@ -3666,7 +3677,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "ae74b58e722abe7ddf5948e07dd220808acce8a9",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:36.436Z"
+      "enriched_at": "2026-11-04T06:41:28.273Z"
     }
   },
   {
@@ -3691,7 +3702,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "25442837f1087d1d39e5bfcb6aeda3c315f3da5b",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:38.896Z"
+      "enriched_at": "2026-11-04T06:41:30.921Z"
     }
   },
   {
@@ -3716,7 +3727,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "ee95ac6ebcfaaa4ffb50685584cf39674a9046b0",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:22:42.373Z"
+      "enriched_at": "2026-11-04T06:41:33.687Z"
     }
   },
   {
@@ -3741,7 +3752,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "8d2d7b644a54372576a8e7a022854dca4b8d8c95",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:46.133Z"
+      "enriched_at": "2026-11-04T06:41:36.454Z"
     }
   },
   {
@@ -3766,7 +3777,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "41f6e30b9a9aff5e05bc16bd885f6344a8ec5ec6",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:22:49.131Z"
+      "enriched_at": "2026-11-04T06:41:39.216Z"
     }
   },
   {
@@ -3791,7 +3802,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "b7c64fa043cf2be7c4445d2501aae3dbbe18c995",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:51.691Z"
+      "enriched_at": "2026-11-04T06:41:41.775Z"
     }
   },
   {
@@ -3816,7 +3827,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "a12fd5672110c8aa7e3c8419e28c96943ca179be",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:22:55.075Z"
+      "enriched_at": "2026-11-04T06:41:44.539Z"
     }
   },
   {
@@ -3841,7 +3852,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "b9faafbf0397dcf79d1d4242b13d908abc5dffea",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:22:57.425Z"
+      "enriched_at": "2026-11-04T06:41:47.112Z"
     }
   },
   {
@@ -3866,7 +3877,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "ead80032e57dee2e75f0b51f2ea67528647d9944",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:23:00.089Z"
+      "enriched_at": "2026-11-04T06:41:49.763Z"
     }
   },
   {
@@ -3891,7 +3902,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "9a0d6a258149570ffc3b19048ae884ebd01b3c6a",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:23:02.650Z"
+      "enriched_at": "2026-11-04T06:41:52.428Z"
     }
   },
   {
@@ -3916,7 +3927,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "2265ad3be141595d43648a3b5ee1a94c30e740be",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:23:05.312Z"
+      "enriched_at": "2026-11-04T06:41:54.885Z"
     }
   },
   {
@@ -3941,7 +3952,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "63992afcfd630bcd3ddfb1452bf31081f97e4739",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:23:07.760Z"
+      "enriched_at": "2026-11-04T06:41:57.339Z"
     }
   },
   {
@@ -3966,7 +3977,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "19436074f636a9249eaedf10fcb815bc8e3fb74e",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:23:11.822Z"
+      "enriched_at": "2026-11-04T06:41:59.900Z"
     }
   },
   {
@@ -3991,7 +4002,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "837e4f316d5363661479798fb2e55481677c78d3",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:23:14.631Z"
+      "enriched_at": "2026-11-04T06:42:02.666Z"
     }
   },
   {
@@ -4016,7 +4027,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "e0e8f68a0f4bef11bfd04c4fb3091052ad36132f",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:23:17.550Z"
+      "enriched_at": "2026-11-04T06:42:05.017Z"
     }
   },
   {
@@ -4041,7 +4052,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "b861d320702ba0a13af575ec21d4008bfc1aec8f",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:23:19.944Z"
+      "enriched_at": "2026-11-04T06:42:07.684Z"
     }
   },
   {
@@ -4066,7 +4077,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "af37eb4e9e7eb5fd2a5a355dbca83b1644a9f08c",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:23:22.317Z"
+      "enriched_at": "2026-11-04T06:42:10.355Z"
     }
   },
   {
@@ -4080,18 +4091,10 @@
     "parent_id": null,
     "observed_at": "2026-11-03T20:05:22.302Z",
     "enrichment": {
-      "status": "ENRICHED",
+      "status": "PARENT_HEAD_UNREACHABLE",
       "parent_full_name": "zaproxy/zap-extensions",
-      "parent_id": 35210580,
       "parent_default_branch": "main",
-      "parent_head_sha": "518d4a3964a374493b2a033483cf9e1c371bfa50",
-      "local_head_sha": "5a44248fc358d80d77412907d165a009fa121384",
-      "ahead_of_parent_by": 0,
-      "behind_parent_by": 150,
-      "total_commits_in_range": 0,
-      "merge_base_sha": "5a44248fc358d80d77412907d165a009fa121384",
-      "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:23:24.926Z"
+      "error": "Get \"https://api.github.com/repos/zaproxy/zap-extensions/commits/main\": dial tcp 4.237.22.34:443: i/o timeout"
     }
   },
   {
@@ -4116,7 +4119,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "9d1970a436b1b189bfb588fc88864c80d9baf6a5",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:23:27.135Z"
+      "enriched_at": "2026-11-04T06:42:43.931Z"
     }
   },
   {
@@ -4141,7 +4144,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "af431aeef42704f277cda75aa9cf48b0778a7994",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:23:29.235Z"
+      "enriched_at": "2026-11-04T06:42:46.391Z"
     }
   },
   {
@@ -4166,7 +4169,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "5cf99cf2e27e048ad31b90264516a1655976735e",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:23:31.932Z"
+      "enriched_at": "2026-11-04T06:42:48.751Z"
     }
   },
   {
@@ -4191,7 +4194,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "6987662ce59d3279e379bcd0ed3202567fcef306",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:23:35.007Z"
+      "enriched_at": "2026-11-04T06:42:51.409Z"
     }
   },
   {
@@ -4216,7 +4219,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "ad92124e7d3ff54a047ab7f75f7d8cb716f4d997",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:23:37.251Z"
+      "enriched_at": "2026-11-04T06:42:53.866Z"
     }
   },
   {
@@ -4241,7 +4244,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "f2e8d027764f7f52272a7064e80c576af5f08de9",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:23:40.119Z"
+      "enriched_at": "2026-11-04T06:42:56.422Z"
     }
   },
   {
@@ -4266,7 +4269,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "7f06f8648f2405e7121d0428130fb5fa012dcba2",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:23:42.582Z"
+      "enriched_at": "2026-11-04T06:42:58.984Z"
     }
   },
   {
@@ -4291,7 +4294,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "50c3175d29111b6cb74ce6445871cd92872188a4",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:23:45.145Z"
+      "enriched_at": "2026-11-04T06:43:01.449Z"
     }
   },
   {
@@ -4316,7 +4319,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "993ac8f95887b0e91e4db9378b26d5e5ac9ff9b6",
       "compare_status": "identical",
-      "enriched_at": "2026-11-04T06:23:49.139Z"
+      "enriched_at": "2026-11-04T06:43:04.615Z"
     }
   },
   {
@@ -4341,7 +4344,7 @@
       "total_commits_in_range": 0,
       "merge_base_sha": "67521da2445a36704484bb83729508e50fea8a1c",
       "compare_status": "behind",
-      "enriched_at": "2026-11-04T06:23:52.618Z"
+      "enriched_at": "2026-11-04T06:43:07.177Z"
     }
   }
 ]
