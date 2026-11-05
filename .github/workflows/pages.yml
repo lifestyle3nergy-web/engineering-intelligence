@@ -3,6 +3,8 @@ name: pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -18,16 +20,28 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - name: Install pandoc
         run: |
           sudo apt-get update
           sudo apt-get install -y pandoc
-      - name: Render atlas to HTML
+      - name: Render documentation site
         run: |
-          mkdir -p _site/assets
+          mkdir -p _site/assets _site/atlas _site/reports/archive
           cp assets/wiki.css _site/assets/wiki.css
+
+          pandoc index.md \
+            --from=gfm \
+            --to=html5 \
+            --standalone \
+            --toc \
+            --toc-depth=2 \
+            --metadata title="Engineering Intelligence" \
+            --css=/engineering-intelligence/assets/wiki.css \
+            --output=_site/index.html
+
           pandoc wiki.md \
             --from=gfm \
             --to=html5 \
@@ -35,8 +49,23 @@ jobs:
             --toc \
             --toc-depth=3 \
             --metadata title="Internet Engineering Evolution Atlas" \
-            --css=assets/wiki.css \
-            --output=_site/index.html
+            --css=/engineering-intelligence/assets/wiki.css \
+            --output=_site/atlas/index.html
+
+          pandoc reports/archive/recommendations-execution-evidence.md \
+            --from=gfm \
+            --to=html5 \
+            --standalone \
+            --toc \
+            --toc-depth=3 \
+            --metadata title="Archived Recommendations and Execution Evidence" \
+            --css=/engineering-intelligence/assets/wiki.css \
+            --output=_site/reports/archive/recommendations-execution-evidence.html
+
+          test -s _site/index.html
+          test -s _site/atlas/index.html
+          test -s _site/reports/archive/recommendations-execution-evidence.html
+          test -s _site/assets/wiki.css
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -44,8 +73,10 @@ jobs:
 
   deploy:
     name: deploy
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
