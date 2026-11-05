@@ -49,7 +49,7 @@ execution and human decision authority.
 | `twgt-schema-gate` | Canonical schemas and contract validation | Validates shape and compatibility; does not authorize execution |
 | `twgt-bridge` | Evidence collection and verification | Evidence-only; collection is not admission or merge authority |
 | `TWGT-` | Runtime policy and admission boundary | Consumes verified governance and requires the applicable human authorization |
-| `twgt-knowledge` | Derived/contextual knowledge service | Inherits curated knowledge from Engineering Intelligence; does not become a second governance authority |
+| `twgt-knowledge` (private) | Derived/contextual knowledge service | Inherits curated knowledge from Engineering Intelligence; does not become a second governance authority |
 | `AI-OS` / `AI-OS-CM` | Workflow orchestration and its management surface | Orchestration and management do not override TWGT policy |
 | `twgt-git-hitl` | Human review and decision boundary | Presents decisions; does not independently define policy |
 | `router-cli` | Command routing and dispatch | Navigation only; no policy or admission decision |
