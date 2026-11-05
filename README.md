@@ -41,7 +41,7 @@ runtime-admission authority.**
 | [TWGT-](https://github.com/lifestyle3nergy-web/TWGT-) | Runtime and admission consumer | Owns runtime-facing execution and admission decisions |
 | [twgt-schema-gate](https://github.com/lifestyle3nergy-web/twgt-schema-gate) | Shared schemas and contract validation | Validation is not authorization |
 | [twgt-bridge](https://github.com/lifestyle3nergy-web/twgt-bridge) | Evidence collection and verification | Evidence-only; no merge or admission authority |
-| [twgt-knowledge](https://github.com/lifestyle3nergy-web/twgt-knowledge) | Derived knowledge service | Inherits from this repository; does not independently allocate ADRs or override governance |
+| `twgt-knowledge` (private) | Derived knowledge service | Inherits from this repository; does not independently allocate ADRs or override governance |
 | [AI-OS](https://github.com/lifestyle3nergy-web/AI-OS) | Workflow orchestration | Does not own TWGT policy or admission |
 | [AI-OS-CM](https://github.com/lifestyle3nergy-web/AI-OS-CM) | AI-OS management surface | Does not confer authorization |
 | [twgt-git-hitl](https://github.com/lifestyle3nergy-web/twgt-git-hitl) | Human review boundary | Human decision interface; policy remains separately governed |
