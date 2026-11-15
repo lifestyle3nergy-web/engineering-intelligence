@@ -51,8 +51,18 @@ const GATES = [
         if (!p.head_sha || !p.head_sha.match(/^[0-9a-f]{40}$/)) {
           return { exit: 30, out: `E-P04-SHA-MISMATCH: ${p.full_name} has invalid SHA` };
         }
+        if (p.fork && (
+          p.parent_identity_status !== "RESOLVED" ||
+          !p.parent_full_name ||
+          !Number.isInteger(p.parent_id)
+        )) {
+          return {
+            exit: 30,
+            out: `E-PARENT-IDENTITY-UNRESOLVED: ${p.full_name} parent identity is not verified`
+          };
+        }
       }
-      return { exit: 0, out: `verified ${pins.length} pins` };
+      return { exit: 0, out: `verified ${pins.length} pins including fork lineage` };
     }
   },
   { id: "G04", name: "fixtures",

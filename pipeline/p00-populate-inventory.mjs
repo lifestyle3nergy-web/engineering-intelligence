@@ -45,6 +45,30 @@ for (const r of chunks) {
     investigation_note: isTrailingDash ? "INV-001: Trailing dash requires explicit numeric ID mapping." : null
   });
 
+  // The owner-repositories listing exposes the fork flag but omits the parent
+  // object. Fetch the canonical repository resource before pinning lineage.
+  let parentFullName = null;
+  let parentId = null;
+  let parentIdentityStatus = r.fork ? "UNRESOLVED" : "NOT_APPLICABLE";
+  if (r.fork) {
+    try {
+      const detail = JSON.parse(execSync(
+        `gh api 'repos/${full}'`,
+        { encoding: "utf8" }
+      ));
+      parentFullName = detail.parent?.full_name ?? null;
+      parentId = detail.parent?.id ?? null;
+      parentIdentityStatus = parentFullName && Number.isInteger(parentId)
+        ? "RESOLVED"
+        : "UNRESOLVED";
+      if (parentIdentityStatus === "UNRESOLVED") {
+        console.error(`  BLOCKED parent ${full}: detail response omitted parent identity`);
+      }
+    } catch (e) {
+      console.error(`  BLOCKED parent ${full}: ${e.message.split("\n")[0]}`);
+    }
+  }
+
   pins.push({
     repo_id: r.id,
     full_name: full,
@@ -52,8 +76,9 @@ for (const r of chunks) {
     default_branch: branch,
     head_sha: sha,
     fork: r.fork,
-    parent_full_name: r.parent?.full_name ?? null,
-    parent_id: r.parent?.id ?? null,
+    parent_full_name: parentFullName,
+    parent_id: parentId,
+    parent_identity_status: parentIdentityStatus,
     observed_at: new Date().toISOString()
   });
 }
