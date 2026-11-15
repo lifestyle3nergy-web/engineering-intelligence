@@ -1,0 +1,9 @@
+{ "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lifestyle3nergy:template:upstream-repo@1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["uid","state"],
+  "properties": {
+    "uid":   { "type": "string", "pattern": "^lifestyle3nergy:" },
+    "state": { "type": "string", "enum": ["PROPOSED","INVESTIGATION","VERIFIED","DEPRECATED"] }
+  } }

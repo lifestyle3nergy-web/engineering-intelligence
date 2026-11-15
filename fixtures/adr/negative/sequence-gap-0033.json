@@ -1,0 +1,9 @@
+{
+  "fixture_id": "ADR-N-0033-GAP",
+  "expected_outcome": "REJECT",
+  "expected_rejection_code": "E-ADR-SEQUENCE-GAP",
+  "payload": {
+    "allocated": ["0025", "0026", "0032", "0034", "0035", "0036"],
+    "next_number_claimed": "0033"
+  }
+}

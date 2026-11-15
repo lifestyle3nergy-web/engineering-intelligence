@@ -1,0 +1,11 @@
+{
+  "fixture_id": "REPO-P-001",
+  "expected_outcome": "ACCEPT",
+  "expected_rejection_code": null,
+  "payload": {
+    "repo_id": 123456,
+    "full_name": "lifestyle3nergy-web/valid",
+    "visibility": "PUBLIC",
+    "observed_sha": "0123456789abcdef0123456789abcdef01234567"
+  }
+}
