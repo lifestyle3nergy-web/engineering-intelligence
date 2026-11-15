@@ -65,7 +65,7 @@ for (const r of chunks) {
         console.error(`  BLOCKED parent ${full}: detail response omitted parent identity`);
       }
     } catch (e) {
-      console.error(`  BLOCKED parent ${full}: ${e.message.split("\\n")[0]}`);
+      console.error(`  BLOCKED parent ${full}: ${e.message.split("\n")[0]}`);
     }
   }
 
