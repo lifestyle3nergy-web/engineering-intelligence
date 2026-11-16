@@ -29,7 +29,7 @@ export function inspectPublication({ root, privateInventoryPath, files = tracked
   if (!privateInventoryPath || !path.isAbsolute(privateInventoryPath)) {
     return { pass: false, failures: ["E-G06-PRIVATE-SOURCE-MISSING"] };
   }
-  const privatePath = path.resolve(privateInventoryPath);
+  const privatePath = fs.existsSync(privateInventoryPath) ? fs.realpathSync(privateInventoryPath) : path.resolve(privateInventoryPath);
   if (isInside(root, privatePath)) failures.push("E-G06-PRIVATE-SOURCE-IN-REPOSITORY");
   if (!fs.existsSync(privatePath)) failures.push("E-G06-PRIVATE-SOURCE-UNAVAILABLE");
 
