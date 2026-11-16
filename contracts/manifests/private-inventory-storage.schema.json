@@ -1,0 +1,21 @@
+{
+  "$id": "lifestyle3nergy:manifest:private-inventory-storage@1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Restricted private inventory storage envelope",
+  "type": "object",
+  "required": ["schema_version", "classification", "records"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "classification": { "const": "RESTRICTED" },
+    "records": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          { "$ref": "../bases/repository.schema.json" },
+          { "properties": { "visibility": { "const": "PRIVATE" }, "publication": { "const": "INTERNAL_ONLY" } } }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

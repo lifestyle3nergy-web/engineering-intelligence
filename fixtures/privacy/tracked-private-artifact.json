@@ -1,0 +1,6 @@
+{
+  "fixture_id": "PRIV-NEG-004",
+  "expected_outcome": "REJECT",
+  "expected_rejection_code": "E-G06-TRACKED-PRIVATE-ARTIFACT",
+  "synthetic": true
+}

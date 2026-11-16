@@ -1,0 +1,14 @@
+{
+  "fixture_id": "PRIV-SYNTHETIC-001",
+  "expected_outcome": "TEST_DATA",
+  "records": [
+    {
+      "repo_id": 987654321,
+      "node_id": "R_SYNTHETIC_PRIVATE_001",
+      "full_name": "synthetic-private-org/restricted-example",
+      "visibility": "PRIVATE",
+      "publication": "INTERNAL_ONLY",
+      "observed_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ]
+}
