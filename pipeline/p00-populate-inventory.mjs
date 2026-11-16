@@ -9,7 +9,7 @@ const PRIVATE_DIR_INPUT = process.env.PRIVATE_INVENTORY_DIR;
 function runGh(args) {
   return execFileSync("gh", args, { encoding: "utf8", maxBuffer: 100 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] }).trim();
 }
-function repositoryRoot() { return runGh(["rev-parse", "--show-toplevel"]); }
+function repositoryRoot() { return execFileSync("git", ["rev-parse", "--show-toplevel"], { encoding: "utf8" }).trim(); }
 function privateStorageDirectory(root) {
   if (!PRIVATE_DIR_INPUT || !path.isAbsolute(PRIVATE_DIR_INPUT)) throw new Error("E-PRIVACY-001: external private storage is not configured");
   fs.mkdirSync(PRIVATE_DIR_INPUT, { recursive: true, mode: 0o700 });
@@ -23,7 +23,7 @@ function atomicWrite(directory, filename, value, mode = 0o644) {
   const target = path.join(directory, filename);
   const temporary = path.join(directory, "." + filename + "." + process.pid + ".tmp");
   fs.writeFileSync(temporary, JSON.stringify(value, null, 2) + "\n", { mode });
-  fs.renameSync(temporary, target);
+  fs.renameSync(temporary, target);\n  fs.chmodSync(target, mode);
 }
 function enumerateRepositories() {
   const pages = JSON.parse(runGh(["api", "--paginate", "--slurp", "user/repos?per_page=100&affiliation=owner"]));
@@ -37,7 +37,7 @@ function classifyVisibility(repository) {
 }
 function getHeadSha(fullName, branch) {
   if (!branch) throw new Error("E-INVENTORY-002: default branch is missing");
-  const sha = runGh(["api", "repos/" + fullName + "/commits/" + branch, "--jq", ".sha"]);
+  const sha = runGh(["api", "repos/" + fullName + "/commits/" + encodeURIComponent(branch), "--jq", ".sha"]);
   if (!/^[a-f0-9]{40}$/.test(sha)) throw new Error("E-INVENTORY-003: repository head SHA is invalid");
   return sha;
 }
