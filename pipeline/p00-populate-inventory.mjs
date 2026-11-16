@@ -23,7 +23,8 @@ function atomicWrite(directory, filename, value, mode = 0o644) {
   const target = path.join(directory, filename);
   const temporary = path.join(directory, "." + filename + "." + process.pid + ".tmp");
   fs.writeFileSync(temporary, JSON.stringify(value, null, 2) + "\n", { mode });
-  fs.renameSync(temporary, target);\n  fs.chmodSync(target, mode);
+  fs.renameSync(temporary, target);
+  fs.chmodSync(target, mode);
 }
 function enumerateRepositories() {
   const pages = JSON.parse(runGh(["api", "--paginate", "--slurp", "user/repos?per_page=100&affiliation=owner"]));
