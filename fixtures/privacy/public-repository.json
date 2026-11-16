@@ -1,0 +1,10 @@
+{
+  "fixture_id": "PRIV-POS-001",
+  "expected_outcome": "ACCEPT",
+  "record": {
+    "repo_id": 10,
+    "full_name": "public/example",
+    "visibility": "PUBLIC",
+    "publication": "PUBLIC"
+  }
+}
