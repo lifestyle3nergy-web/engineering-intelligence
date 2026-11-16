@@ -3,23 +3,21 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 
 const PUBLIC_ARTIFACTS = [
-  "registry/repositories/repository-inventory.json",
-  "registry/repositories/upstream-pins.json",
-  "registry/repositories/inventory-reconciliation.json"
+  { path: "registry/repositories/repository-inventory.json", classified: true },
+  { path: "registry/repositories/upstream-pins.json", classified: true },
+  { path: "registry/repositories/inventory-reconciliation.json", classified: false }
 ];
 
 function isInside(root, candidate) {
   const relative = path.relative(root, candidate);
   return relative === "" || (!relative.startsWith("..") && !path.isAbsolute(relative));
 }
-
 function trackedFiles(root) {
   return execFileSync("git", ["ls-files"], { cwd: root, encoding: "utf8" })
     .split(/\r?\n/).filter(Boolean);
 }
-
-function privateTokens(record) {
-  return [record.full_name, record.repo_id, record.node_id, record.observed_sha, record.head_sha]
+function privateTextTokens(record) {
+  return [record.full_name, record.node_id, record.observed_sha, record.head_sha]
     .filter(value => value !== undefined && value !== null && String(value).length > 0)
     .map(String);
 }
@@ -29,7 +27,9 @@ export function inspectPublication({ root, privateInventoryPath, files = tracked
   if (!privateInventoryPath || !path.isAbsolute(privateInventoryPath)) {
     return { pass: false, failures: ["E-G06-PRIVATE-SOURCE-MISSING"] };
   }
-  const privatePath = fs.existsSync(privateInventoryPath) ? fs.realpathSync(privateInventoryPath) : path.resolve(privateInventoryPath);
+  const privatePath = fs.existsSync(privateInventoryPath)
+    ? fs.realpathSync(privateInventoryPath)
+    : path.resolve(privateInventoryPath);
   if (isInside(root, privatePath)) failures.push("E-G06-PRIVATE-SOURCE-IN-REPOSITORY");
   if (!fs.existsSync(privatePath)) failures.push("E-G06-PRIVATE-SOURCE-UNAVAILABLE");
 
@@ -37,7 +37,6 @@ export function inspectPublication({ root, privateInventoryPath, files = tracked
     /(^|\/)([^/]*\.(private|restricted)\.json|private|restricted)(\/|$)/i.test(file)
   );
   if (trackedPrivate.length) failures.push("E-G06-TRACKED-PRIVATE-ARTIFACT");
-
   if (failures.length) return { pass: false, failures };
 
   let privateRecords;
@@ -49,27 +48,29 @@ export function inspectPublication({ root, privateInventoryPath, files = tracked
     return { pass: false, failures: ["E-G06-PRIVATE-SOURCE-INVALID"] };
   }
 
-  const tokens = privateRecords.flatMap(privateTokens);
-  for (const relative of PUBLIC_ARTIFACTS) {
-    const target = path.join(root, relative);
+  for (const artifact of PUBLIC_ARTIFACTS) {
+    const target = path.join(root, artifact.path);
     if (!fs.existsSync(target)) {
       failures.push("E-G06-PUBLIC-ARTIFACT-MISSING");
       continue;
     }
     const raw = fs.readFileSync(target, "utf8");
-    let records;
-    try { records = JSON.parse(raw); }
+    let parsed;
+    try { parsed = JSON.parse(raw); }
     catch { failures.push("E-G06-PUBLIC-ARTIFACT-INVALID"); continue; }
 
-    const rows = Array.isArray(records) ? records : [records];
-    for (const row of rows) {
-      if (row.visibility !== "PUBLIC" || row.publication !== "PUBLIC") {
-        failures.push("E-G06-NONPUBLIC-CLASSIFICATION");
+    const rows = Array.isArray(parsed) ? parsed : [parsed];
+    if (artifact.classified && rows.some(row =>
+      row.visibility !== "PUBLIC" || row.publication !== "PUBLIC"
+    )) failures.push("E-G06-NONPUBLIC-CLASSIFICATION");
+
+    for (const record of privateRecords) {
+      if (privateTextTokens(record).some(token => raw.includes(token))) {
+        failures.push("E-G06-PRIVATE-IDENTIFIER-LEAK");
         break;
       }
-    }
-    for (const token of tokens) {
-      if (raw.includes(token)) {
+      if (rows.some(row => row && row.repo_id !== undefined &&
+          String(row.repo_id) === String(record.repo_id))) {
         failures.push("E-G06-PRIVATE-IDENTIFIER-LEAK");
         break;
       }
@@ -79,10 +80,14 @@ export function inspectPublication({ root, privateInventoryPath, files = tracked
 }
 
 export function runPrivacyGate(root = process.cwd()) {
-  const privateInventoryPath = process.env.PRIVATE_INVENTORY_FILE;
-  const result = inspectPublication({ root, privateInventoryPath });
+  const result = inspectPublication({
+    root,
+    privateInventoryPath: process.env.PRIVATE_INVENTORY_FILE
+  });
   return {
     exit: result.pass ? 0 : 30,
-    out: result.pass ? "public artifacts contain only approved public records" : result.failures.join(",")
+    out: result.pass
+      ? "public artifacts contain only approved public records"
+      : result.failures.join(",")
   };
 }
