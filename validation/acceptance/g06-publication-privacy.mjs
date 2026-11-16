@@ -17,7 +17,7 @@ function trackedFiles(root) {
     .split(/\r?\n/).filter(Boolean);
 }
 function privateTextTokens(record) {
-  return [record.full_name, record.node_id, record.observed_sha, record.head_sha]
+  return [record.full_name, record.node_id, record.default_branch, record.observed_sha, record.head_sha]
     .filter(value => value !== undefined && value !== null && String(value).length > 0)
     .map(String);
 }
