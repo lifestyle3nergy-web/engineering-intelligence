@@ -1,88 +1,67 @@
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
+import path from "node:path";
 
-// /user/repos?affiliation=owner includes PRIVATE repos for the authed owner
-console.log("Enumerating via REST (user/repos?affiliation=owner)...");
-const raw = execSync(
-  "gh api 'user/repos?per_page=100&affiliation=owner' --paginate",
-  { encoding: "utf8", maxBuffer: 1024 * 1024 * 100 }
-);
-const chunks = JSON.parse(`[${raw.replace(/\]\s*\[/g, ",")}]`).flat()
-  .filter(r => r.owner.login === "lifestyle3nergy-web");
+const OWNER = "lifestyle3nergy-web";
+const PUBLIC_DIR = path.resolve("registry/repositories");
+const PRIVATE_DIR_INPUT = process.env.PRIVATE_INVENTORY_DIR;
 
-const privateCount = chunks.filter(r => r.private).length;
-console.log(`Enumerated ${chunks.length} repos owned by lifestyle3nergy-web (${privateCount} private).`);
-
-const inventory = [];
-const pins = [];
-
-for (const r of chunks) {
-  const full = r.full_name;
-  const branch = r.default_branch;
-  let sha = "UNRESOLVED";
-  if (branch) {
-    try {
-      sha = execSync(
-        `gh api 'repos/${full}/commits/${branch}' --jq .sha`,
-        { encoding: "utf8" }
-      ).trim();
-    } catch (e) {
-      console.error(`  WARN sha ${full}: ${e.message.split("\n")[0]}`);
-    }
-  }
-
-  const isTrailingDash = r.name === "TWGT-";
-  inventory.push({
-    repo_id: r.id,
-    node_id: r.node_id,
-    full_name: full,
-    visibility: r.private ? "PRIVATE" : "PUBLIC",
-    fork: r.fork,
-    archived: r.archived,
-    default_branch: branch,
-    observed_sha: sha,
-    name_has_trailing_dash: isTrailingDash,
-    investigation_note: isTrailingDash ? "INV-001: Trailing dash requires explicit numeric ID mapping." : null
-  });
-
-  pins.push({
-    repo_id: r.id,
-    full_name: full,
-    visibility: r.private ? "PRIVATE" : "PUBLIC",
-    default_branch: branch,
-    head_sha: sha,
-    fork: r.fork,
-    parent_full_name: r.parent?.full_name ?? null,
-    parent_id: r.parent?.id ?? null,
-    observed_at: new Date().toISOString()
-  });
+function runGh(args) {
+  return execFileSync("gh", args, { encoding: "utf8", maxBuffer: 100 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] }).trim();
 }
-
-const observedCount = inventory.length;
-const reconciliation = {
-  expected_historical: 47,
-  expected_previous_snapshot: 75,
-  requested_limit: 180,
-  observed_now: observedCount,
-  private_observed: privateCount,
-  status: observedCount >= 180 ? "AT_OR_ABOVE_LIMIT" : "BOUNDED_LIMIT_NOT_REACHED",
-  endpoint: "user/repos?affiliation=owner",
-  note: observedCount < 180
-    ? "Account currently has fewer repos than the requested limit of 180."
-    : "Account has reached or exceeded the requested limit of 180."
-};
-
-fs.mkdirSync("registry/repositories", { recursive: true });
-fs.writeFileSync("registry/repositories/repository-inventory.json", JSON.stringify(inventory, null, 2));
-fs.writeFileSync("registry/repositories/upstream-pins.json", JSON.stringify(pins, null, 2));
-fs.writeFileSync("registry/repositories/inventory-reconciliation.json", JSON.stringify(reconciliation, null, 2));
-
-// Private repos get their own file — this is what P07 checks for leaks
-fs.writeFileSync(
-  "registry/repositories/repository-inventory.private.json",
-  JSON.stringify(inventory.filter(r => r.visibility === "PRIVATE"), null, 2)
-);
-
-const unresolved = inventory.filter(r => r.observed_sha === "UNRESOLVED");
-console.log(`Populated ${observedCount} (${privateCount} private). Unresolved: ${unresolved.length}.`);
-if (unresolved.length) unresolved.forEach(r => console.log(`  UNRESOLVED: ${r.full_name}`));
+function repositoryRoot() { return runGh(["rev-parse", "--show-toplevel"]); }
+function privateStorageDirectory(root) {
+  if (!PRIVATE_DIR_INPUT || !path.isAbsolute(PRIVATE_DIR_INPUT)) throw new Error("E-PRIVACY-001: external private storage is not configured");
+  fs.mkdirSync(PRIVATE_DIR_INPUT, { recursive: true, mode: 0o700 });
+  const resolved = fs.realpathSync(PRIVATE_DIR_INPUT);
+  const relative = path.relative(root, resolved);
+  if (relative === "" || (!relative.startsWith("..") && !path.isAbsolute(relative))) throw new Error("E-PRIVACY-002: private storage must be outside the repository");
+  fs.chmodSync(resolved, 0o700);
+  return resolved;
+}
+function atomicWrite(directory, filename, value, mode = 0o644) {
+  const target = path.join(directory, filename);
+  const temporary = path.join(directory, "." + filename + "." + process.pid + ".tmp");
+  fs.writeFileSync(temporary, JSON.stringify(value, null, 2) + "\n", { mode });
+  fs.renameSync(temporary, target);
+}
+function enumerateRepositories() {
+  const pages = JSON.parse(runGh(["api", "--paginate", "--slurp", "user/repos?per_page=100&affiliation=owner"]));
+  if (!Array.isArray(pages)) throw new Error("E-INVENTORY-001: unexpected repository response");
+  return pages.flat().filter(r => r && r.owner && r.owner.login === OWNER);
+}
+function classifyVisibility(repository) {
+  if (repository.private === true) return "PRIVATE";
+  if (repository.private === false) return "PUBLIC";
+  throw new Error("E-PRIVACY-003: repository visibility is unknown; publication held");
+}
+function getHeadSha(fullName, branch) {
+  if (!branch) throw new Error("E-INVENTORY-002: default branch is missing");
+  const sha = runGh(["api", "repos/" + fullName + "/commits/" + branch, "--jq", ".sha"]);
+  if (!/^[a-f0-9]{40}$/.test(sha)) throw new Error("E-INVENTORY-003: repository head SHA is invalid");
+  return sha;
+}
+const root = repositoryRoot();
+const privateDirectory = privateStorageDirectory(root);
+const repositories = enumerateRepositories();
+const publicInventory = [];
+const publicPins = [];
+const privateInventory = [];
+for (const repository of repositories) {
+  const visibility = classifyVisibility(repository);
+  const fullName = repository.full_name;
+  const branch = repository.default_branch;
+  const sha = getHeadSha(fullName, branch);
+  const common = { repo_id: repository.id, full_name: fullName, visibility, publication: visibility === "PUBLIC" ? "PUBLIC" : "INTERNAL_ONLY", fork: Boolean(repository.fork), archived: Boolean(repository.archived), default_branch: branch, observed_sha: sha };
+  if (visibility === "PRIVATE") { privateInventory.push({ ...common, node_id: repository.node_id ?? null }); continue; }
+  const isTrailingDash = repository.name === "TWGT-";
+  publicInventory.push({ ...common, name_has_trailing_dash: isTrailingDash, investigation_note: isTrailingDash ? "INV-001: trailing dash requires explicit numeric ID mapping." : null });
+  publicPins.push({ repo_id: repository.id, full_name: fullName, visibility: "PUBLIC", publication: "PUBLIC", default_branch: branch, head_sha: sha, fork: Boolean(repository.fork), observed_at: new Date().toISOString() });
+}
+atomicWrite(privateDirectory, "repository-inventory.private.json", { schema_version: "1.0.0", classification: "RESTRICTED", records: privateInventory }, 0o600);
+fs.mkdirSync(PUBLIC_DIR, { recursive: true });
+atomicWrite(PUBLIC_DIR, "repository-inventory.json", publicInventory);
+atomicWrite(PUBLIC_DIR, "upstream-pins.json", publicPins);
+atomicWrite(PUBLIC_DIR, "inventory-reconciliation.json", { schema_version: "1.0.0", expected_historical: 47, expected_previous_snapshot: 75, requested_limit: 180, observed_public: publicInventory.length, status: "PUBLIC_SCOPE_ONLY", endpoint: "user/repos?affiliation=owner", note: "Counts describe only explicitly public repositories." });
+console.log("Public inventory generated: " + publicInventory.length + " records.");
+console.log("Restricted inventory written to external protected storage.");
