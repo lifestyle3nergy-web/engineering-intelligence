@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
   "updated_at": "2026-10-17T00:00:00Z",
-  "next_number": "0033",
+  "next_number": "0043",
   "allocated": [
     {
       "number": "0000",
@@ -400,6 +400,18 @@
       "superseded_by": null
     },
     {
+      "number": "0033",
+      "slug": "upload-artifact-v7-migration",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 94,
+      "merged_at": null,
+      "status": "proposed",
+      "evidence_class": "ACTION",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
       "number": "0034",
       "slug": "p03-shadow-gate",
       "repo": "lifestyle3nergy-web/TWGT-",
@@ -431,6 +443,78 @@
       "merged_at": "2026-10-30",
       "status": "merged",
       "evidence_class": "STATE",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0037",
+      "slug": "gitleaks-action-v3-node24",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 95,
+      "merged_at": null,
+      "status": "proposed",
+      "evidence_class": "ACTION",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0038",
+      "slug": "setup-node-v7-runtime-alignment",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 96,
+      "merged_at": null,
+      "status": "proposed",
+      "evidence_class": "ACTION",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0039",
+      "slug": "error-propagation-lifecycle-repair",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 107,
+      "merged_at": null,
+      "status": "proposed",
+      "evidence_class": "ACTION",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0040",
+      "slug": "release-codeql-workflow-alignment",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 117,
+      "merged_at": null,
+      "status": "proposed",
+      "evidence_class": "ACTION",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0041",
+      "slug": "postgres-redis-runtime-smoke-workflow",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 118,
+      "merged_at": null,
+      "status": "proposed",
+      "evidence_class": "ACTION",
+      "content_sha256": null,
+      "supersedes": [],
+      "superseded_by": null
+    },
+    {
+      "number": "0042",
+      "slug": "codeql-action-4.39.3",
+      "repo": "lifestyle3nergy-web/TWGT-",
+      "pr": 191,
+      "merged_at": null,
+      "status": "proposed",
+      "evidence_class": "ACTION",
       "content_sha256": null,
       "supersedes": [],
       "superseded_by": null
