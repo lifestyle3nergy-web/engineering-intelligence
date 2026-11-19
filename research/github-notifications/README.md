@@ -108,6 +108,19 @@ The PR's own README says the repository currently has no persistent Gmail OAuth 
 
 No ADR number was allocated for this research snapshot. Preserve the existing registry state and resolve the current allocation proposal before reserving another number.
 
+## Core-stack GitHub review inventory
+
+The current open PR review surfaces were inspected for the core TWGT stack. Review-thread counts below are observations; zero returned review threads do not mean a PR passed CI or was approved.
+
+- [TWGT- PR #117](https://github.com/lifestyle3nergy-web/TWGT-/pull/117): **2 unresolved findings**. The release workflow change requires a numbered ADR, and linting must be restored to the release gate so a tagged release cannot proceed with lint violations.
+- [TWGT- PR #118](https://github.com/lifestyle3nergy-web/TWGT-/pull/118): **2 unresolved findings**. The runtime-smoke workflow change requires a numbered ADR, and graceful-shutdown timeout must fail the smoke test rather than warn and force-kill.
+- [TWGT- PR #191](https://github.com/lifestyle3nergy-web/TWGT-/pull/191): **1 unresolved finding**. The CodeQL workflow upgrade is blocked by the missing numbered ADR.
+- [TWGT- PR #107](https://github.com/lifestyle3nergy-web/TWGT-/pull/107): no review threads returned.
+- [twgt-bridge PR #7](https://github.com/lifestyle3nergy-web/twgt-bridge/pull/7): no review threads returned.
+- [twgt-schema-gate PR #12](https://github.com/lifestyle3nergy-web/twgt-schema-gate/pull/12), [#5](https://github.com/lifestyle3nergy-web/twgt-schema-gate/pull/5), [#6](https://github.com/lifestyle3nergy-web/twgt-schema-gate/pull/6), and [#4](https://github.com/lifestyle3nergy-web/twgt-schema-gate/pull/4): no review threads returned.
+
+**Allocation:** route #117/#118/#191 to the TWGT- workflow owner and EI ADR governance; route #7 to the bridge owner and schema-gate contract owner; route #4/#5/#6/#12 to the schema-gate owner. Do not allocate new ADR numbers until the current EI ADR registry and PR #68 are reconciled.
+
 ## Account-security and workflow lifecycle signals
 
 The exact label registry redacts **69 private account/external identity messages**. Categories include OAuth authorization, PAT lifecycle, MFA, SSH keys, permission requests, passkeys, password changes, external account logins, verification notices and service onboarding. Application names, token names, scopes, codes, IP addresses, email addresses and private identifiers are excluded.
