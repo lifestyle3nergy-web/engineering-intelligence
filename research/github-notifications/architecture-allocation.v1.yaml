@@ -1,16 +1,27 @@
 registry_id: EI-GITHUB-ARCHITECTURE-ALLOCATION-001
 version: 1.0.0
 status: PROPOSED_RESEARCH_ALLOCATION
-source_registry: research/github-notifications/registry.v1.json
+source_registry: research/github-notifications/git-reviews-registry.v1.json
+supplemental_source_registry: research/github-notifications/registry.v1.json
 collected_on: "2026-11-20"
 scope:
-  gmail_threads: 533
-  individual_messages: 609
-  repository_activity_threads: 479
-  private_account_security_threads: 49
-  private_workspace_lifecycle_threads: 5
-  label_filter: "Not applied; the snapshot covers GitHub-origin sender searches, not a verified export of the Gmail 'git reviews' label."
-  privacy: "Public repository metadata only; account-security and workspace notifications are individually classified but redacted."
+  gmail_label: "git reviews"
+  gmail_label_threads_reported: 511
+  gmail_label_messages_reported: 626
+  gmail_label_threads_retrieved: 511
+  gmail_label_messages_retrieved: 574
+  unreconciled_label_message_count: 52
+  repository_notification_messages: 479
+  workflow_lifecycle_messages: 16
+  deployment_preview_messages: 5
+  private_account_identity_messages_redacted: 69
+  non_github_newsletter_messages: 5
+  supplemental_broad_sender_threads: 533
+  supplemental_broad_sender_messages: 609
+  pagination_complete: true
+  label_membership_verified: true
+  privacy: "Public repository metadata only; account-security and external identity notifications are individually classified but redacted."
+  completeness: "HELD: 52 label messages reported by Gmail metadata were not returned by message search."
 knowledge_classification:
   email_record_primary_kind: CONTENT
   actionable_secondary_kind: TASK
