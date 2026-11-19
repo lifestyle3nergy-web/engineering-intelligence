@@ -201,3 +201,43 @@ governance:
     - "UNKNOWN != PASS"
     - "READ_ONLY_COLLECTOR != AUTOMATIC_PUBLISHER"
   next_action: "Human review of P0 bridge write-boundary conflict and EI#70 privacy gate before any merge or runtime mutation."
+
+core_stack_review_inventory:
+  - target: lifestyle3nergy-web/TWGT-#117
+    unresolved_threads: 2
+    priority: P1
+    findings:
+      - "Release workflow change requires a numbered ADR."
+      - "Restore linting to the release gate."
+    allocation: "TWGT- workflow owner and Engineering Intelligence ADR governance."
+  - target: lifestyle3nergy-web/TWGT-#118
+    unresolved_threads: 2
+    priority: P1
+    findings:
+      - "Runtime-smoke workflow change requires a numbered ADR."
+      - "Graceful-shutdown timeout must fail the smoke test, not warn and force-kill."
+    allocation: "TWGT- workflow/runtime owner and Engineering Intelligence ADR governance."
+  - target: lifestyle3nergy-web/TWGT-#191
+    unresolved_threads: 1
+    priority: P1
+    findings:
+      - "CodeQL workflow upgrade is blocked by missing numbered ADR."
+    allocation: "TWGT- workflow owner and Engineering Intelligence ADR governance."
+  - target: lifestyle3nergy-web/TWGT-#107
+    unresolved_threads: 0
+    status: "NO_REVIEW_THREADS_RETURNED_NOT_A_PASS"
+  - target: lifestyle3nergy-web/twgt-bridge#7
+    unresolved_threads: 0
+    status: "NO_REVIEW_THREADS_RETURNED_NOT_A_PASS"
+  - target: lifestyle3nergy-web/twgt-schema-gate#12
+    unresolved_threads: 0
+    status: "NO_REVIEW_THREADS_RETURNED_NOT_A_PASS"
+  - target: lifestyle3nergy-web/twgt-schema-gate#5
+    unresolved_threads: 0
+    status: "NO_REVIEW_THREADS_RETURNED_NOT_A_PASS"
+  - target: lifestyle3nergy-web/twgt-schema-gate#6
+    unresolved_threads: 0
+    status: "NO_REVIEW_THREADS_RETURNED_NOT_A_PASS"
+  - target: lifestyle3nergy-web/twgt-schema-gate#4
+    unresolved_threads: 0
+    status: "NO_REVIEW_THREADS_RETURNED_NOT_A_PASS"
