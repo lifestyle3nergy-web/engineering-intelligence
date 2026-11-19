@@ -1,30 +1,36 @@
 # GitHub notification audit and repository allocation
 
-**Registry:** `EI-GITHUB-NOTIFICATION-REGISTRY-001`  
+**Registry:** `EI-GIT-REVIEWS-LABEL-REGISTRY-001`  
 **Status:** Research snapshot — not an admission decision  
 **Collection date:** 2026-11-20
 
-## Executive result
+## Primary source: Gmail `git reviews` label
 
-The audit examined **533 Gmail threads containing 609 individual messages** from GitHub-origin notification senders. The machine-readable registry represents every message separately, groups messages by synthetic thread key, and excludes Gmail identifiers and private account data.
+The exact user label was resolved through Gmail label metadata and verified against the label membership on returned messages.
 
-| Scope | Threads | Messages |
-|---|---:|---:|
-| Repository notifications | 463 | 503 |
-| Repository workflow lifecycle notices | 16 | 16 |
-| Account-security notifications (redacted) | 49 | 85 |
-| Private Codespaces lifecycle notices (redacted) | 5 | 5 |
-| **Total** | **533** | **609** |
+- **511 labelled threads** were retrieved across all pages.
+- **574 labelled message summaries** were retrieved and recorded individually.
+- Gmail label metadata reports **626 messages**, leaving a **52-message reconciliation gap**. The search was repeated with `in:anywhere` and trash inclusion; it still returned 574 messages. The missing 52 messages remain **UNKNOWN**, not silently counted as inspected.
+- Every returned message record has a synthetic event ID and synthetic thread-group key. Raw Gmail message/thread IDs are not published.
 
-The Gmail search covered GitHub-origin senders across searchable mail; it did **not** apply a verified `git reviews` label filter. The snapshot is therefore broader than the curated sample in [agentnotebooklm PR #3](https://github.com/lifestyle3nergy-web/agentnotebooklm/pull/3). It must not be described as an exhaustive export of that label.
+| Classification | Retrieved messages |
+|---|---:|
+| GitHub workflow-run notifications | 266 |
+| GitHub pull-request check notifications | 213 |
+| Workflow lifecycle notices | 16 |
+| Preview deployment notifications | 5 |
+| Private account / external identity notices (redacted) | 69 |
+| Non-GitHub technical newsletters | 5 |
+| **Retrieved total** | **574** |
+| **Unreconciled against Gmail label metadata** | **52** |
 
-## Repository activity concentration
+The exact label registry is [git-reviews-registry.v1.json](./git-reviews-registry.v1.json).
 
-The largest message clusters were:
+## Repository activity concentration — exact label
 
 | Repository | Messages | Allocated destination |
 |---|---:|---|
-| `TWGT-` | 258 | L2 admission/runtime consumer |
+| `TWGT-` | 234 | L2 admission/runtime consumer |
 | `all-in-one` | 61 | Engineering Intelligence triage pending role verification |
 | `twgt-schema-gate` | 57 | L2 schema authority |
 | `twgt-bridge` | 35 | L2 read-only evidence transport |
@@ -32,8 +38,14 @@ The largest message clusters were:
 | `deepseek-harness` | 19 | External model integration test harness |
 | `opa` | 15 | Policy-engine dependency/candidate |
 | `zed` | 14 | Workflow maintenance; 14 deactivation warnings |
+| `firefox-devtools-mcp` | 8 | Engineering Intelligence triage pending role verification |
+| `agentnotebooklm` | 7 | Research/archive candidate; 2 CI messages and 5 preview messages |
 
-The full message-level classification and allocation metadata are in [registry.v1.json](./registry.v1.json) and [architecture-allocation.v1.yaml](./architecture-allocation.v1.yaml).
+The label also contains account-security notices, external identity notifications and newsletters. These are classified, but are not treated as repository evidence.
+
+## Supplementary broad GitHub-sender audit
+
+A separate broader sender search captured **533 threads / 609 message summaries**. It is preserved in [registry.v1.json](./registry.v1.json) as a supplementary audit snapshot, not as a substitute for the exact label registry. Its search scope is broader and its population differs from the `git reviews` label.
 
 ## Confirmed architectural allocation
 
@@ -55,7 +67,7 @@ The `twgt-persist-service` README could not be retrieved in this inspection. Its
 
 The [twgt-bridge README](https://github.com/lifestyle3nergy-web/twgt-bridge/blob/main/README.md) states that the bridge is read-only, does not automatically commit evidence, and has no merge authority. However, [harvest.yml](https://github.com/lifestyle3nergy-web/twgt-bridge/blob/main/.github/workflows/harvest.yml) declares `contents: write` and pushes collected evidence to `evidence/auto`.
 
-The inspected [latest harvest run](https://github.com/lifestyle3nergy-web/twgt-bridge/actions/runs/44551062187) reports 9 checks passed and 0 failed, then fails because the remote `evidence/auto` branch contains work and rejects the non-fast-forward push. The operational failure is a branch concurrency conflict; the architectural issue is the mismatch between the declared read-only contract and the scheduled write path.
+The inspected [latest harvest run](https://github.com/lifestyle3nergy-web/twgt-bridge/actions/runs/44551062187) reports 9 checks passed and 0 failed, then fails because the remote `evidence/auto` branch rejects a non-fast-forward push. The operational failure is a branch concurrency conflict; the architectural issue is the mismatch between the declared read-only contract and the scheduled write path.
 
 **Disposition:** HOLD the automatic publication path pending human review and an explicit authority decision. Do not quietly broaden the bridge's permissions.
 
@@ -91,24 +103,24 @@ The PR's own README says the repository currently has no persistent Gmail OAuth 
 
 - [PR #68](https://github.com/lifestyle3nergy-web/engineering-intelligence/pull/68): 2 unresolved findings — commit messages omit required filenames; CodeQL slugs containing periods violate the current slug schema. It proposes ADR allocations 0033–0042 while current main reports `next_number: 0033`.
 - [PR #67](https://github.com/lifestyle3nergy-web/engineering-intelligence/pull/67): 2 documentation findings — GitHub-source navigation and an obsolete archive warning.
-- [PR #69](https://github.com/lifestyle3nergy-web/engineering-intelligence/pull/69): no review threads returned; the PR body still requires verified fork-parent data refresh before acceptance.
+- [PR #69](https://github.com/lifestyle3nergy-web/engineering-intelligence/pull/69): no review threads returned; the PR itself requires authenticated regeneration and inspection of 164 fork-parent records before acceptance.
 - [PR #66](https://github.com/lifestyle3nergy-web/engineering-intelligence/pull/66): no review threads returned; its own disclosure says signature verification is not yet enforced by a gate (G11 deferred).
 
 No ADR number was allocated for this research snapshot. Preserve the existing registry state and resolve the current allocation proposal before reserving another number.
 
 ## Account-security and workflow lifecycle signals
 
-The 49 account-security threads (85 messages) were classified and redacted in the public registry. Categories include OAuth application authorizations, PAT lifecycle, MFA, SSH key events, app permission requests, passkey, password-change and sudo verification notices. The registry intentionally omits application names, token names, scopes, credential values, codes, message IDs and dates.
+The exact label registry redacts **69 private account/external identity messages**. Categories include OAuth authorization, PAT lifecycle, MFA, SSH keys, permission requests, passkeys, password changes, external account logins, verification notices and service onboarding. Application names, token names, scopes, codes, IP addresses, email addresses and private identifiers are excluded.
 
 Review OAuth grants and PAT scopes privately in GitHub account settings. The email evidence alone does not establish that an authorization was malicious or that a token remains active.
 
-Sixteen repository workflow lifecycle threads include 14 Zed workflow deactivation warnings and two NVDroid CodeQL lifecycle notices. Confirm ownership and recent use before re-enabling or retiring scheduled workflows.
+Sixteen repository workflow lifecycle messages include 14 Zed workflow deactivation warnings and two NVDroid CodeQL lifecycle notices. Confirm ownership and recent use before re-enabling or retiring scheduled workflows.
 
 ## Classification and admission rules
 
 Each email message is recorded as primary kind **CONTENT**. Where it requires action, **TASK** is a secondary kind. A transferable lesson becomes **INSIGHT** only after source corroboration and review. Repository names, workflow names, commit prefixes and tags are **KEYWORDS** metadata facets.
 
-The proposed discipline taxonomy in agentnotebooklm PR #3 (CSSE, DSIE, GRRE) and its asset types should be treated as separate dimensions, not as replacements for the four record kinds.
+The discipline taxonomy proposed in agentnotebooklm PR #3 (CSSE, DSIE, GRRE) and its asset types should be treated as separate dimensions, not as replacements for the four record kinds.
 
 All notification-derived claims remain `CLAIM` and `HELD` until corroborated against the exact GitHub run, PR, review or commit. A notification is not a workflow verdict, authorization, admission or merge approval.
 
@@ -134,5 +146,6 @@ Relevant existing design references:
 5. Resolve PR #68's slug and commit-scope findings before further ADR allocation.
 6. Review GitHub OAuth grants, PATs and authentication notices privately.
 7. Assign unverified repositories to a named owner only after inspecting their current README, tree, contracts and workflow state.
+8. Reconcile the 52-message difference between Gmail label metadata and retrievable message summaries.
 
 **No repository was merged, no workflow was changed, no permission was granted, and no credential was created or modified during this audit.**
