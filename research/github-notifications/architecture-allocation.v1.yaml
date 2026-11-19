@@ -1,0 +1,192 @@
+registry_id: EI-GITHUB-ARCHITECTURE-ALLOCATION-001
+version: 1.0.0
+status: PROPOSED_RESEARCH_ALLOCATION
+source_registry: research/github-notifications/registry.v1.json
+collected_on: "2026-11-20"
+scope:
+  gmail_threads: 533
+  individual_messages: 609
+  repository_activity_threads: 479
+  private_account_security_threads: 49
+  private_workspace_lifecycle_threads: 5
+  label_filter: "Not applied; the snapshot covers GitHub-origin sender searches, not a verified export of the Gmail 'git reviews' label."
+  privacy: "Public repository metadata only; account-security and workspace notifications are individually classified but redacted."
+knowledge_classification:
+  email_record_primary_kind: CONTENT
+  actionable_secondary_kind: TASK
+  verified_transferable_lesson_kind: INSIGHT
+  metadata_facets_kind: KEYWORDS
+  rule: "Do not promote email claims into INSIGHT until corroborated by GitHub evidence and reviewed."
+architecture_ownership:
+  - repository: lifestyle3nergy-web/engineering-intelligence
+    layer: L5_GOVERNANCE_AND_KNOWLEDGE
+    allocation: CANONICAL
+    responsibility: "Evidence atlas, ADR registry, research classification, repository allocation, durable engineering lessons."
+    authority: "Registry owner; not runtime admission or persistence authority."
+  - repository: lifestyle3nergy-web/TWGT-
+    layer: L2_ADMISSION_CONSUMER
+    allocation: CANONICAL
+    responsibility: "Application/runtime admission consumer and repository contract."
+    authority: "Consumes governance and schemas; cannot rewrite the EI registry."
+  - repository: lifestyle3nergy-web/twgt-schema-gate
+    layer: L2_SCHEMA_AUTHORITY
+    allocation: CANONICAL
+    responsibility: "Versioned boundary schemas, registry, dual-runtime fixtures and contract validation."
+    authority: "Structural validation only; validation does not authorize admission."
+  - repository: lifestyle3nergy-web/twgt-bridge
+    layer: L2_EVIDENCE_TRANSPORT
+    allocation: CANONICAL_READ_ONLY
+    responsibility: "Read-only collection and verification of repository, PR, commit and workflow evidence."
+    authority: "No merge authority. Current harvest workflow's contents:write/evidence branch push conflicts with the README's no-automatic-commit contract; HOLD this write path pending human review."
+  - repository: lifestyle3nergy-web/twgt-git-hitl
+    layer: L2_HUMAN_AUTHORIZATION
+    allocation: CANONICAL
+    responsibility: "Human review surface, traffic-light review protocol and authorization evidence."
+    authority: "Human approval remains the admission decision."
+  - repository: lifestyle3nergy-web/twgt-device-node
+    layer: L2_EDGE_EXTRACTION
+    allocation: CANONICAL_EDGE
+    responsibility: "Local-first capture, extraction and device-side provenance."
+    authority: "Capture does not grant admission or persistence authority."
+  - repository: lifestyle3nergy-web/twgt-knowledge
+    layer: L5_READ_ONLY_KNOWLEDGE
+    allocation: CANONICAL_CONSUMER
+    responsibility: "Plain Markdown engineering knowledge and session context."
+    authority: "Read-only consumer; not source of live repository state."
+  - repository: lifestyle3nergy-web/agentnotebooklm
+    layer: L4_RESEARCH_AND_ARCHIVE_CANDIDATE
+    allocation: CONDITIONAL_CANDIDATE
+    responsibility: "Firesearch research application; PR #3 proposes a sanitized review archive contract, event schema and read-only validation."
+    authority: "Not canonical TWGT governance; Gmail worker, durable queue and archive persistence are not implemented."
+  - repository: lifestyle3nergy-web/opa
+    layer: L2_POLICY_ENGINE_DEPENDENCY
+    allocation: CONDITIONAL_CANDIDATE
+    responsibility: "Policy engine dependency/mirror; verify exact source, policy bundle and deployed runtime before assigning policy authority."
+    authority: "A repository CI result does not prove deployed OPA policy state."
+  - repository: lifestyle3nergy-web/temporal
+    layer: L4_ORCHESTRATION_CANDIDATE
+    allocation: CONDITIONAL_CANDIDATE
+    responsibility: "Durable workflow orchestration candidate."
+    authority: "Upstream repository CI does not prove TWGT integration."
+  - repository: lifestyle3nergy-web/opentelemetry-injector
+    layer: L4_OBSERVABILITY_CANDIDATE
+    allocation: CONDITIONAL_CANDIDATE
+    responsibility: "Instrumentation candidate; require explicit integration and privacy review."
+    authority: "No telemetry authority until schema, retention and privacy contracts are verified."
+unverified_repositories:
+  - repository: lifestyle3nergy-web/twgt-persist-service
+    status: UNVERIFIED_ACCESS_OR_CONTENT
+    note: "README fetch returned 404; do not infer absence or assign write authority without a current repository/file inspection."
+  - repository: lifestyle3nergy-web/twgt-relationship-types
+    status: NOT_INSPECTED_IN_THIS_AUDIT
+    note: "Retain provisional schema/ontology ownership from the architecture plan; verify current repository and pin before action."
+  - repository: lifestyle3nergy-web/all-in-one
+    status: ROLE_UNVERIFIED
+    note: "61 notification messages; route to EI triage until its purpose and relationship to the core stack are inspected."
+  - repository: lifestyle3nergy-web/litellm
+    status: ROLE_UNVERIFIED
+    note: "19 notification messages; route to EI triage until mirror/integration status is confirmed."
+  - repository: lifestyle3nergy-web/deepseek-harness
+    status: TEST_HARNESS
+    note: "19 notification messages; latest inspected E2E failure is caused by a missing DEEPSEEK_API_KEY_EXTERNAL secret, not a verified application defect."
+  - repository: lifestyle3nergy-web/zed
+    status: WORKFLOW_MAINTENANCE
+    note: "14 workflow deactivation warnings; inspect owner intent and recent use before re-enabling or retiring workflows."
+  - repository: lifestyle3nergy-web/nvdroid
+    status: WORKFLOW_MAINTENANCE
+    note: "Two CodeQL workflow lifecycle notifications; one reports disabled and one warns of upcoming disablement."
+review_allocations:
+  - target: engineering-intelligence#70
+    status: HOLD
+    review_threads_unresolved: 15
+    reviewers: "9 Devin findings; 6 Codex findings"
+    priority: P0
+    themes:
+      - "Private inventory path containment bypass using dot-prefixed checkout directory."
+      - "Malformed protected inventory records can disable leakage checks."
+      - "Nested private repository identifiers can evade detection."
+      - "Common branch names can cause false-positive privacy failures."
+      - "Generated validation report changes the tree digest on repeated runs."
+      - "Alternate pin writer omits required publication classification."
+      - "PRIVATE_INVENTORY_DIR and PRIVATE_INVENTORY_FILE configuration mismatch."
+      - "Unresolvable schema reference and missing G01/G04 regression coverage."
+      - "Positive fixture does not satisfy the new publication field."
+    disposition: "Independent reproduction and negative/positive regression fixtures required before merge or public inventory publication."
+  - target: engineering-intelligence#68
+    status: HOLD
+    review_threads_unresolved: 2
+    priority: P1
+    themes:
+      - "Commit messages omit changed filenames required by repository commit rules."
+      - "CodeQL slug values containing periods violate the current ADR slug schema; the base also contains a similar mismatch."
+    disposition: "Reconcile slug policy and existing data, then rerun registry validation; preserve existing allocations 0034-0036."
+  - target: engineering-intelligence#67
+    status: REVIEW
+    review_threads_unresolved: 2
+    priority: P2
+    themes:
+      - "Atlas links differ between GitHub source view and Pages."
+      - "Archived editorial warning describes an obsolete layout."
+  - target: engineering-intelligence#69
+    status: REVIEW
+    review_threads_unresolved: 0
+    priority: P1
+    themes:
+      - "Fork parent provenance remains unresolved until inventory refresh and G03 acceptance rerun."
+  - target: engineering-intelligence#66
+    status: REVIEW
+    review_threads_unresolved: 0
+    priority: P1
+    themes:
+      - "Signature verification is not enforced by a gate; G11 is deferred."
+  - target: agentnotebooklm#3
+    status: HOLD
+    review_threads_unresolved: 0
+    priority: P1
+    themes:
+      - "Archive Registry Validation fails at validate-registry.mjs line 13 because a literal \\n token appears between JavaScript statements."
+      - "PR is a contract and sanitized sample registry only; no Gmail OAuth worker or durable queue is implemented."
+    disposition: "Fix syntax, add schema/event fixtures, run CI, then request independent human review. Do not merge based on the email claim alone."
+recent_run_diagnostics:
+  - repository: lifestyle3nergy-web/TWGT-
+    run_id: 44340894957
+    status: FAILURE_CONFIRMED_FROM_JOB_LOG
+    finding: "Audit dependencies found 16 vulnerabilities (8 moderate, 8 high); later Prisma/build/test/lint steps were skipped."
+    allocation: "Dependency remediation to TWGT-; inspect full npm audit report and update packages in an isolated candidate. Do not run npm audit fix --force blindly."
+  - repository: lifestyle3nergy-web/twgt-bridge
+    run_id: 44551062187
+    status: FAILURE_CONFIRMED_FROM_JOB_LOG
+    finding: "Harvest checks reported 9 passed and 0 failed; push to evidence/auto was rejected as non-fast-forward."
+    allocation: "Bridge owner; first reconcile the contradiction between read-only/no-auto-commit README and scheduled workflow contents:write publishing."
+  - repository: lifestyle3nergy-web/deepseek-harness
+    run_id: 44480853448
+    status: FAILURE_CONFIRMED_FROM_JOB_LOG
+    finding: "E2E stopped because DEEPSEEK_API_KEY_EXTERNAL was not configured; fail-closed guard prevents a false green."
+    allocation: "Repository secret/configuration owner; credential provisioning requires separate human authorization."
+  - repository: lifestyle3nergy-web/agentnotebooklm
+    run_id: 44437483866
+    status: FAILURE_CONFIRMED_FROM_JOB_LOG
+    finding: "Node SyntaxError in archive/scripts/validate-registry.mjs:13 due to literal \\n text."
+    allocation: "PR #3 author; repair the validator and add fixtures before human review."
+  - repository: lifestyle3nergy-web/zed
+    status: EMAIL_NOTIFICATION
+    finding: "14 scheduled-workflow deactivation warnings."
+    allocation: "Workflow owner; classify each schedule as retain, replace, or retire."
+  - repository: lifestyle3nergy-web/nvdroid
+    status: EMAIL_NOTIFICATION
+    finding: "Two CodeQL workflow lifecycle notifications, including one disabled notice."
+    allocation: "Security workflow owner; verify coverage before re-enabling or retiring."
+governance:
+  adr_registry:
+    current_main_next_number_observed: "0033"
+    open_allocation_pr: "engineering-intelligence#68 proposes ADR allocations 0033-0042; unresolved review comments remain."
+    new_adr_allocated_for_this_snapshot: false
+    rule: "Do not allocate or advance an ADR from this research snapshot. Re-read main and resolve PR #68 first."
+  authority_invariants:
+    - "EMAIL_NOTIFICATION != VERIFIED_WORKFLOW_RESULT"
+    - "OBSERVED != VALIDATED"
+    - "VALIDATED != AUTHORIZED"
+    - "EVIDENCE_READY != ADMITTED"
+    - "UNKNOWN != PASS"
+    - "READ_ONLY_COLLECTOR != AUTOMATIC_PUBLISHER"
+  next_action: "Human review of P0 bridge write-boundary conflict and EI#70 privacy gate before any merge or runtime mutation."
