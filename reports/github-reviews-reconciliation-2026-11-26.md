@@ -132,6 +132,10 @@ Any non-zero result is STOP / HOLD / no push. Record command, exit code, log ref
 - [GitHub Actions — Use GITHUB_TOKEN for authentication](https://docs.github.com/en/actions/tutorials/authenticate-with-github_token): scope permissions at workflow/job level.
 - [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12): versioned schema vocabulary and validation specification.
 - [Open Policy Agent — Policy testing](https://www.openpolicyagent.org/docs/policy-testing): executable positive/negative tests for authorization policy.
+- [AWS Prescriptive Guidance — Transactional outbox pattern](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html): reference architecture for atomically recording state and outbound event intent.
+- [GitHub Actions — Concurrency](https://docs.github.com/en/actions/concepts/workflows-and-actions/concurrency): serialize conflicting jobs; use queueing rather than the default pending-run replacement when every publication attempt must be retained.
+- [GitHub Actions — Deployments and environments](https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments): environment protection rules, required reviewers and environment-secret gating.
+- [GitHub — About rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets): protect branch/tag interactions and define bypass controls.
 
 ## 9. Deployment and approval state
 
