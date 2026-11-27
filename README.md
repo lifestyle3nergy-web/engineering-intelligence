@@ -204,3 +204,42 @@ When a section in the atlas grows past what it can hold, the long form
 moves into the corresponding directory (`epr/`, `governance/`, `policy/`,
 `capabilities/`, `foundations/`) and the atlas keeps a one-line summary
 with a link.
+
+
+## Current ADR allocation proposal — 2026-11-17
+
+**Evidence class:** `ACTION`. This section describes a proposed registry
+change and its review boundary; it is not an admission or merge decision.
+
+Engineering Intelligence PR
+[#68 — allocate ADRs for seven TWGT workflow changes](https://github.com/lifestyle3nergy-web/engineering-intelligence/pull/68)
+proposes the following allocations:
+
+| ADR | Decision | Consuming PR | Registry state in proposal |
+| --- | --- | ---: | --- |
+| 0033 | Upload Artifact v7 migration | TWGT-#94 | proposed |
+| 0037 | Gitleaks action v3 / Node 24 | TWGT-#95 | proposed |
+| 0038 | setup-node v7 runtime alignment | TWGT-#96 | proposed |
+| 0039 | Error propagation and lifecycle repair | TWGT-#107 | proposed |
+| 0040 | Release and CodeQL workflow alignment | TWGT-#117 | proposed |
+| 0041 | PostgreSQL / Redis runtime smoke workflow | TWGT-#118 | proposed |
+| 0042 | CodeQL action v4.39.3 | TWGT-#191 | proposed |
+
+The existing allocations 0034–0036 remain unchanged. The proposal advances
+`next_number` to `0043` and intentionally preserves the existing
+`updated_at` value. The proposal branch is
+`governance/twgt-pr-adr-allocations-0033-0042`; its registry change is not
+authoritative until PR #68 is independently reviewed and merged.
+
+**Consumer hold:** Do not add the seven numbered ADR files to TWGT, update
+TWGT's registry pin to the proposal branch, or claim consumer validation
+against these proposed entries before PR #68 is merged. After merge, read
+the registry from current Engineering Intelligence `main`, verify the
+merged allocation and registry digest, then open and rebase each consuming
+ADR PR under `policy/ADR-numbering-policy.md`.
+
+The registry allocation records a proposed decision mapping only. It does
+not establish implementation, passing CI, admission, deployment, or merge
+authorization. The detailed decision drafts and per-PR evidence are retained
+in the separate remediation pack supplied for this review; this repository
+does not duplicate consumer ADR content.
