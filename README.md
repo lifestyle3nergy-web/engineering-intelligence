@@ -2,6 +2,9 @@
 
 Reference library for evidence-bounded engineering knowledge.
 
+**Published site:** [Engineering Intelligence](https://lifestyle3nergy-web.github.io/engineering-intelligence/) · [Internet Engineering Evolution Atlas](https://lifestyle3nergy-web.github.io/engineering-intelligence/atlas/)
+
+
 The atlas connects historical engineering constraints, implementation
 evidence, operational failures, and transfer hypotheses. It does not turn
 inference into fact.
@@ -27,6 +30,8 @@ The current TWGT implementation is documented in:
 
 - `epr/EPR-019-schema-validation-at-agent-boundaries.md`
 - `epr/EPR-020-evidence-as-a-contract.md`
+- `epr/EPR-021-boundary-hardening-for-agent-changes.md`
+- `epr/EPR-022-preflight-boundary-for-repository-operations.md`
 - `integrations/twgt-boundary-stack.md`
 
 The stack separates execution, evidence collection, validation, and
@@ -59,9 +64,11 @@ instruments. They consume governance. They do not define it.
 | [Swarm-Mind-Console](https://github.com/lifestyle3nergy-web/Swarm-Mind-Console) | Console application |
 | [Intelligent-Nexus](https://github.com/lifestyle3nergy-web/Intelligent-Nexus) | Replit-hosted application |
 
-Application repositories do not hold ADRs. Boundary decisions that affect
-them live in TWGT- or in this repository. See
-[ADR collision elimination](#adr-collision-elimination).
+ADR allocation and document ownership are separate. The central registry
+allocates organisation-wide numbers, while the repository that owns a decision
+maintains its long-form ADR under `docs/adr/`. Application repositories may
+hold ADRs for decisions they own; cross-repository allocation and governance
+remain centralised here. See [ADR collision elimination](#adr-collision-elimination).
 
 ## Integration family
 
@@ -182,6 +189,12 @@ protocol as a checklist.
 Every claim in this library is labelled: historical fact, implementation
 evidence, measured result, engineering inference, research hypothesis,
 unverified. A statement that is not labelled is not a claim.
+
+Do not collapse record classes, commit-claim classes, and operational decisions:
+`FACT`, `STATE`, `GATE`, and `ACTION` are repository record classes
+(`governance/evidence-policy.md`). `EXECUTED`, `RESEARCH_PATTERN`,
+`ENGINEERING_INFERENCE`, `RESEARCH_HYPOTHESIS`, and `UNVERIFIED` classify
+commit claims (`COMMIT-RULES.md`). Neither vocabulary grants runtime admission.
 
 See `wiki.md` §2 for the full method. See `governance/evidence-policy.md`
 for the FACT/STATE/GATE/ACTION taxonomy.
