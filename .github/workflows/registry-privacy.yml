@@ -1,0 +1,40 @@
+name: Registry publication privacy
+
+on:
+  pull_request:
+    paths:
+      - "pipeline/p00-populate-inventory.mjs"
+      - "validation/acceptance/**"
+      - "contracts/bases/repository.schema.json"
+      - "registry/repositories/**"
+      - "fixtures/privacy/**"
+      - ".github/workflows/registry-privacy.yml"
+  push:
+    branches: [main]
+    paths:
+      - "pipeline/p00-populate-inventory.mjs"
+      - "validation/acceptance/**"
+      - "contracts/bases/repository.schema.json"
+      - "registry/repositories/**"
+      - "fixtures/privacy/**"
+      - ".github/workflows/registry-privacy.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  privacy-regression:
+    name: G06 privacy regression
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Syntax-check security-sensitive modules
+        run: |
+          node --check pipeline/p00-populate-inventory.mjs
+          node --check validation/acceptance/g06-publication-privacy.mjs
+          node --check validation/acceptance/run.mjs
+      - name: Run synthetic privacy regression tests
+        run: node --test validation/acceptance/privacy.test.mjs

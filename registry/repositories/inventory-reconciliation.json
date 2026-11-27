@@ -1,10 +1,10 @@
 {
+  "schema_version": "1.0.0",
   "expected_historical": 47,
   "expected_previous_snapshot": 75,
   "requested_limit": 180,
-  "observed_now": 183,
-  "private_observed": 3,
-  "status": "AT_OR_ABOVE_LIMIT",
+  "observed_public": 180,
+  "status": "PUBLIC_SCOPE_ONLY",
   "endpoint": "user/repos?affiliation=owner",
-  "note": "Account has reached or exceeded the requested limit of 180."
+  "note": "Counts describe only explicitly public repositories."
 }

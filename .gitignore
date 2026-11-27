@@ -3,3 +3,9 @@ node_modules/
 *.log
 _site/
 .cache/
+
+# Restricted registry exports must remain outside the repository.
+*.private.json
+*.restricted.json
+registry/private/
+registry/restricted/
